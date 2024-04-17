@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjyr512gsum80"]
+[gd_scene load_steps=11 format=3 uid="uid://cjyr512gsum80"]
 
 [ext_resource type="Texture2D" uid="uid://c8oyhks1tj80d" path="res://sprites/ui/mapselect/track1icon.png" id="1_jiydb"]
 [ext_resource type="Script" path="res://scripts/map1selected.gd" id="2_rg44c"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0xmakuowqs" path="res://sprites/ui/menu_assets/mappagearrowleft.png" id="7_dws5w"]
 [ext_resource type="Texture2D" uid="uid://dsb5ypnjlumaq" path="res://sprites/ui/menu_assets/mappagearrowleftpressed.png" id="8_yrp32"]
 [ext_resource type="Texture2D" uid="uid://66ojr6rohdow" path="res://sprites/ui/menu_assets/mappagearrowlefthover.png" id="9_uqbrv"]
+[ext_resource type="Script" path="res://scripts/firstscreenright.gd" id="10_eomfr"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -84,6 +85,7 @@ texture_normal = ExtResource("7_dws5w")
 texture_pressed = ExtResource("8_yrp32")
 texture_hover = ExtResource("9_uqbrv")
 flip_h = true
+script = ExtResource("10_eomfr")
 
 [node name="left" type="TextureButton" parent="."]
 offset_top = 268.0
@@ -96,3 +98,4 @@ texture_hover = ExtResource("9_uqbrv")
 [connection signal="pressed" from="map1" to="map1" method="_on_pressed"]
 [connection signal="pressed" from="desert" to="desert" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="right" to="right" method="_on_pressed"]

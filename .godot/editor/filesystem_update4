@@ -16,3 +16,6 @@ res://scenes/towerrooms/enemy.tscn
 res://scenes/pickup.tscn
 res://scenes/mapselectpage1.tscn
 res://scripts/White.gd
+res://scenes/mapselectpage2.tscn
+res://scripts/towerpageleft.gd
+res://scripts/firstscreenright.gd
