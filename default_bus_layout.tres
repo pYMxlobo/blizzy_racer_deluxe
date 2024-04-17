@@ -1,0 +1,37 @@
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://dlyhli05v0wn4"]
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_2dm4s"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_hgafj"]
+resource_name = "Compressor"
+gain = 1.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_6y1p0"]
+resource_name = "Compressor"
+threshold = -20.0
+ratio = 32.0
+gain = -1.0
+attack_us = 25.0
+release_ms = 260.0
+mix = 0.2
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectLowPassFilter_2dm4s")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectCompressor_hgafj")
+bus/0/effect/1/enabled = true
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectCompressor_6y1p0")
+bus/2/effect/0/enabled = true

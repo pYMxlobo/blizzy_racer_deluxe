@@ -1,0 +1,471 @@
+[gd_scene load_steps=40 format=3 uid="uid://baie1ytu0vsxk"]
+
+[ext_resource type="Script" path="res://scripts/map3win.gd" id="1_8i4c5"]
+[ext_resource type="Texture2D" uid="uid://bs5h0ng85dllo" path="res://sprites/stageassets/racetrackassets/joketrack.png" id="1_sl5rr"]
+[ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/stageassets/racetrackassets/skytemp.png" id="2_82f26"]
+[ext_resource type="Texture2D" uid="uid://cejvvnvcgu16p" path="res://sprites/stageassets/racetrackassets/Start.png" id="3_jwjf0"]
+[ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="4_o1p4l"]
+[ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_72esl"]
+[ext_resource type="Script" path="res://scripts/noturning.gd" id="7_14k8d"]
+[ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_jj6v8"]
+[ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="8_b0jmi"]
+[ext_resource type="Texture2D" uid="uid://d371syh2hr3oj" path="res://sprites/character_assets/penvort/penvortdrivin.png" id="9_tniyd"]
+[ext_resource type="Texture2D" uid="uid://rpro5w812yn4" path="res://sprites/character_assets/robot/robotdrivin.png" id="10_hd8hp"]
+[ext_resource type="Texture2D" uid="uid://dddcfb2t74ir" path="res://sprites/character_assets/yogu/yogudrivin.png" id="12_1yju2"]
+[ext_resource type="Texture2D" uid="uid://4cjun8xkvd6u" path="res://sprites/character_assets/racer_other/wheels1.png" id="13_mah65"]
+[ext_resource type="Texture2D" uid="uid://xhjfv300n2ml" path="res://sprites/character_assets/racer_other/wheels2.png" id="14_njlx2"]
+[ext_resource type="Texture2D" uid="uid://bp3eofct0v1bo" path="res://sprites/character_assets/racer_other/wheels3.png" id="15_a1dtw"]
+[ext_resource type="Texture2D" uid="uid://brbtlowyfa1ff" path="res://sprites/character_assets/racer_other/wheels.png" id="16_ykm7e"]
+[ext_resource type="Shape2D" uid="uid://bsbqu5xe065ou" path="res://other/racerhitbox.tres" id="17_bk8b4"]
+[ext_resource type="Script" path="res://scripts/BlizzyAI.gd" id="18_lka18"]
+[ext_resource type="Script" path="res://scripts/YoguAI.gd" id="19_4ongp"]
+[ext_resource type="Script" path="res://scripts/RobotAI.gd" id="20_gocfl"]
+[ext_resource type="Script" path="res://scripts/GermAI.gd" id="21_xj7sp"]
+[ext_resource type="Script" path="res://scripts/PenvortAI.gd" id="22_7y7b4"]
+[ext_resource type="Script" path="res://scripts/OartAI.gd" id="23_pgeqk"]
+[ext_resource type="Script" path="res://scripts/lapchecker.gd" id="24_3itkb"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="26_hy0kf"]
+[ext_resource type="Texture2D" uid="uid://cfacud55ldfw5" path="res://sprites/ui/bars/drift_bar_under.png" id="28_a8474"]
+[ext_resource type="Texture2D" uid="uid://cld0tosi7a7ib" path="res://sprites/ui/bars/drift_bar_over.png" id="29_46gfp"]
+[ext_resource type="Texture2D" uid="uid://cuq7tce3tgl83" path="res://sprites/ui/bars/drift_bar_progress.png" id="30_cih8s"]
+[ext_resource type="Script" path="res://scripts/DriftMeter.gd" id="31_t60ue"]
+[ext_resource type="Script" path="res://scripts/lapverifynolame.gd" id="33_0oexj"]
+[ext_resource type="Script" path="res://scripts/enemyclipthrough.gd" id="33_43jip"]
+[ext_resource type="Shader" path="res://other/rerro.gdshader" id="34_1omje"]
+[ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="35_2fscc"]
+[ext_resource type="Texture2D" uid="uid://d05fqpxko7p7b" path="res://sprites/stageassets/racetrackassets/jokeaudience.png" id="38_uguwl"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="39_74imp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_taybb"]
+shader = ExtResource("34_1omje")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_pcf8u"]
+_data = {
+"points": PackedVector2Array(44.9492, -88.4001, -44.9492, 88.4001, -7334, 1232, -148.332, -140.841, 148.332, 140.841, -7209, 1558, -413.066, -67.3477, 413.066, 67.3477, -6514, 1879, -415.779, 39.598, 415.779, -39.598, -5284, 1959, -342.24, 79.196, 342.24, -79.196, -4229, 1773, -610.94, -217.789, 610.94, 217.789, -2559, 1904, -675.994, 175.362, 675.994, -175.362, -187, 2240, -763.675, -186.676, 763.675, 186.676, 2050, 1910, -483.661, 107.48, 483.661, -107.48, 6017, 2147, -642.053, 59.397, 642.053, -59.397, 8653, 1893, -1227.54, -93.3381, 1227.54, 93.3381, 13162, 2249, -1599.81, -185.821, 1599.81, 185.821, 17154, 2249, 992.257, 399.597, -992.257, -399.597, 17256, 460, 718.376, 125.716, -718.376, -125.716, 14213, 647, 1091.03, 89.797, -1091.03, -89.797, 11357, 545, 527.412, 67.7083, -527.412, -67.7083, 8839, 748, 769.736, -199.561, -769.736, 199.561, 5415, 511, 1136.79, 224.506, -1136.79, -224.506, 2754, 765, 955.043, -3.56359, -955.043, 3.56359, 448, 308, 602.247, 121.162, -602.247, -121.162, -2408, 435, 669.956, 245.888, -669.956, -245.888, -6019, 231, 170.614, -969.807, -170.614, 969.807, -7336, 1229)
+}
+point_count = 22
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epu7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_mah65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_njlx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_a1dtw")
+}],
+"loop": true,
+"name": &"wheel_active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ykm7e")
+}],
+"loop": true,
+"name": &"wheel_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_a1dtw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_njlx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mah65")
+}],
+"loop": true,
+"name": &"wheel_reverse",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqq2g"]
+size = Vector2(989, 87)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8i4c5")
+
+[node name="shader" type="Sprite2D" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_taybb")
+position = Vector2(187.076, -19.377)
+rotation = 3.14159
+scale = Vector2(8294.14, 3721.47)
+texture = ExtResource("35_2fscc")
+
+[node name="Track" type="Sprite2D" parent="."]
+z_index = -1985
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(13.912, 13.912)
+texture = ExtResource("1_sl5rr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(22, 236)
+polygon = PackedVector2Array(-45, -1259, -42, -1973, -13938, -1980, -13938, -253, -13093, -244, -13039, -850, -12652, -1188, -11370, -1455, -9518, -1527, -6698, -1485, -4723, -1278, -2338, -1230)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-13075, -14, -13928, -29, -13935, 1750, 6, 1747, -11, 1347, -1764, 1430, -2930, 1351, -4252, 1313, -5241, 1506, -5483, 1491, -6041, 1483, -7151, 1317, -7906, 1173, -12837, 1294, -12513, 1162, -12818, 1064, -13068, 822, -13059, -9, -13069, -40, -13093, -36)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-7, 1351, 407, 1424, 599, 1377, 3132, 1387, 3551, 1337, 4062, 1384, 4928, 1417, 5958, 1341, 6959, 1491, 8013, 1486, 8241, 1425, 8686, 1513, 10068, 1372, 11094, 1365, 12128, 1441, 12609, 1405, 12616, 1322, 12815, 1309, 12906, 1151, 12861, 1047, 12919, 974, 12937, 484, 12963, -10, 13909, 1, 13908, 1737, -9, 1740, -28, 1355, -14, 1335, -17, 1357)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(12966, -1, 12940, -206, 12958, -257, 12951, -492, 12863, -659, 12716, -763, 12659, -830, 12472, -902, 11991, -1037, 11599, -1105, 11337, -1102, 11177, -1038, 10775, -1096, 10648, -1042, 10041, -1042, 9968, -1054, 9560, -1050, 8937, -913, 7812, -861, 7760, -891, 5885, -775, 5508, -838, 5008, -802, 4771, -804, 4171, -895, 4106, -940, 4032, -957, 2938, -955, 2517, -1006, 1566, -1014, 1348, -959, 1193, -987, 1048, -942, 811, -964, 342, -997, -13, -997, -65, -1079, -58, -1774, 14120, -1781, 14178, 614, 12954, 38, 12951, 3, 12920, -34, 12869, -47, 12941, -72)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-12196, 240, -12189, 345, -11998, 410, -11706, 240, -11394, 377, -10893, 312, -10333, 372, -9637, 334, -8506, 320, -7433, 485, -6418, 550, -5505, 552, -5356, 495, -2832, 492, -1207, 555, -296, 638, 1301, 641, 1565, 657, 3663, 463, 3724, 422, 5152, 628, 6537, 517, 6845, 577, 9671, 575, 10060, 607, 10711, 612, 11438, 758, 11469, 782, 11677, 794, 12000, 840, 12160, 579, 12204, 517, 12222, 453, 12193, 416, 12160, -193, 11743, -297, 11504, -326, 11289, -325, 11052, -300, 10244, -165, 10112, -161, 9159, -19, 7592, 35, 5615, 41, 4648, -113, 2635, -110, 1371, -253, 1213, -137, 829, -149, 690, -68, -552, -72, -634, -15, -737, -16, -955, 48, -1231, 73, -1899, 75, -2606, 22, -3419, 18, -3836, -50, -4307, -93, -4642, -100, -4966, -86, -5058, -121, -5093, -173, -5106, -227, -5461, -261, -6044, -320, -6513, -308, -6829, -318, -6878, -307, -7437, -329, -7968, -357, -8465, -373, -9107, -271, -9480, -275, -10196, -400, -10262, -398, -10398, -351, -10724, -350, -11329, -463, -11506, -339, -11669, -278, -11750, -112, -12150, 226)
+
+[node name="Start" type="Sprite2D" parent="."]
+z_index = 465
+texture_filter = 1
+position = Vector2(-12384, -610)
+scale = Vector2(4.09163, 4.09163)
+texture = ExtResource("3_jwjf0")
+
+[node name="Player" parent="." instance=ExtResource("4_o1p4l")]
+z_as_relative = false
+position = Vector2(-12596, 234)
+rotation = -3.14159
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-12596, 234)
+zoom = Vector2(0.355, 0.355)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("26_hy0kf")
+
+[node name="Sky" type="Sprite2D" parent="Camera2D"]
+z_index = -4096
+position = Vector2(-14.9831, 5.17641)
+rotation = 3.14159
+scale = Vector2(1.46899, 1.00882)
+texture = ExtResource("2_82f26")
+script = ExtResource("7_14k8d")
+
+[node name="DriftMeter" type="TextureProgressBar" parent="Camera2D"]
+editor_description = "this is the meter for the thing :D"
+z_index = 3806
+z_as_relative = false
+offset_left = 1051.0
+offset_top = -741.0
+offset_right = 1227.0
+offset_bottom = 675.0
+tooltip_text = "The Drift Warp Meter!"
+max_value = 18.1
+step = 0.25
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("28_a8474")
+texture_over = ExtResource("29_46gfp")
+texture_progress = ExtResource("30_cih8s")
+script = ExtResource("31_t60ue")
+
+[node name="norotateimage" type="RemoteTransform2D" parent="."]
+position = Vector2(-6047, -928)
+update_position = false
+update_scale = false
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-5492, -1083)
+curve = SubResource("Curve2D_pcf8u")
+
+[node name="Blizzy" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("18_lka18")
+
+[node name="1" type="Sprite2D" parent="Path2D/Blizzy"]
+position = Vector2(8.46695, -1.52069)
+rotation = -1.5708
+texture = ExtResource("6_72esl")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Blizzy/1"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Blizzy/1/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Blizzy/1"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Yogu" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("19_4ongp")
+
+[node name="2" type="Sprite2D" parent="Path2D/Yogu"]
+rotation = -1.5708
+texture = ExtResource("12_1yju2")
+offset = Vector2(0, -24.82)
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Yogu/2"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Yogu/2/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Yogu/2"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Robot" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("20_gocfl")
+
+[node name="3" type="Sprite2D" parent="Path2D/Robot"]
+position = Vector2(-1.37891, -1.76038)
+rotation = -1.5708
+texture = ExtResource("10_hd8hp")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Robot/3"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Robot/3/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Robot/3"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Germ" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("21_xj7sp")
+
+[node name="4" type="Sprite2D" parent="Path2D/Germ"]
+position = Vector2(2.71103, 1.2846)
+rotation = -1.5708
+texture = ExtResource("7_jj6v8")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Germ/4"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Germ/4/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Germ/4"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Penvort" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("22_7y7b4")
+
+[node name="5" type="Sprite2D" parent="Path2D/Penvort"]
+position = Vector2(1.28473, -2.71085)
+rotation = -1.5708
+texture = ExtResource("9_tniyd")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Penvort/5"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Penvort/5/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Penvort/5"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Oart" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-7334, 1232)
+rotation = 2.0412
+script = ExtResource("23_pgeqk")
+
+[node name="6" type="Sprite2D" parent="Path2D/Oart"]
+position = Vector2(1.76022, -1.37921)
+rotation = -1.5708
+texture = ExtResource("8_b0jmi")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Oart/6"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Oart/6/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_bk8b4")
+script = ExtResource("33_43jip")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Oart/6"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_epu7f")
+animation = &"wheel_active"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("24_3itkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12627.5, 303)
+shape = SubResource("RectangleShape2D_nqq2g")
+
+[node name="no cheating" type="Area2D" parent="."]
+position = Vector2(25173, -246)
+script = ExtResource("33_0oexj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="no cheating"]
+position = Vector2(-12627.5, 303)
+shape = SubResource("RectangleShape2D_nqq2g")
+
+[node name="Track1Audience" type="Sprite2D" parent="."]
+position = Vector2(-2798, 268)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience2" type="Sprite2D" parent="."]
+position = Vector2(-802, 288)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience3" type="Sprite2D" parent="."]
+position = Vector2(2486, 223)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience4" type="Sprite2D" parent="."]
+position = Vector2(7101, 268)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience5" type="Sprite2D" parent="."]
+position = Vector2(11536, 262)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience6" type="Sprite2D" parent="."]
+position = Vector2(-6902, 30)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience7" type="Sprite2D" parent="."]
+position = Vector2(-11174, -102)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience8" type="Sprite2D" parent="."]
+position = Vector2(-13491, 852)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience9" type="Sprite2D" parent="."]
+position = Vector2(-13732, -850)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience10" type="Sprite2D" parent="."]
+position = Vector2(13368, -1231)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Track1Audience11" type="Sprite2D" parent="."]
+position = Vector2(13533, 1284)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_uguwl")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+script = ExtResource("39_74imp")
+
+[connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
+[connection signal="body_shape_exited" from="no cheating" to="no cheating" method="_on_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

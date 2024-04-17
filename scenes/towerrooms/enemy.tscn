@@ -1,0 +1,185 @@
+[gd_scene load_steps=26 format=3 uid="uid://eoloj1c3dknk"]
+
+[ext_resource type="Script" path="res://scripts/towerscripts/testai.gd" id="1_1ba84"]
+[ext_resource type="Texture2D" uid="uid://cpj1mghuddc10" path="res://sprites/other/temp_or_other/baddie3.png" id="2_4bsks"]
+[ext_resource type="Texture2D" uid="uid://3cop2flwink1" path="res://sprites/other/temp_or_other/baddie.png" id="2_6b4sa"]
+[ext_resource type="Texture2D" uid="uid://bak7euq8kbl5x" path="res://sprites/other/temp_or_other/demon.png" id="3_o8hr7"]
+[ext_resource type="Texture2D" uid="uid://27fhnfw7duox" path="res://sprites/other/temp_or_other/chillguy.png" id="3_ourh0"]
+[ext_resource type="Script" path="res://scripts/enemyclipthrough.gd" id="3_qer27"]
+[ext_resource type="Texture2D" uid="uid://b8dvubms17oyx" path="res://sprites/other/temp_or_other/baddie2.png" id="3_siliy"]
+[ext_resource type="Texture2D" uid="uid://b7ueh5fc2e6wj" path="res://sprites/other/temp_or_other/baddie4.png" id="4_iuco6"]
+[ext_resource type="Script" path="res://scripts/towerscripts/testaidamage.gd" id="4_ygwp1"]
+[ext_resource type="Script" path="res://scripts/towerscripts/testairecievedamage.gd" id="5_l6npc"]
+[ext_resource type="Script" path="res://scripts/towerscripts/Detect.gd" id="6_70ukf"]
+[ext_resource type="Texture2D" uid="uid://bw0xocbcd6lvu" path="res://sprites/ui/bars/enemyhealthunder.png" id="6_i3dg3"]
+[ext_resource type="Script" path="res://scripts/towerscripts/Undetect.gd" id="7_8jqgt"]
+[ext_resource type="Texture2D" uid="uid://tvcgujxru3qc" path="res://sprites/ui/bars/enemyhealthover.png" id="7_jrqre"]
+[ext_resource type="Texture2D" uid="uid://b4m32wp04eesd" path="res://sprites/ui/bars/enemyhealthprogress.png" id="8_s7850"]
+[ext_resource type="Script" path="res://scripts/towerscripts/testaihealth.gd" id="9_df6ad"]
+[ext_resource type="Script" path="res://scripts/towerscripts/enemyseerange.gd" id="12_wmxfr"]
+[ext_resource type="Script" path="res://scripts/towerscripts/enemyforgetrange.gd" id="13_yk4od"]
+[ext_resource type="Script" path="res://scripts/towerscripts/EnemyRegenTimer.gd" id="15_h1ufx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_endfc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4bsks")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ourh0")
+}],
+"loop": true,
+"name": &"Chill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o8hr7")
+}],
+"loop": true,
+"name": &"Demon",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_siliy")
+}],
+"loop": true,
+"name": &"Green",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_iuco6")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6b4sa")
+}],
+"loop": true,
+"name": &"Yellow",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34rfk"]
+radius = 58.2151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_duvtc"]
+radius = 92.0054
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frt7r"]
+radius = 50.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq212"]
+radius = 450.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7exb"]
+radius = 1500.0
+
+[node name="enemy" type="CharacterBody2D" groups=["enemy"]]
+editor_description = "enemy.
+ID 0 = yellow
+ID 1 = green
+ID 2 = blue
+ID 3 = red
+ID 4 = demon
+ID 5 = chill tutorial guy"
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_1ba84")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Char" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 4)
+sprite_frames = SubResource("SpriteFrames_endfc")
+animation = &"Yellow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
+shape = SubResource("CircleShape2D_34rfk")
+debug_color = Color(0.6, 0.545098, 0, 0.419608)
+script = ExtResource("3_qer27")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_use_custom = true
+debug_path_custom_color = Color(0.65098, 0, 0, 1)
+debug_path_custom_line_width = 4.0
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_ygwp1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_duvtc")
+debug_color = Color(0.619608, 0, 0.141176, 0.419608)
+script = ExtResource("3_qer27")
+
+[node name="DamageCooldown" type="Timer" parent="Area2D"]
+wait_time = 2.0
+autostart = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+script = ExtResource("5_l6npc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_frt7r")
+debug_color = Color(1, 0.411765, 0.380392, 0.419608)
+
+[node name="DamageCooldown" type="Timer" parent="Hurtbox"]
+autostart = true
+
+[node name="Detect" type="Area2D" parent="."]
+z_index = -910
+script = ExtResource("6_70ukf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_vq212")
+debug_color = Color(0.14902, 0.517647, 1, 0.419608)
+script = ExtResource("12_wmxfr")
+
+[node name="Undetect" type="Area2D" parent="."]
+z_index = -910
+script = ExtResource("7_8jqgt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Undetect"]
+shape = SubResource("CircleShape2D_p7exb")
+script = ExtResource("13_yk4od")
+
+[node name="Health" type="TextureProgressBar" parent="."]
+offset_left = -126.0
+offset_top = -102.0
+offset_right = 126.0
+offset_bottom = -78.0
+max_value = 50.0
+step = 2.0
+value = 50.0
+texture_under = ExtResource("6_i3dg3")
+texture_over = ExtResource("7_jrqre")
+texture_progress = ExtResource("8_s7850")
+script = ExtResource("9_df6ad")
+
+[node name="EnemyRegenTimer" type="Timer" parent="."]
+script = ExtResource("15_h1ufx")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
+[connection signal="timeout" from="Area2D/DamageCooldown" to="Area2D" method="_on_damage_cooldown_timeout"]
+[connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="Hurtbox" to="Hurtbox" method="_on_body_shape_exited"]
+[connection signal="timeout" from="Hurtbox/DamageCooldown" to="Hurtbox" method="_on_damage_cooldown_timeout"]
+[connection signal="body_shape_entered" from="Detect" to="Detect" method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="Undetect" to="Undetect" method="_on_body_shape_exited"]
+[connection signal="timeout" from="EnemyRegenTimer" to="EnemyRegenTimer" method="_on_timeout"]

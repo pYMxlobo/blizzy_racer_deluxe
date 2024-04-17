@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk2m3vdiv267m"
+path="res://.godot/imported/GO v2.mp3-b8cd023aa3934bf29d63c5e26cc69f1f.mp3str"
+
+[deps]
+
+source_file="res://audio/music/GO v2.mp3"
+dest_files=["res://.godot/imported/GO v2.mp3-b8cd023aa3934bf29d63c5e26cc69f1f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=12.0
+bpm=0.0
+beat_count=0
+bar_beats=4

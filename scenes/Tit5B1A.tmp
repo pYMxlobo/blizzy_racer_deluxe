@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://cskdd4i1afpky"]
+
+[ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/titlebackround.png" id="1_vmeeb"]
+[ext_resource type="Texture2D" uid="uid://cseq55au7n43g" path="res://sprites/title.png" id="2_5dh1l"]
+[ext_resource type="Texture2D" uid="uid://tqp7gy6nd43b" path="res://sprites/starttitle.png" id="4_ojl0w"]
+[ext_resource type="Texture2D" uid="uid://ev4w6pifvphb" path="res://sprites/starttitlepressed.png" id="5_5c71i"]
+[ext_resource type="Texture2D" uid="uid://k2dosgxybrg5" path="res://sprites/starttitlehover.png" id="6_6od2i"]
+[ext_resource type="AudioStream" uid="uid://dwqee13en8h2h" path="res://audio/music/Untitled.mp3" id="7_nx7bk"]
+[ext_resource type="Script" path="res://scripts/tostartornottostartthatisthequestion.gd" id="7_s6nvy"]
+[ext_resource type="Script" path="res://scripts/soundtoggle.gd" id="8_nrcre"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Titlebackround" type="Sprite2D" parent="."]
+position = Vector2(480, 320)
+scale = Vector2(240, 160)
+texture = ExtResource("1_vmeeb")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(480, 320)
+texture = ExtResource("2_5dh1l")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 351.0
+offset_top = 451.0
+offset_right = 607.0
+offset_bottom = 579.0
+tooltip_text = "the button to start the game!!!!!!!!"
+texture_normal = ExtResource("4_ojl0w")
+texture_pressed = ExtResource("5_5c71i")
+texture_hover = ExtResource("6_6od2i")
+script = ExtResource("7_s6nvy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_nx7bk")
+autoplay = true
+bus = &"Music"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 4.0
+offset_top = 603.0
+offset_right = 68.0
+offset_bottom = 634.0
+text = "music"
+script = ExtResource("8_nrcre")
+
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

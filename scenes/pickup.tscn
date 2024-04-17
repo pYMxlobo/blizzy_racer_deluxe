@@ -1,0 +1,145 @@
+[gd_scene load_steps=16 format=3 uid="uid://dghkolp8poebe"]
+
+[ext_resource type="Script" path="res://scripts/towerscripts/itemspawn.gd" id="1_4n2ua"]
+[ext_resource type="Texture2D" uid="uid://oc8jy2gji3dt" path="res://sprites/stageassets/pickups/axel.png" id="1_b76gt"]
+[ext_resource type="Texture2D" uid="uid://cxlhw05bobgo3" path="res://sprites/stageassets/pickups/battery.png" id="2_nl772"]
+[ext_resource type="Texture2D" uid="uid://blfw3mdhepadp" path="res://sprites/stageassets/pickups/brakefluid.png" id="3_uvm7q"]
+[ext_resource type="Texture2D" uid="uid://2m61ipoo4dtp" path="res://sprites/stageassets/pickups/eyesoftruth.png" id="4_mgqoy"]
+[ext_resource type="Texture2D" uid="uid://7bai2m4jobir" path="res://sprites/stageassets/pickups/blackhole.png" id="4_mtrqg"]
+[ext_resource type="Texture2D" uid="uid://354xfuhfahca" path="res://sprites/stageassets/pickups/gear.png" id="5_pbe3k"]
+[ext_resource type="Texture2D" uid="uid://8hs03x5flsbf" path="res://sprites/stageassets/pickups/metalplate.png" id="6_tk8o7"]
+[ext_resource type="Texture2D" uid="uid://dko5up7lejps5" path="res://sprites/stageassets/pickups/coin.png" id="6_xlv7r"]
+[ext_resource type="Texture2D" uid="uid://dnyppala0ut2b" path="res://sprites/stageassets/pickups/oil.png" id="7_1yj3r"]
+[ext_resource type="Texture2D" uid="uid://bsntjmdlqiyhn" path="res://sprites/stageassets/pickups/theorb.png" id="8_4qx86"]
+[ext_resource type="Texture2D" uid="uid://c5u4ifiaebq40" path="res://sprites/stageassets/pickups/voidbox.png" id="9_krslj"]
+[ext_resource type="Texture2D" uid="uid://b8ber83ypric5" path="res://sprites/stageassets/pickups/wrench.png" id="12_84o7l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hadi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b76gt")
+}],
+"loop": true,
+"name": &"Axel",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nl772")
+}],
+"loop": true,
+"name": &"Battery",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mtrqg")
+}],
+"loop": true,
+"name": &"Blackhole",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uvm7q")
+}],
+"loop": true,
+"name": &"BrakeFluid",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_xlv7r")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mgqoy")
+}],
+"loop": true,
+"name": &"EyesofTruth",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pbe3k")
+}],
+"loop": true,
+"name": &"Gear",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tk8o7")
+}],
+"loop": true,
+"name": &"MetalPlate",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1yj3r")
+}],
+"loop": true,
+"name": &"Oil",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4qx86")
+}],
+"loop": true,
+"name": &"TheOrb",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_krslj")
+}],
+"loop": true,
+"name": &"Voidbox",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_84o7l")
+}],
+"loop": true,
+"name": &"Wrench",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m6mt"]
+size = Vector2(48, 48)
+
+[node name="Node2D" type="Node2D"]
+editor_description = "this is an item.
+ID 0 = axel
+ID 1 = battery
+ID 2 = brake fluid
+ID 3 = eyes of truth
+ID 4 = gear
+ID 5 = metal plate
+ID 6 = oil
+ID 7 = the orb
+ID 8 = voidbox
+ID 9 = wrench
+ID 10 = black hole
+ID 11 = coin"
+script = ExtResource("1_4n2ua")
+
+[node name="Item" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6hadi")
+animation = &"Axel"
+
+[node name="Touch" type="Area2D" parent="."]
+
+[node name="Shape" type="CollisionShape2D" parent="Touch"]
+shape = SubResource("RectangleShape2D_2m6mt")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+
+[connection signal="body_shape_entered" from="Touch" to="." method="_on_touch_body_shape_entered"]

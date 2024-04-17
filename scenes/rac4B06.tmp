@@ -1,0 +1,222 @@
+[gd_scene load_steps=18 format=3 uid="uid://cd7hitq111edr"]
+
+[ext_resource type="Texture2D" uid="uid://d225b1mh1nwkx" path="res://sprites/tracktemp.png" id="1_jvfk1"]
+[ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/skytemp.png" id="2_q56t5"]
+[ext_resource type="Texture2D" uid="uid://3vdv1j3t5288" path="res://sprites/starttemp.png" id="2_we8b4"]
+[ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="3_gfrs7"]
+[ext_resource type="Texture2D" uid="uid://c1qqc03bhvbr2" path="res://sprites/1racertemp.png" id="4_4hkwu"]
+[ext_resource type="Shape2D" uid="uid://bsbqu5xe065ou" path="res://other/racerhitbox.tres" id="4_yab3v"]
+[ext_resource type="Texture2D" uid="uid://63j7pxdxtc5d" path="res://sprites/2racertemp.png" id="5_2f12h"]
+[ext_resource type="Texture2D" uid="uid://dxkfwkld8txs" path="res://sprites/3racertemp.png" id="6_sueuk"]
+[ext_resource type="Texture2D" uid="uid://smdtv8or3iby" path="res://sprites/4racertemp.png" id="7_xli4v"]
+[ext_resource type="Texture2D" uid="uid://ccj73e60fjtrj" path="res://sprites/5racertemp.png" id="8_emhxb"]
+[ext_resource type="Texture2D" uid="uid://b41ngopnnutlo" path="res://sprites/6racertemp.png" id="9_c2lqa"]
+[ext_resource type="Texture2D" uid="uid://dde8mn8sd8mne" path="res://sprites/7racertemp.png" id="10_b7ta3"]
+[ext_resource type="Texture2D" uid="uid://ywb4s0n8x22q" path="res://sprites/8racertemp.png" id="11_2mtfy"]
+[ext_resource type="Script" path="res://scripts/selection_proccessing.gd" id="13_0yem6"]
+[ext_resource type="Script" path="res://scripts/YoguAI.gd" id="15_2qfh7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6py4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2mtfy")
+}],
+"loop": true,
+"name": &"Bane",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4hkwu")
+}],
+"loop": true,
+"name": &"Blizzy",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xli4v")
+}],
+"loop": true,
+"name": &"Germ",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_c2lqa")
+}],
+"loop": true,
+"name": &"Oart",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_emhxb")
+}],
+"loop": true,
+"name": &"Penvort",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sueuk")
+}],
+"loop": true,
+"name": &"Robot",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_b7ta3")
+}],
+"loop": true,
+"name": &"Will",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2f12h")
+}],
+"loop": true,
+"name": &"Yogu",
+"speed": 3.0
+}]
+
+[sub_resource type="Curve2D" id="Curve2D_b6c0n"]
+_data = {
+"points": PackedVector2Array(-92.8266, -195.876, 92.8266, 195.876, -349, 103, -46, -28, 46, 28, -101, 645, -255.406, -204.816, 255.406, 204.816, 446, 1135, -251.445, -200.425, 251.445, 200.425, 993, 1544, -219.19, 33.4167, 219.19, -33.4167, 1854, 1891, -428.507, 7.07107, 428.507, -7.07107, 2330, 1820, -277.186, -243.245, 277.186, 243.245, 3043, 2053, 90.8168, -102.589, -90.8168, 102.589, 3162, 2462, -52.4408, -233.736, 52.4408, 233.736, 3143, 2838, -124, -1008, 124, 1008, 3105, 4013, -27.4838, -28.6432, 27.4838, 28.6432, 3248, 4874, -111.377, -545.559, 111.377, 545.559, 3571, 5430, -256.734, 77.3977, 256.734, -77.3977, 4237, 6020, -594.641, -128.367, 594.641, 128.367, 5303, 6058, -235.969, 286.938, 235.969, -286.938, 6439, 5787, -122.704, 218.979, 122.704, -218.979, 7101, 5226, 88.7242, 298.264, -88.7242, -298.264, 7163, 4603, -366.223, 251.071, 366.223, -251.071, 7667, 3699, -356.785, 269.948, 356.785, -269.948, 8261, 2971, -464.386, 81.1732, 464.386, -81.1732, 8994, 2709, -252.958, 403.978, 252.958, -403.978, 9731, 2324, -120.816, 336.019, 120.816, -336.019, 10269, 1715, -226.53, 311.479, 226.53, -311.479, 10521, 773, -75.259, 366.414, 75.259, -366.414, 10552, -464, 289.173, 238.98, -289.173, -238.98, 10162, -1147, 313.951, 290.167, -313.951, -290.167, 9281, -2183, 513.737, 152.218, -513.737, -152.218, 8464, -2680, 133.799, 7.75437, -133.799, -7.75437, 7397, -2893, 204.907, 45.4358, -204.907, -45.4358, 6259, -2963, 349.086, 60.6129, -349.086, -60.6129, 5410, -2882, 119.719, 5.29732, -119.719, -5.29732, 4134, -2920, 143.675, -12.3471, -143.675, 12.3471, 2997, -2920, 351.742, -103.827, -351.742, 103.827, 1683, -2963, 442.001, -34.4611, -442.001, 34.4611, 824, -2616, 215.756, -217.255, -215.756, 217.255, -13, -2237, 57.181, -319.541, -57.181, 319.541, -381, -1562, -196.059, -273.089, 196.059, 273.089, -349, 103, -83.5223, -84.094, 83.5223, 84.094, -349, 103)
+}
+point_count = 38
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(6.95583, 6.95583)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(5.75057, -0.431292)
+polygon = PackedVector2Array(-5.75057, 1000.74, -5.75057, 902.552, -5.75057, 770.433, -64.1189, 781.215, -185.456, 782.796, -266.826, 747.43, -309.812, 672.242, -338.852, 615.455, -340.434, 580.089, -388.02, 518.701, -408.003, 469.534, -435.606, 388.164, -434.168, 277.753, -477.154, 202.42, -675.117, 151.815, -779.49, 108.83, -879.262, -1.72517, -1000.6, -0.143764, -999.018, 237.786, -999.018, 397.508, -1002.18, 836.564, -999.018, 996.143)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(7.04445, 774.746, -2.30023, 766.551, -8.0508, 773.021, -4.31293, 789.554, 18.6894, 884.15, 219.672, 976.878, 489.661, 943.525, 830.67, 828.226, 976.16, 469.534, 971.99, 76.1951, 906.578, 0.143765, 811.118, 0.143765, 808.674, 37.9538, 799.33, 69.2944, 779.778, 112.711, 766.12, 137.87, 760.369, 169.354, 725.003, 206.158, 678.999, 266.395, 660.166, 267.545, 605.248, 311.393, 502.025, 391.183, 447.97, 470.684, 404.984, 587.852, 330.802, 699.845, 199.832, 761.807)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(813.706, -5.46304, 808.387, 1.58141, 813.131, 3.88164, 822.044, 3.30658, 888.32, -28.7529, 936.193, -105.667, 945.394, -251.156, 935.618, -424.248, 830.958, -522.583, 688.344, -707.177, 439.344, -998.587, -0.143764, -999.449, -0.862585, -637.02, 41.6916, -636.588, 68.8631, -616.893, 102.504, -616.461, 121.05, -639.607, 179.13, -640.901, 312.256, -616.893, 324.764, -634.432, 417.779, -641.764, 499.725, -611.717, 548.748, -569.882, 601.797, -533.222, 634.576, -507.776, 704.733, -460.908, 720.259, -441.069, 775.752, -371.774, 784.809, -325.626, 807.668, -240.805, 812.843, -159.291, 814.569, -68.4318)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-872.074, 3.45034, -871.93, -9.05715, -884.294, -25.3025, -901.115, -66.9942, -938.062, -67.4255, -939.356, -87.1212, -912.041, -86.8336, -909.022, -156.991, -905.571, -233.186, -896.658, -333.677, -886.019, -425.399, -872.362, -494.118, -837.283, -525.746, -828.37, -552.63, -806.374, -555.793, -796.598, -585.983, -781.215, -585.983, -766.551, -609.561, -749.443, -609.561, -733.198, -634.719, -716.953, -632.275, -694.238, -653.409, -662.466, -656.715, -574.626, -642.051, -446.963, -664.047, -355.817, -649.383, -277.753, -660.741, -197.245, -668.935, -152.534, -661.603, -94.8844, -642.914, -24.0086, -641.189, -0.431293, -638.745, 9.20092, -793.291, -237.211, -832.395, -756.344, -934.18, -920.092, -851.516, -961.352, -522.296, -986.942, -105.667, -999.306, -0.431292, -970.553, 20.127, -952.726, -34.6472, -930.874, 6.46939, -919.948, -25.015, -888.463, 3.73787)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-731.329, -110.986, -696.107, -94.4531, -716.809, -75.3325, -665.197, -39.6789, -611.286, -20.127, -531.928, -16.1016, -460.19, -27.3152, -377.238, -35.5098, -330.658, -16.6767, -267.545, 37.235, -271.139, 93.0155, -221.541, 145.777, -231.173, 262.082, -254.319, 354.379, -261.363, 428.13, -262.514, 471.116, -252.163, 502.888, -258.919, 518.702, -202.995, 628.969, -205.008, 641.189, -158.428, 653.552, -20.7021, 637.163, 77.2014, 607.404, 111.992, 583.827, 119.756, 511.657, 131.976, 509.069, 125.938, 493.112, 136.145, 493.112, 135.138, 481.323, 143.764, 480.317, 134.132, 462.346, 142.327, 457.746, 137.726, 445.957, 143.764, 442.938, 137.726, 429.568, 147.933, 425.542, 139.164, 410.16, 213.778, 328.933, 247.85, 261.651, 286.954, 244.974, 338.277, 193.507, 415.91, 165.185, 476.722, 105.092, 540.554, 85.5398, 596.334, 25.4463, 603.523, -104.948, 619.48, -181.143, 618.043, -227.435, 591.159, -310.1, 571.607, -354.235, 505.044, -383.276, 493.399, -422.38, 368.755, -491.961, 312.975, -510.076, 243.393, -489.805, 211.621, -511.513, 147.071, -510.795, 89.8527, -540.41, 68.8631, -530.346, 60.5248, -503.894, 45.4295, -491.243, -21.7084, -474.853, -184.162, -435.606, -264.526, -467.09, -438.912, -486.498, -499.725, -463.352, -596.909, -466.228, -666.348, -416.916, -712.065, -376.375, -736.648, -235.055, -712.065, -155.409)
+
+[node name="Tracktemp" type="Sprite2D" parent="."]
+z_index = -1985
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(6.95583, 6.95583)
+texture = ExtResource("1_jvfk1")
+
+[node name="Starttemp" type="Sprite2D" parent="."]
+z_index = 465
+texture_filter = 1
+position = Vector2(-5607, -1528)
+scale = Vector2(4.09163, 4.09163)
+texture = ExtResource("2_we8b4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-6047, -928)
+script = ExtResource("3_gfrs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, 30)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("4_yab3v")
+
+[node name="Skytemp" type="Sprite2D" parent="CharacterBody2D"]
+z_index = -3720
+position = Vector2(6591, 1395)
+scale = Vector2(0.800032, 0.800032)
+texture = ExtResource("2_q56t5")
+
+[node name="PlayerRacer" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_6py4q")
+animation = &"Robot"
+script = ExtResource("13_0yem6")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="1Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-6060, -1117)
+texture = ExtResource("4_4hkwu")
+
+[node name="3Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-6065, -1357)
+texture = ExtResource("6_sueuk")
+
+[node name="4Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-5484, -1346)
+texture = ExtResource("7_xli4v")
+
+[node name="5Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-6052, -1647)
+texture = ExtResource("8_emhxb")
+
+[node name="6Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-5501, -1581)
+texture = ExtResource("9_c2lqa")
+
+[node name="7Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-5988, -1916)
+texture = ExtResource("10_b7ta3")
+
+[node name="8Racertemp" type="Sprite2D" parent="."]
+position = Vector2(-5430, -1857)
+texture = ExtResource("11_2mtfy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-6047, -928)
+zoom = Vector2(0.355, 0.355)
+
+[node name="norotateimage" type="RemoteTransform2D" parent="."]
+position = Vector2(-6047, -928)
+remote_path = NodePath("../CharacterBody2D/PlayerRacer")
+update_position = false
+update_scale = false
+
+[node name="Tracktemp2" type="Sprite2D" parent="."]
+z_index = -2760
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(84, -49)
+scale = Vector2(7.684, 6.95583)
+texture = ExtResource("1_jvfk1")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-5492, -1083)
+curve = SubResource("Curve2D_b6c0n")
+
+[node name="Yogu" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0.204865, 44.1153)
+rotation = 1.12824
+h_offset = 96.335
+v_offset = -340.78
+script = ExtResource("15_2qfh7")
+
+[node name="2Racertemp" type="Sprite2D" parent="Path2D/Yogu"]
+rotation = -1.13446
+texture = ExtResource("5_2f12h")
+offset = Vector2(0, -24.82)
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Yogu/2Racertemp"]
+position = Vector2(0, -27.16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/Yogu/2Racertemp/collosion"]
+position = Vector2(0, 30)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("4_yab3v")

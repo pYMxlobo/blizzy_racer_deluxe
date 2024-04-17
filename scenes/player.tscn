@@ -1,0 +1,234 @@
+[gd_scene load_steps=33 format=3 uid="uid://5ig03wmyusyv"]
+
+[ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="1_voco8"]
+[ext_resource type="Shader" path="res://other/whiteflash.gdshader" id="2_r4eco"]
+[ext_resource type="Texture2D" uid="uid://cj8oqsjs2s3n4" path="res://sprites/other/temp_or_other/white.png" id="3_fjhi4"]
+[ext_resource type="Script" path="res://scripts/White.gd" id="3_q5ems"]
+[ext_resource type="Texture2D" uid="uid://c0en0kl3s2wiv" path="res://sprites/character_assets/bane/bandrivin.png" id="5_awiyf"]
+[ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_tp7dc"]
+[ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_gsits"]
+[ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="8_kqx8m"]
+[ext_resource type="Texture2D" uid="uid://d371syh2hr3oj" path="res://sprites/character_assets/penvort/penvortdrivin.png" id="9_dhap6"]
+[ext_resource type="Texture2D" uid="uid://rpro5w812yn4" path="res://sprites/character_assets/robot/robotdrivin.png" id="10_2lsuc"]
+[ext_resource type="Texture2D" uid="uid://djoxlxved3c4d" path="res://sprites/character_assets/will/willdrivin.png" id="11_0b34r"]
+[ext_resource type="Texture2D" uid="uid://dddcfb2t74ir" path="res://sprites/character_assets/yogu/yogudrivin.png" id="12_t2k84"]
+[ext_resource type="Texture2D" uid="uid://4cjun8xkvd6u" path="res://sprites/character_assets/racer_other/wheels1.png" id="13_mev60"]
+[ext_resource type="Texture2D" uid="uid://xhjfv300n2ml" path="res://sprites/character_assets/racer_other/wheels2.png" id="14_74ysk"]
+[ext_resource type="Texture2D" uid="uid://bp3eofct0v1bo" path="res://sprites/character_assets/racer_other/wheels3.png" id="15_76iy8"]
+[ext_resource type="Texture2D" uid="uid://brbtlowyfa1ff" path="res://sprites/character_assets/racer_other/wheels.png" id="16_cud0c"]
+[ext_resource type="Shape2D" uid="uid://bsbqu5xe065ou" path="res://other/racerhitbox.tres" id="16_jq0u4"]
+[ext_resource type="AudioStream" uid="uid://dkju8py17rcfx" path="res://audio/music/level select song v12.mp3" id="17_whh1w"]
+[ext_resource type="AudioStream" uid="uid://by5jinbetkuxw" path="res://audio/music/grasser v2.mp3" id="18_dy678"]
+[ext_resource type="AudioStream" uid="uid://bhw4yhmn8gpyn" path="res://audio/music/Sandy Wheels v2.mp3" id="19_br8xy"]
+[ext_resource type="AudioStream" uid="uid://8v6xdjjd8xaj" path="res://audio/music/The Race of a Lifetime.mp3" id="20_5ollv"]
+[ext_resource type="AudioStream" uid="uid://p8wknopohf2i" path="res://audio/music/song.mp3" id="21_4t6sx"]
+[ext_resource type="AudioStream" uid="uid://cmtuw8tukviua" path="res://audio/finaksfx/vroom.mp3" id="22_xortt"]
+[ext_resource type="AudioStream" uid="uid://j0b2towbmq8w" path="res://audio/finaksfx/vroom-secondary.mp3" id="23_f8fbh"]
+[ext_resource type="AudioStream" uid="uid://ocmeeh5ignh2" path="res://audio/music/Climber.mp3" id="23_whbmv"]
+[ext_resource type="AudioStream" uid="uid://bqs83bw4pywqo" path="res://audio/sfx/turner.mp3" id="24_6lil5"]
+[ext_resource type="AudioStream" uid="uid://csuu0bgpwwqqr" path="res://audio/finaksfx/warp2.mp3" id="25_yx7nr"]
+[ext_resource type="AudioStream" uid="uid://dl33po5l513qa" path="res://audio/finaksfx/ready.mp3" id="26_7i0pl"]
+[ext_resource type="Script" path="res://scripts/AutoRegen.gd" id="28_w0tc7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_731qk"]
+shader = ExtResource("2_r4eco")
+shader_parameter/color_0 = Color(1, 1, 1, 1)
+shader_parameter/color_1 = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs7en"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_awiyf")
+}],
+"loop": true,
+"name": &"Bane",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tp7dc")
+}],
+"loop": true,
+"name": &"Blizzy",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gsits")
+}],
+"loop": true,
+"name": &"Germ",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_kqx8m")
+}],
+"loop": true,
+"name": &"Oart",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dhap6")
+}],
+"loop": true,
+"name": &"Penvort",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_2lsuc")
+}],
+"loop": true,
+"name": &"Robot",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0b34r")
+}],
+"loop": true,
+"name": &"Will",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_t2k84")
+}],
+"loop": true,
+"name": &"Yogu",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbku0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_mev60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_74ysk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_76iy8")
+}],
+"loop": true,
+"name": &"wheel_active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_cud0c")
+}],
+"loop": true,
+"name": &"wheel_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_76iy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_74ysk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mev60")
+}],
+"loop": true,
+"name": &"wheel_reverse",
+"speed": 2.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_voco8")
+
+[node name="White" type="Sprite2D" parent="."]
+visible = false
+z_index = 4096
+material = SubResource("ShaderMaterial_731qk")
+position = Vector2(67.5, 87.5002)
+scale = Vector2(17.8945, 14.3086)
+texture = ExtResource("3_fjhi4")
+script = ExtResource("3_q5ems")
+
+[node name="PlayerRacer" type="AnimatedSprite2D" parent="."]
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_xs7en")
+animation = &"Blizzy"
+
+[node name="Wheels" type="AnimatedSprite2D" parent="PlayerRacer"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_pbku0")
+animation = &"wheel_idle"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("16_jq0u4")
+debug_color = Color(1, 0, 0.0901961, 0.419608)
+
+[node name="BGMTEST" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_whh1w")
+bus = &"Music"
+
+[node name="BGMGREEN" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_dy678")
+bus = &"Music"
+
+[node name="BGMDESERT" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_br8xy")
+bus = &"Music"
+
+[node name="BGMFINAL" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_5ollv")
+volume_db = 4.0
+bus = &"Music"
+
+[node name="BGMJOKE" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_4t6sx")
+bus = &"Music"
+
+[node name="BGMCLIMBER" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_whbmv")
+bus = &"Music"
+
+[node name="FORWARD" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_xortt")
+volume_db = 5.0
+max_distance = 1250.0
+bus = &"SFX"
+
+[node name="BACKWARD" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_f8fbh")
+volume_db = 1.0
+bus = &"SFX"
+
+[node name="TURN" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("24_6lil5")
+volume_db = -10.0
+max_polyphony = 2
+bus = &"SFX"
+
+[node name="WARP" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_yx7nr")
+bus = &"SFX"
+
+[node name="READY" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_7i0pl")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="WarpFlash" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.05
+one_shot = true
+
+[node name="AutoRegen" type="Timer" parent="."]
+autostart = true
+script = ExtResource("28_w0tc7")
+
+[connection signal="finished" from="READY" to="." method="_on_ready_finished"]
+[connection signal="timeout" from="WarpFlash" to="." method="_on_warp_flash_timeout"]
+[connection signal="timeout" from="AutoRegen" to="AutoRegen" method="_on_timeout"]

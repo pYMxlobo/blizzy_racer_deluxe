@@ -1,0 +1,451 @@
+[gd_scene load_steps=41 format=3 uid="uid://chf6dp65nkly1"]
+
+[ext_resource type="Script" path="res://scripts/map2win.gd" id="1_4g4v4"]
+[ext_resource type="Texture2D" uid="uid://c0hd1hx6khcn5" path="res://sprites/stageassets/racetrackassets/track2.png" id="1_tqgqe"]
+[ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/stageassets/racetrackassets/skytemp.png" id="2_edo1y"]
+[ext_resource type="Texture2D" uid="uid://cejvvnvcgu16p" path="res://sprites/stageassets/racetrackassets/Start.png" id="3_8ser5"]
+[ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="4_pbb7q"]
+[ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_y1i44"]
+[ext_resource type="Script" path="res://scripts/noturning.gd" id="7_lt3su"]
+[ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_t8hrl"]
+[ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="8_oplds"]
+[ext_resource type="Texture2D" uid="uid://d371syh2hr3oj" path="res://sprites/character_assets/penvort/penvortdrivin.png" id="9_bvb3h"]
+[ext_resource type="Texture2D" uid="uid://rpro5w812yn4" path="res://sprites/character_assets/robot/robotdrivin.png" id="10_7rbsm"]
+[ext_resource type="Texture2D" uid="uid://dddcfb2t74ir" path="res://sprites/character_assets/yogu/yogudrivin.png" id="12_wyy1b"]
+[ext_resource type="Texture2D" uid="uid://4cjun8xkvd6u" path="res://sprites/character_assets/racer_other/wheels1.png" id="13_kc7pj"]
+[ext_resource type="Texture2D" uid="uid://xhjfv300n2ml" path="res://sprites/character_assets/racer_other/wheels2.png" id="14_8tfei"]
+[ext_resource type="Texture2D" uid="uid://bp3eofct0v1bo" path="res://sprites/character_assets/racer_other/wheels3.png" id="15_3gu5i"]
+[ext_resource type="Texture2D" uid="uid://brbtlowyfa1ff" path="res://sprites/character_assets/racer_other/wheels.png" id="16_ars2i"]
+[ext_resource type="Shape2D" uid="uid://bsbqu5xe065ou" path="res://other/racerhitbox.tres" id="17_tcxcp"]
+[ext_resource type="Script" path="res://scripts/BlizzyAI.gd" id="18_3g0qw"]
+[ext_resource type="Script" path="res://scripts/YoguAI.gd" id="19_hdop4"]
+[ext_resource type="Script" path="res://scripts/RobotAI.gd" id="20_twdq4"]
+[ext_resource type="Script" path="res://scripts/GermAI.gd" id="21_on7m7"]
+[ext_resource type="Script" path="res://scripts/PenvortAI.gd" id="22_3rlar"]
+[ext_resource type="Script" path="res://scripts/OartAI.gd" id="23_yco2s"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="26_0cyp4"]
+[ext_resource type="Texture2D" uid="uid://cfacud55ldfw5" path="res://sprites/ui/bars/drift_bar_under.png" id="28_wiw6e"]
+[ext_resource type="Texture2D" uid="uid://cld0tosi7a7ib" path="res://sprites/ui/bars/drift_bar_over.png" id="29_p3yfs"]
+[ext_resource type="Texture2D" uid="uid://cuq7tce3tgl83" path="res://sprites/ui/bars/drift_bar_progress.png" id="30_ijejd"]
+[ext_resource type="Script" path="res://scripts/DriftMeter.gd" id="31_e0ut0"]
+[ext_resource type="Script" path="res://scripts/lapchecker.gd" id="32_qy0ke"]
+[ext_resource type="Script" path="res://scripts/lapverifynolame.gd" id="33_jhrw8"]
+[ext_resource type="Shader" path="res://other/rerro.gdshader" id="34_i3tnw"]
+[ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="35_vqweh"]
+[ext_resource type="Script" path="res://scripts/enemyclipthrough.gd" id="38_868df"]
+[ext_resource type="Texture2D" uid="uid://dir2clcae6q0m" path="res://sprites/stageassets/racetrackassets/track2audience.png" id="38_o4fiy"]
+[ext_resource type="Script" path="res://scripts/Timer.gd" id="39_n8hpx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qw8o4"]
+shader = ExtResource("34_i3tnw")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_o4raq"]
+_data = {
+"points": PackedVector2Array(-112.207, -237.322, 112.207, 237.322, -2032.2, 6675.98, -139.881, -268.003, 139.881, 268.003, -1881.33, 7397.99, -336.093, -323.034, 336.093, 323.034, -1480.67, 8019, -434.786, -45.385, 434.786, 45.385, -491.519, 8460, -613.502, -162.852, 613.502, 162.852, 324.784, 8680, -373.436, 304.346, 373.436, -304.346, 1433.84, 8540, -834.897, 456.519, 834.897, -456.519, 2340.06, 8023, -400.11, 395.116, 400.11, -395.116, 3331.22, 7462.99, -560.154, 437.831, 560.154, -437.831, 3971.67, 6934.99, -245.401, 341.722, 245.401, -341.722, 4584.15, 5972.98, -97.4608, 193.408, 97.4608, -193.408, 4868.9, 5402.97, 226.848, 295.998, -226.848, -295.998, 5089.71, 4625.96, 124.346, 136.226, -124.346, -136.226, 4847.92, 4319.96, -60.2698, 288.91, 60.2698, -288.91, 4599.13, 3549.95, -94.1, 326.271, 94.1, -326.271, 4627.11, 3086.95, -253.734, -164.817, 253.734, 164.817, 5709.19, 3021.95, -120.986, -210.226, 120.986, 210.226, 6008.93, 3556.95, 21.3875, -325.846, -21.3875, 325.846, 6450.55, 5124.97, 76.0443, -283.034, -76.0443, 283.034, 6336.65, 6542.98, 16.6347, -380.55, -16.6347, 380.55, 6136.82, 7405.99, 67.2143, -243.862, -67.2143, 243.862, 5809.1, 8931, -160.225, -397.344, 160.225, 397.344, 5617.26, 9786.01, -238.611, 112.681, 238.611, -112.681, 6699.34, 10235, -685.946, 332.674, 685.946, -332.674, 8273, 10264, -141.847, 355.983, 141.847, -355.983, 9156.24, 9252.01, -249.82, 292.414, 249.82, -292.414, 9540.91, 8318, -139.73, 294.533, 139.73, -294.533, 10238.3, 7604.99, -110.09, 244.738, 110.09, -244.738, 10302.3, 5637.97, -694.009, 367.941, 694.009, -367.941, 11940.9, 3962.96, -373.039, 15.1363, 373.039, -15.1363, 12845.1, 3620.96, -307.505, 0, 307.505, 0, 13428.6, 3670.96, 11.7625, 131.181, -11.7625, -131.181, 13835.2, 3378.95, 86.8018, 211.895, -86.8018, -211.895, 13549.5, 2758.95, -186.17, 188.575, 186.17, -188.575, 13535.5, 2359.94, -107.851, 47.6225, 107.851, -47.6225, 14127, 2195.94, -28.5488, 222.238, 28.5488, -222.238, 14468.7, 1788.94, 104.182, 196.772, -104.182, -196.772, 14340.8, 1076.93, 68.8947, 270.771, -68.8947, -270.771, 13991.1, 285.924, -53.7715, 131.181, 53.7715, -131.181, 13998.1, -163.08, 57.9505, 172.002, -57.9505, -172.002, 14091, -3613.11, 237.797, 366.003, -237.797, -366.003, 13029.9, -4276.12, 117.899, 256.002, -117.899, -256.002, 12852.1, -5552.13, 151.87, 118.001, -151.87, -118.001, 12104.7, -6720.14, 867.259, 530.005, -867.259, -530.005, 11171.5, -7348.15, 893.02, -769.339, -893.02, 769.339, 6065.88, -7540.15, 487.304, 1022.54, -487.304, -1022.54, 3890.74, -6866.14, 101.851, -453.064, -101.851, 453.064, 2188.19, -6930.14, 547.532, 1120.01, -547.532, -1120.01, -313.671, -6666.14, 403.655, -532.005, -403.655, 532.005, -1944.28, -7562.15, -15.9863, -192.002, 15.9863, 192.002, -2232.03, -6794.14, 47.9049, -392.56, -47.9049, 392.56, -2463.83, -5922.13, -150.395, -215.184, 150.395, 215.184, -2487.81, -5098.13, -472.13, 320.365, 472.13, -320.365, -1312.82, -4770.12, -548.857, -309.943, 548.857, 309.943, -33.9097, -4698.12, -224.075, 55.437, 224.075, -55.437, 1860.47, -4474.12, -324.782, -183.95, 324.782, 183.95, 2443.97, -4426.12, -569.689, 181.745, 569.689, -181.745, 8350.93, -4338.12, -963.177, -784.007, 963.177, 784.007, 11660.1, -3202.11, -94.3069, -615.412, 94.3069, 615.412, 12987, -1426.09, 56.5841, -271.838, -56.5841, 271.838, 13026.9, 533.927, 347.049, -740.004, -347.049, 740.004, 12979, 1157.93, 49.0396, 951.434, -49.0396, -951.434, 12115.7, 1157.93, 1528.84, 396.641, -1528.84, -396.641, 10527.1, -1334.09, 662.25, -33.1241, -662.25, 33.1241, 8071.17, -1378.09, 755.355, -404.004, -755.355, 404.004, 5585.29, -682.085, 1585.49, -473.971, -1585.49, 473.971, 3762.85, 69.9222, -7.7509, -541.612, 7.7509, 541.612, 1620.68, 2685.95, 201.415, -370.063, -201.415, 370.063, 1221.02, 3844.96, 1377.27, 329.631, -1377.27, -329.631, -752.296, 4948.97, 119.889, -338.72, -119.889, 338.72, -1993.24, 5746.98, 0, 0, 0, 0, -2032.2, 6675.98)
+}
+point_count = 71
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0jdn3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kc7pj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8tfei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3gu5i")
+}],
+"loop": true,
+"name": &"wheel_active",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ars2i")
+}],
+"loop": true,
+"name": &"wheel_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_3gu5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8tfei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_kc7pj")
+}],
+"loop": true,
+"name": &"wheel_reverse",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afvd8"]
+size = Vector2(1392, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13ffp"]
+size = Vector2(989, 87)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4g4v4")
+
+[node name="shader" type="Sprite2D" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_qw8o4")
+position = Vector2(-143.052, -171.302)
+rotation = 3.14159
+scale = Vector2(7927.37, 7583.13)
+texture = ExtResource("35_vqweh")
+
+[node name="Track" type="Sprite2D" parent="."]
+z_index = -1985
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(13.912, 13.912)
+texture = ExtResource("1_tqgqe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(9196, -6, 9118, -207, 8955, -491, 8876, -841, 8820, -1235, 8794, -1445, 8884, -1779, 8952, -2087, 8910, -2509, 8952, -2994, 8916, -3516, 9009, -3953, 9030, -4280, 9102, -4640, 9003, -4972, 8709, -5278, 8425, -5371, 8281, -5341, 7870, -5664, 7894, -6237, 7835, -6655, 7644, -7066, 6894, -7896, 6610, -8125, 5546, -8719, 4534, -9075, 3135, -9333, 2310, -9294, 1241, -9244, 556, -8941, 143, -8397, -638, -7812, -1077, -7626, -1188, -7697, -1309, -7969, -1767, -8468, -2246, -8775, -2679, -8861, -3305, -8280, -4100, -7638, -4922, -7524, -5584, -7847, -6157, -8797, -6530, -9084, -7069, -9159, -7588, -8983, -8047, -8429, -8117, -7688, -8485, -6539, -7911, -5808, -7054, -5380, -6323, -5435, -5124, -5294, -4327, -5304, -2861, -5047, -1588, -5026, -191, -4873, 469, -4924, 1460, -5007, 1936, -5032, 5701, -4175, 6647, -3458, 7232, -2346, 7263, -1502, 7047, 86, 6952, 193, 7079, -575, 7098, -1464, 5854, -2550, 5155, -2969, 3098, -3108, 1053, -2562, -725, -1966, -1572, -1562, -2824, -1395, -3732, -1078, -4100, -233, -4290, 834, -4367, 1970, -4627, 2929, -5192, 3602, -6018, 3608, -6945, 3443, -7802, 3951, -8018, 5101, -7999, 6643, -7713, 7501, -6475, 8053, -5446, 8212, -5325, 8155, -4640, 8186, -3668, 7799, -2347, 7151, -976, 5945, -354, 4859, -220, 4789, 40, 4034, -4, 3202, -62, 2980, -436, 2497, 2, 2472, 281, 2777, 396, 3545, 396, 4821, 370, 5640, 78, 7183, -303, 7990, -379, 8885, -43, 9126, 846, 9374, 1580, 9660, 2141, 9783, 2989, 9703, 3453, 9391, 4117, 8327, 5045, 6791, 5317, 5151, 5413, 4615, 5909, 3951, 6525, 3535, 6869, 3239, 8365, 2951, 8709, 2527, 8917, 1991, 8453, 1687, 8549, 1559, 9237, 1431, 9301, 119, 9169, -56, 10397, -73, 8343, 10196, -8750, 10348, -9641, -9593, 8861, -10220, 10088, -2209, 10204, -431, 10240, -4)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-3147, 730, -2770, 437, -1968, -208, -733, -954, 416, -1543, 1726, -1790, 2966, -1906, 3999, -1830, 4074, -1992, 4644, -1997, 5899, -1503, 6115, -1347, 6221, 321, 5994, 599, 6186, 941, 6745, 1239, 7290, 1173, 7708, 785, 7945, 684, 8116, -97, 8106, -369, 8061, -1170, 7980, -2178, 7854, -2854, 7421, -3786, 7007, -4194, 5017, -5399, 4740, -5419, 3324, -5898, 1763, -5992, -94, -5878, -477, -5831, -1728, -6066, -3498, -6073, -3605, -6174, -5536, -6463, -5684, -6349, -6236, -6376, -6969, -6604, -7076, -6564, -7581, -7183, -7224, -8353, -6693, -8636, -6209, -8078, -5839, -7418, -5065, -7035, -4110, -7042, -2455, -8387, -1257, -7217, -800, -7270, 303, -7936, 882, -8643, 1507, -8750, 1575, -8865, 3647, -8851, 5033, -8488, 5248, -8300, 6095, -7923, 6122, -7768, 6371, -7640, 7125, -6026, 7098, -5151, 7730, -4512, 8134, -4472, 8268, -4183, 8161, -3523, 8073, -3187, 8282, -2191, 8221, -2057, 8208, -994, 8302, -839, 8309, -301, 8510, 237, 8504, 560, 8295, 863, 7737, 1199, 7555, 1488, 7723, 1973, 8046, 2168, 7239, 2350, 6284, 2659, 5483, 3130, 4885, 3648, 4494, 4563, 4589, 5081, 4521, 5262, 4508, 5928, 3492, 7651, 3344, 7677, 3021, 8317, 2409, 8619, 2187, 8727, 1117, 8485, 808, 7765, 1238, 6150, 1339, 5013, 1454, 4025, 1245, 2820, 1144, 2820, 983, 2154, 519, 1778, -147, 1502, -1506, 1630, -1439, 2814, -1042, 3493, -1053, 4234, -1982, 5786, -3253, 6547, -4487, 7087, -6321, 6763, -6914, 6086, -6974, 4941, -6878, 4462, -6267, 4204, -5404, 4384, -4613, 4222, -3726, 2999, -3307, 2160)
+
+[node name="Start" type="Sprite2D" parent="."]
+z_index = 465
+texture_filter = 1
+position = Vector2(-7425, 4999)
+scale = Vector2(4.09163, 4.09163)
+texture = ExtResource("3_8ser5")
+
+[node name="Player" parent="." instance=ExtResource("4_pbb7q")]
+z_as_relative = false
+position = Vector2(-7432, 5895)
+rotation = -3.14159
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-7432, 5895)
+zoom = Vector2(0.355, 0.355)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+script = ExtResource("26_0cyp4")
+
+[node name="Sky" type="Sprite2D" parent="Camera2D"]
+z_index = -4096
+position = Vector2(-14.9831, 5.17641)
+rotation = 3.14159
+scale = Vector2(1.46899, 1.00882)
+texture = ExtResource("2_edo1y")
+script = ExtResource("7_lt3su")
+
+[node name="DriftMeter" type="TextureProgressBar" parent="Camera2D"]
+editor_description = "this is the meter for the thing :D"
+z_index = 3721
+z_as_relative = false
+offset_left = 1051.0
+offset_top = -741.0
+offset_right = 1227.0
+offset_bottom = 675.0
+tooltip_text = "The Drift Warp Meter!"
+max_value = 18.1
+step = 0.25
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("28_wiw6e")
+texture_over = ExtResource("29_p3yfs")
+texture_progress = ExtResource("30_ijejd")
+script = ExtResource("31_e0ut0")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-5501.06, -1082.92)
+scale = Vector2(1.00085, 0.999991)
+curve = SubResource("Curve2D_o4raq")
+
+[node name="Blizzy" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("18_3g0qw")
+
+[node name="1" type="Sprite2D" parent="Path2D/Blizzy"]
+position = Vector2(8.46695, -1.52069)
+rotation = -1.5708
+texture = ExtResource("6_y1i44")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Blizzy/1"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Blizzy/1/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Blizzy/1"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Yogu" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("19_hdop4")
+
+[node name="2" type="Sprite2D" parent="Path2D/Yogu"]
+rotation = -1.5708
+texture = ExtResource("12_wyy1b")
+offset = Vector2(0, -24.82)
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Yogu/2"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Yogu/2/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Yogu/2"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Robot" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("20_twdq4")
+
+[node name="3" type="Sprite2D" parent="Path2D/Robot"]
+position = Vector2(-1.37891, -1.76038)
+rotation = -1.5708
+texture = ExtResource("10_7rbsm")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Robot/3"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Robot/3/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Robot/3"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Germ" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("21_on7m7")
+
+[node name="4" type="Sprite2D" parent="Path2D/Germ"]
+position = Vector2(2.71103, 1.2846)
+rotation = -1.5708
+texture = ExtResource("7_t8hrl")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Germ/4"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Germ/4/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Germ/4"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Penvort" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("22_3rlar")
+
+[node name="5" type="Sprite2D" parent="Path2D/Penvort"]
+position = Vector2(1.28473, -2.71085)
+rotation = -1.5708
+texture = ExtResource("9_bvb3h")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Penvort/5"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Penvort/5/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Penvort/5"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Oart" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-2032.2, 6675.98)
+rotation = 1.12914
+script = ExtResource("23_yco2s")
+
+[node name="6" type="Sprite2D" parent="Path2D/Oart"]
+position = Vector2(1.76022, -1.37921)
+rotation = -1.5708
+texture = ExtResource("8_oplds")
+
+[node name="collosion" type="CharacterBody2D" parent="Path2D/Oart/6"]
+position = Vector2(-3.86328, 23.3893)
+
+[node name="Collider" type="CollisionShape2D" parent="Path2D/Oart/6/collosion"]
+position = Vector2(2.00014, -15)
+scale = Vector2(5.75805, 3.35143)
+shape = ExtResource("17_tcxcp")
+script = ExtResource("38_868df")
+
+[node name="Wheels" type="AnimatedSprite2D" parent="Path2D/Oart/6"]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_0jdn3")
+animation = &"wheel_active"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(5086, 5600)
+script = ExtResource("32_qy0ke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12546, 303)
+shape = SubResource("RectangleShape2D_afvd8")
+
+[node name="no cheating" type="Area2D" parent="Area2D/CollisionShape2D"]
+position = Vector2(28724, -10289)
+script = ExtResource("33_jhrw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/CollisionShape2D/no cheating"]
+position = Vector2(-12627.5, 303)
+shape = SubResource("RectangleShape2D_13ffp")
+
+[node name="Track1Audience" type="Sprite2D" parent="."]
+position = Vector2(-2971, 1015)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience2" type="Sprite2D" parent="."]
+position = Vector2(-6526, 6012)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience3" type="Sprite2D" parent="."]
+position = Vector2(-8545, 5570)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience4" type="Sprite2D" parent="."]
+position = Vector2(-6776, 5492)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience5" type="Sprite2D" parent="."]
+position = Vector2(11, 2764)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience6" type="Sprite2D" parent="."]
+position = Vector2(5220, 2243)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience7" type="Sprite2D" parent="."]
+position = Vector2(5048, 7992)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience8" type="Sprite2D" parent="."]
+position = Vector2(-1431, -2111)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Track1Audience9" type="Sprite2D" parent="."]
+position = Vector2(-2427, -7744)
+scale = Vector2(6.956, 6.956)
+texture = ExtResource("38_o4fiy")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+script = ExtResource("39_n8hpx")
+
+[connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
+[connection signal="body_shape_exited" from="Area2D/CollisionShape2D/no cheating" to="Area2D/CollisionShape2D/no cheating" method="_on_body_shape_exited"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

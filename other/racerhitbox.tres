@@ -1,0 +1,6 @@
+[gd_resource type="CapsuleShape2D" format=3 uid="uid://bsbqu5xe065ou"]
+
+[resource]
+resource_name = "racerhitbox"
+radius = 13.3726
+height = 51.3214

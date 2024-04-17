@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2l7ock4ftyif"
+path="res://.godot/imported/GO v2.wav-94eadc816b2db0246ff7add36d9afb28.sample"
+
+[deps]
+
+source_file="res://audio/GO v2.wav"
+dest_files=["res://.godot/imported/GO v2.wav-94eadc816b2db0246ff7add36d9afb28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

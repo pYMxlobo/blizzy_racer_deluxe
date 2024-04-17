@@ -1,0 +1,369 @@
+[gd_scene load_steps=56 format=3 uid="uid://y3jsojbv4r3a"]
+
+[ext_resource type="Script" path="res://scripts/load_data.gd" id="1_swu2e"]
+[ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="3_mkagi"]
+[ext_resource type="Script" path="res://scripts/Blizzy_Select.gd" id="3_mufoh"]
+[ext_resource type="Texture2D" uid="uid://k38fnb0twikn" path="res://sprites/character_assets/blizzy/blizzy.png" id="4_fjdt8"]
+[ext_resource type="AudioStream" uid="uid://w13fo3gsq30x" path="res://audio/finaksfx/blizzy-select.wav" id="4_i3yxq"]
+[ext_resource type="Texture2D" uid="uid://d0b5wxm48pfwh" path="res://sprites/character_assets/blizzy/blizzypressed.png" id="5_dixsq"]
+[ext_resource type="Script" path="res://scripts/Yogu_Select.gd" id="6_hnj6p"]
+[ext_resource type="Texture2D" uid="uid://cqrgcuepe2wpv" path="res://sprites/character_assets/blizzy/blizzyhover.png" id="6_if51u"]
+[ext_resource type="Texture2D" uid="uid://d2j3ajfba0wi6" path="res://sprites/other/temp_or_other/notunlockedtemp.png" id="7_vnwva"]
+[ext_resource type="AudioStream" uid="uid://ptmby8shylbe" path="res://audio/finaksfx/yogu-select.wav" id="8_itj37"]
+[ext_resource type="Script" path="res://scripts/Robot_Select.gd" id="8_r7r18"]
+[ext_resource type="Texture2D" uid="uid://pglwgsbniilh" path="res://sprites/character_assets/yogu/Yogu.png" id="10_lvt3s"]
+[ext_resource type="Script" path="res://scripts/Germ_Select.gd" id="10_u20nt"]
+[ext_resource type="Texture2D" uid="uid://bpqk5kgvp4g4k" path="res://sprites/character_assets/yogu/Yogupressed.png" id="11_w470l"]
+[ext_resource type="AudioStream" uid="uid://b4rk0s7wttr8m" path="res://audio/finaksfx/robot-select.wav" id="11_ymyp5"]
+[ext_resource type="Script" path="res://scripts/Penvort_Select.gd" id="12_jngis"]
+[ext_resource type="Texture2D" uid="uid://bqdusovaskbnb" path="res://sprites/character_assets/yogu/Yoguhover.png" id="12_t70lb"]
+[ext_resource type="Texture2D" uid="uid://by0pwir3b572x" path="res://sprites/ui/menu_assets/Locked.png" id="13_i3vpj"]
+[ext_resource type="Script" path="res://scripts/Oart_Select.gd" id="14_0a8d2"]
+[ext_resource type="AudioStream" uid="uid://dwnyk74w1uq0n" path="res://audio/finaksfx/germ-select.wav" id="14_26wio"]
+[ext_resource type="Texture2D" uid="uid://bdbj5p2bn766x" path="res://sprites/character_assets/robot/Robot.png" id="16_kyajn"]
+[ext_resource type="Script" path="res://scripts/Will_Select.gd" id="16_pnjbd"]
+[ext_resource type="Texture2D" uid="uid://pv4j6kbb4q3j" path="res://sprites/character_assets/robot/Robotpressed.png" id="17_nndx8"]
+[ext_resource type="AudioStream" uid="uid://ddus3gxh4dfa" path="res://audio/finaksfx/penvort-select.wav" id="17_shphh"]
+[ext_resource type="Texture2D" uid="uid://cnpsp5gym1eo4" path="res://sprites/character_assets/robot/Robothover.png" id="18_irl2k"]
+[ext_resource type="Script" path="res://scripts/Bane_Select.gd" id="18_y5t1c"]
+[ext_resource type="Script" path="res://scripts/Difficulty_Set.gd" id="20_27wdd"]
+[ext_resource type="AudioStream" uid="uid://bh8c8f5f8axbo" path="res://audio/finaksfx/oart-select.wav" id="20_oupj0"]
+[ext_resource type="Texture2D" uid="uid://cpvu6oxw27d0t" path="res://sprites/character_assets/germ/Germ.png" id="21_qaf2b"]
+[ext_resource type="Script" path="res://scripts/setlaps.gd" id="21_w5cpy"]
+[ext_resource type="Texture2D" uid="uid://cnbwmwftdv5di" path="res://sprites/character_assets/germ/Germpressed.png" id="22_ew5mp"]
+[ext_resource type="AudioStream" uid="uid://4gis2grff87j" path="res://audio/finaksfx/will-select.wav" id="23_25rve"]
+[ext_resource type="Texture2D" uid="uid://c05pfgvcb86ta" path="res://sprites/character_assets/germ/Germhover.png" id="23_m8py1"]
+[ext_resource type="AudioStream" uid="uid://c54fs52atvb1g" path="res://audio/finaksfx/wrong.wav" id="24_s1ha6"]
+[ext_resource type="Texture2D" uid="uid://cajtjhef1umrm" path="res://sprites/character_assets/penvort/Penvort.png" id="26_riyo1"]
+[ext_resource type="AudioStream" uid="uid://cdms4s56xbv4j" path="res://audio/finaksfx/bane-select.wav" id="26_us273"]
+[ext_resource type="Texture2D" uid="uid://ciwvp1b506w" path="res://sprites/character_assets/penvort/Penvortpressed.png" id="27_nem3c"]
+[ext_resource type="Texture2D" uid="uid://digtceh06q3d1" path="res://sprites/character_assets/penvort/Penvorthover.png" id="28_op3n6"]
+[ext_resource type="Texture2D" uid="uid://bg46mvgylxwlw" path="res://sprites/character_assets/oart/Oart.png" id="31_248v4"]
+[ext_resource type="Texture2D" uid="uid://xsqjpk12o6ed" path="res://sprites/character_assets/oart/Oartpressed.png" id="32_3dikx"]
+[ext_resource type="Script" path="res://scripts/windisplay.gd" id="32_wyvep"]
+[ext_resource type="Script" path="res://scripts/lossdisplay.gd" id="33_0d4lj"]
+[ext_resource type="Texture2D" uid="uid://coq7rj4n5kg35" path="res://sprites/character_assets/oart/Oarthover.png" id="33_ivagl"]
+[ext_resource type="Shader" path="res://other/rerro.gdshader" id="35_njfwq"]
+[ext_resource type="Texture2D" uid="uid://rkgp6i1y8jyk" path="res://sprites/character_assets/will/Will.png" id="36_gxqgl"]
+[ext_resource type="AudioStream" uid="uid://dk2m3vdiv267m" path="res://audio/music/GO v2.mp3" id="36_ix08o"]
+[ext_resource type="Texture2D" uid="uid://cep5nj0xjhrwo" path="res://sprites/character_assets/will/Willpressed.png" id="37_qtubq"]
+[ext_resource type="Texture2D" uid="uid://def4etr0qkjj6" path="res://sprites/character_assets/will/Willhover.png" id="38_0xy0y"]
+[ext_resource type="Texture2D" uid="uid://7y50i3tg7a42" path="res://sprites/character_assets/bane/Bane.png" id="42_rjm12"]
+[ext_resource type="Texture2D" uid="uid://bb4y71j84s0cf" path="res://sprites/character_assets/bane/Banepressed.png" id="43_hymda"]
+[ext_resource type="Texture2D" uid="uid://dfmsneh4rig3j" path="res://sprites/character_assets/bane/Banehover.png" id="44_1uoxo"]
+[ext_resource type="Texture2D" uid="uid://ch42awuyk6dvy" path="res://sprites/ui/menu_assets/selectscreen.png" id="47_ciklh"]
+[ext_resource type="Script" path="res://scripts/Label3.gd" id="52_2c3wb"]
+[ext_resource type="Script" path="res://scripts/Label4.gd" id="53_4nfq1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jf7ln"]
+shader = ExtResource("35_njfwq")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_swu2e")
+
+[node name="shader" type="Sprite2D" parent="."]
+z_index = 4096
+material = SubResource("ShaderMaterial_jf7ln")
+position = Vector2(489.94, 320.166)
+rotation = 3.14159
+scale = Vector2(253.415, 175.333)
+texture = ExtResource("3_mkagi")
+
+[node name="Blizzy_Select" type="TextureButton" parent="."]
+offset_left = 54.0
+offset_top = 191.0
+offset_right = 182.0
+offset_bottom = 319.0
+rotation = -0.000872125
+texture_normal = ExtResource("4_fjdt8")
+texture_pressed = ExtResource("5_dixsq")
+texture_hover = ExtResource("6_if51u")
+texture_disabled = ExtResource("7_vnwva")
+stretch_mode = 0
+script = ExtResource("3_mufoh")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Blizzy_Select"]
+stream = ExtResource("4_i3yxq")
+bus = &"SFX"
+
+[node name="Yogu_Select" type="TextureButton" parent="."]
+offset_left = 234.0
+offset_top = 189.0
+offset_right = 362.0
+offset_bottom = 317.0
+texture_normal = ExtResource("10_lvt3s")
+texture_pressed = ExtResource("11_w470l")
+texture_hover = ExtResource("12_t70lb")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("6_hnj6p")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Yogu_Select"]
+stream = ExtResource("8_itj37")
+bus = &"SFX"
+
+[node name="Robot_Select" type="TextureButton" parent="."]
+offset_left = 448.0
+offset_top = 201.0
+offset_right = 576.0
+offset_bottom = 329.0
+rotation = -0.0131914
+texture_normal = ExtResource("16_kyajn")
+texture_pressed = ExtResource("17_nndx8")
+texture_hover = ExtResource("18_irl2k")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("8_r7r18")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Robot_Select"]
+stream = ExtResource("11_ymyp5")
+bus = &"SFX"
+
+[node name="Germ_Select" type="TextureButton" parent="."]
+offset_left = 685.0
+offset_top = 204.0
+offset_right = 813.0
+offset_bottom = 332.0
+texture_normal = ExtResource("21_qaf2b")
+texture_pressed = ExtResource("22_ew5mp")
+texture_hover = ExtResource("23_m8py1")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("10_u20nt")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Germ_Select"]
+stream = ExtResource("14_26wio")
+bus = &"SFX"
+
+[node name="Penvort_Select" type="TextureButton" parent="."]
+offset_left = 43.0
+offset_top = 411.0
+offset_right = 171.0
+offset_bottom = 539.0
+texture_normal = ExtResource("26_riyo1")
+texture_pressed = ExtResource("27_nem3c")
+texture_hover = ExtResource("28_op3n6")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("12_jngis")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Penvort_Select"]
+stream = ExtResource("17_shphh")
+bus = &"SFX"
+
+[node name="Oart_Select" type="TextureButton" parent="."]
+offset_left = 267.0
+offset_top = 409.0
+offset_right = 395.0
+offset_bottom = 537.0
+texture_normal = ExtResource("31_248v4")
+texture_pressed = ExtResource("32_3dikx")
+texture_hover = ExtResource("33_ivagl")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("14_0a8d2")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Oart_Select"]
+stream = ExtResource("20_oupj0")
+bus = &"SFX"
+
+[node name="Will_Select" type="TextureButton" parent="."]
+offset_left = 474.0
+offset_top = 405.0
+offset_right = 602.0
+offset_bottom = 533.0
+disabled = true
+texture_normal = ExtResource("36_gxqgl")
+texture_pressed = ExtResource("37_qtubq")
+texture_hover = ExtResource("38_0xy0y")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("16_pnjbd")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Will_Select"]
+stream = ExtResource("23_25rve")
+bus = &"SFX"
+
+[node name="Fail" type="AudioStreamPlayer2D" parent="Will_Select"]
+stream = ExtResource("24_s1ha6")
+bus = &"SFX"
+
+[node name="Bane_Select" type="TextureButton" parent="."]
+offset_left = 687.0
+offset_top = 401.0
+offset_right = 815.0
+offset_bottom = 529.0
+disabled = true
+texture_normal = ExtResource("42_rjm12")
+texture_pressed = ExtResource("43_hymda")
+texture_hover = ExtResource("44_1uoxo")
+texture_disabled = ExtResource("13_i3vpj")
+script = ExtResource("18_y5t1c")
+
+[node name="Name" type="AudioStreamPlayer2D" parent="Bane_Select"]
+stream = ExtResource("26_us273")
+bus = &"SFX"
+
+[node name="Fail" type="AudioStreamPlayer2D" parent="Bane_Select"]
+stream = ExtResource("24_s1ha6")
+bus = &"SFX"
+
+[node name="backround" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(480, 320)
+texture = ExtResource("47_ciklh")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 859.0
+offset_top = 603.0
+offset_right = 952.0
+offset_bottom = 634.0
+size_flags_horizontal = 8
+text = "20"
+placeholder_text = "Difficulty"
+alignment = 2
+expand_to_text_length = true
+virtual_keyboard_type = 2
+drag_and_drop_selection_enabled = false
+script = ExtResource("20_27wdd")
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+offset_left = 858.0
+offset_top = 564.0
+offset_right = 951.0
+offset_bottom = 595.0
+size_flags_horizontal = 8
+text = "3"
+placeholder_text = "Lap Total"
+alignment = 2
+expand_to_text_length = true
+virtual_keyboard_type = 2
+drag_and_drop_selection_enabled = false
+script = ExtResource("21_w5cpy")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 959.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0.768627, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "0 Wins"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+script = ExtResource("32_wyvep")
+
+[node name="Label2" type="Label" parent="."]
+offset_top = 23.0
+offset_right = 959.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.870588, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "0 Loses"
+horizontal_alignment = 2
+script = ExtResource("33_0d4lj")
+
+[node name="Label3" type="Label" parent="."]
+offset_top = 46.0
+offset_right = 959.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(3.85046e-06, 0.878397, 0.997915, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "0 Tower Wins"
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 1
+script = ExtResource("52_2c3wb")
+
+[node name="Label4" type="Label" parent="."]
+offset_top = 69.0
+offset_right = 959.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.870588, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "0 Tower Loses"
+horizontal_alignment = 2
+script = ExtResource("53_4nfq1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_ix08o")
+autoplay = true
+bus = &"Music"
+
+[connection signal="mouse_entered" from="Blizzy_Select" to="Blizzy_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Blizzy_Select" to="Blizzy_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Yogu_Select" to="Yogu_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Yogu_Select" to="Yogu_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Robot_Select" to="Robot_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Robot_Select" to="Robot_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Germ_Select" to="Germ_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Germ_Select" to="Germ_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Penvort_Select" to="Penvort_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Penvort_Select" to="Penvort_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Oart_Select" to="Oart_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Oart_Select" to="Oart_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Will_Select" to="Will_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Will_Select" to="Will_Select" method="_on_pressed"]
+[connection signal="mouse_entered" from="Bane_Select" to="Bane_Select" method="_on_mouse_entered"]
+[connection signal="pressed" from="Bane_Select" to="Bane_Select" method="_on_pressed"]
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
+[connection signal="text_changed" from="LineEdit2" to="LineEdit2" method="_on_text_changed"]
+[connection signal="text_submitted" from="LineEdit2" to="LineEdit2" method="_on_text_submitted"]

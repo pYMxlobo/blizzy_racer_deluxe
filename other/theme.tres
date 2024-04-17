@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://iahrbkf1omg0"]
+
+[ext_resource type="Texture2D" uid="uid://c1xux2welxirq" path="res://sprites/other/temp_or_other/close.png" id="1_m46o7"]
+[ext_resource type="Texture2D" uid="uid://0kua6vphlfsj" path="res://sprites/other/temp_or_other/close2.png" id="2_wiffy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5b1v"]
+bg_color = Color(0, 0.411765, 0.478431, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfin1"]
+bg_color = Color(0, 0.780392, 0.894118, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_juxaw"]
+bg_color = Color(0, 0.866667, 0.996078, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7a2r"]
+bg_color = Color(0, 0.741176, 0.85098, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+anti_aliasing = false
+anti_aliasing_size = 1.951
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avaro"]
+bg_color = Color(0, 0.564706, 0.647059, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[resource]
+Button/colors/font_pressed_color = Color(0.796078, 0.796078, 0.796078, 1)
+Button/constants/h_separation = 7
+Button/constants/icon_max_width = 2
+Button/styles/disabled = SubResource("StyleBoxFlat_u5b1v")
+Button/styles/focus = SubResource("StyleBoxFlat_sfin1")
+Button/styles/hover = SubResource("StyleBoxFlat_juxaw")
+Button/styles/normal = SubResource("StyleBoxFlat_e7a2r")
+Button/styles/pressed = SubResource("StyleBoxFlat_avaro")
+Window/icons/close = ExtResource("1_m46o7")
+Window/icons/close_pressed = ExtResource("2_wiffy")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4getosyw2hwl"]
+
+[ext_resource type="Texture2D" uid="uid://t8esawvw06jk" path="res://sprites/other/temp_or_other/surewanttoquit.png" id="1_fx4la"]
+[ext_resource type="Script" path="res://scenes/quitmenu.gd" id="1_icit3"]
+[ext_resource type="Texture2D" uid="uid://w1jmitukpbyn" path="res://sprites/other/temp_or_other/no.png" id="2_8nogq"]
+[ext_resource type="Texture2D" uid="uid://cnot7pi2n5max" path="res://sprites/other/temp_or_other/yes.png" id="3_c327p"]
+[ext_resource type="Script" path="res://scenes/no.gd" id="3_vfnpd"]
+[ext_resource type="Script" path="res://scenes/yes.gd" id="4_khj7b"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icit3")
+
+[node name="Surewanttoquit" type="Sprite2D" parent="."]
+position = Vector2(475, 310)
+texture = ExtResource("1_fx4la")
+
+[node name="no" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 378.0
+offset_right = 797.0
+offset_bottom = 538.0
+texture_normal = ExtResource("2_8nogq")
+script = ExtResource("3_vfnpd")
+
+[node name="yes" type="TextureButton" parent="."]
+offset_left = 151.0
+offset_top = 367.0
+offset_right = 391.0
+offset_bottom = 527.0
+texture_normal = ExtResource("3_c327p")
+script = ExtResource("4_khj7b")
+
+[connection signal="pressed" from="no" to="no" method="_on_pressed"]
+[connection signal="pressed" from="yes" to="yes" method="_on_pressed"]
