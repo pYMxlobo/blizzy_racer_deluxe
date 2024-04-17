@@ -1,3 +1,5 @@
+res://scenes
+res://sprites/ui/menu_assets
 E:/FunnyRace/docs
 res://scripts/towerscripts
 C:/Users/minio/Downloads
@@ -6,7 +8,6 @@ res://scenes/towerrooms
 res://sprites/other/temp_or_other
 res://sprites/stageassets/racetrackassets
 res://other
-res://scenes
 res://audio/music
 res://sprites
 res://scripts

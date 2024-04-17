@@ -4,3 +4,15 @@ res://other/theme.tres
 res://other/rerro.gdshader
 res://other/whiteflash.gdshader
 res://other/16.gdshader
+res://scenes/map_select.tscn
+res://scenes/TitleSreen.tscn
+res://scenes/char_select.tscn
+res://scenes/towerrooms/tutorial.tscn
+res://scenes/towerrooms/floor1.tscn
+res://scenes/towerrooms/floor3.tscn
+res://scenes/towerrooms/floor4.tscn
+res://scenes/player.tscn
+res://scenes/towerrooms/enemy.tscn
+res://scenes/pickup.tscn
+res://scenes/mapselectpage1.tscn
+res://scripts/White.gd

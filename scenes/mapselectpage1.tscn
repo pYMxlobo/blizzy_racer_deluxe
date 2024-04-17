@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjyr512gsum80"]
+
+[ext_resource type="Texture2D" uid="uid://c8oyhks1tj80d" path="res://sprites/ui/mapselect/track1icon.png" id="1_jiydb"]
+[ext_resource type="Script" path="res://scripts/map1selected.gd" id="2_rg44c"]
+[ext_resource type="Texture2D" uid="uid://ct2yc8rynxngk" path="res://sprites/ui/mapselect/track2icon.png" id="3_g7xnw"]
+[ext_resource type="Script" path="res://scripts/desertselected.gd" id="4_esrnk"]
+[ext_resource type="Texture2D" uid="uid://c5qhy2p2kxfxb" path="res://sprites/ui/mapselect/finaleicon.png" id="5_7evp1"]
+[ext_resource type="Script" path="res://scripts/finalebutton.gd" id="6_ejrjj"]
+[ext_resource type="Texture2D" uid="uid://d0xmakuowqs" path="res://sprites/ui/menu_assets/mappagearrowleft.png" id="7_dws5w"]
+[ext_resource type="Texture2D" uid="uid://dsb5ypnjlumaq" path="res://sprites/ui/menu_assets/mappagearrowleftpressed.png" id="8_yrp32"]
+[ext_resource type="Texture2D" uid="uid://66ojr6rohdow" path="res://sprites/ui/menu_assets/mappagearrowlefthover.png" id="9_uqbrv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="map1" type="TextureButton" parent="."]
+offset_left = 25.0
+offset_top = 191.0
+offset_right = 281.0
+offset_bottom = 447.0
+texture_normal = ExtResource("1_jiydb")
+script = ExtResource("2_rg44c")
+
+[node name="desert" type="TextureButton" parent="."]
+offset_left = 353.0
+offset_top = 199.0
+offset_right = 609.0
+offset_bottom = 455.0
+texture_normal = ExtResource("3_g7xnw")
+script = ExtResource("4_esrnk")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 675.0
+offset_top = 205.0
+offset_right = 931.0
+offset_bottom = 461.0
+tooltip_text = "are you sure your ready?"
+texture_normal = ExtResource("5_7evp1")
+script = ExtResource("6_ejrjj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 157.0
+offset_right = 236.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 20
+text = "Grassy Home Rd."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 393.0
+offset_top = 161.0
+offset_right = 565.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(1, 0.52549, 0.458824, 1)
+theme_override_font_sizes/font_size = 20
+text = "Windy Desert Dr."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 718.0
+offset_top = 166.0
+offset_right = 890.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0.415686, 0.00392157, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Finale"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="right" type="TextureButton" parent="."]
+offset_left = 920.0
+offset_top = 268.0
+offset_right = 960.0
+offset_bottom = 368.0
+texture_normal = ExtResource("7_dws5w")
+texture_pressed = ExtResource("8_yrp32")
+texture_hover = ExtResource("9_uqbrv")
+flip_h = true
+
+[node name="left" type="TextureButton" parent="."]
+offset_top = 268.0
+offset_right = 40.0
+offset_bottom = 368.0
+texture_normal = ExtResource("7_dws5w")
+texture_pressed = ExtResource("8_yrp32")
+texture_hover = ExtResource("9_uqbrv")
+
+[connection signal="pressed" from="map1" to="map1" method="_on_pressed"]
+[connection signal="pressed" from="desert" to="desert" method="_on_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
