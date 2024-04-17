@@ -1,14 +1,14 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711927619
+::res://::1713388430
 char names.txt::TextFile::-1::1712187166::0::1::::<><>::
 concepts.png::CompressedTexture2D::3326880877668815258::1711928054::1712722008::1::::<><>::
-default_bus_layout.tres::AudioBusLayout::7981329520076458951::1713328554::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1713240130::0::1::::<><>::
+default_bus_layout.tres::AudioBusLayout::7981329520076458951::1713389676::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1713388062::0::1::::<><>::
 global.gd::GDScript::-1::1713231114::0::1::::<>Node<>::
 icon.svg::CompressedTexture2D::9177066626862280664::1711927630::1712673470::1::::<><>::
 New Text Document.txt::TextFile::-1::1712187200::0::1::::<><>::
 towerconcept.png::CompressedTexture2D::5660991775884449204::1712798960::1712802048::1::::<><>::
-::res://audio/::1712107986
+::res://audio/::1712107988
 Climber.wav::AudioStreamWAV::1705612880313406657::1713110496::1713110612::1::::<><>::
 GO v2.wav::AudioStreamWAV::9079037051303858685::1712702702::1712705668::1::::<><>::
 GO.wav::AudioStreamWAV::8424697753612758329::1712110990::1712673474::1::::<><>::
@@ -22,7 +22,7 @@ song.wav::AudioStreamWAV::4703609958434710586::1712455612::1712673474::1::::<><>
 The Race of a Lifetime.wav::AudioStreamWAV::4650726950402522360::1712107982::1712673474::1::::<><>::
 Untitled.wav::AudioStreamWAV::1069780971961908611::1712371308::1712673474::1::::<><>::
 vicroy.wav::AudioStreamWAV::2971454570573930621::1712455872::1712673474::1::::<><>::
-::res://audio/finaksfx/::1712429427
+::res://audio/finaksfx/::1712429428
 bane-select.wav::AudioStreamWAV::5009326118445788431::1712428826::1712673472::1::::<><>::
 blizzy-select.wav::AudioStreamWAV::1599538165288006457::1712428146::1712673472::1::::<><>::
 correct.wav::AudioStreamWAV::8667650596650482527::1712429146::1712673472::1::::<><>::
@@ -45,7 +45,7 @@ warp.mp3::AudioStreamMP3::3479371631150238919::1712446824::1712673468::1::::<><>
 will-select.wav::AudioStreamWAV::2048382040438317669::1712428740::1712673472::1::::<><>::
 wrong.wav::AudioStreamWAV::6938710978085468950::1712429248::1712673472::1::::<><>::
 yogu-select.wav::AudioStreamWAV::1092787533971821186::1712428232::1712673472::1::::<><>::
-::res://audio/music/::1712451489
+::res://audio/music/::1712451490
 Climber.mp3::AudioStreamMP3::987508535810426093::1713110552::1713110646::1::::<><>::
 GO v2.mp3::AudioStreamMP3::7917668400979186480::1712703668::1712705846::1::::<><>::
 GO.mp3::AudioStreamMP3::120158202423216893::1712451478::1712673468::1::::<><>::
@@ -59,7 +59,7 @@ song.mp3::AudioStreamMP3::1122311457365705130::1712519320::1712673468::1::::<><>
 The Race of a Lifetime.mp3::AudioStreamMP3::2361507244813438589::1712451568::1712673468::1::::<><>::
 Untitled.mp3::AudioStreamMP3::8736698075389704977::1712451638::1712673468::1::::<><>::
 vicroy.mp3::AudioStreamMP3::384030634477555461::1712519366::1712673468::1::::<><>::
-::res://audio/sfx/::1712427325
+::res://audio/sfx/::1712427326
 correct-1.wav::AudioStreamWAV::3478539852148667878::1712427702::1712722008::1::::<><>::
 correct-2.wav::AudioStreamWAV::2228464919811399583::1712427702::1712722008::1::::<><>::
 correct-3.wav::AudioStreamWAV::5102494844204659806::1712427702::1712722008::1::::<><>::
@@ -82,20 +82,16 @@ vroom-6.wav::AudioStreamWAV::3390284425366240349::1712427702::1712722008::1::::<
 vroom-7.wav::AudioStreamWAV::6140813837192507977::1712427702::1712722008::1::::<><>::
 wrong-1.wav::AudioStreamWAV::7257799437475734688::1712427702::1712722008::1::::<><>::
 wrong-2.wav::AudioStreamWAV::397868973317227173::1712427702::1712722008::1::::<><>::
-::res://docs/::1713387759
-index.apple-touch-icon.png::CompressedTexture2D::6109167070671570369::1713388078::1713388082::1::::<><>::
-index.icon.png::CompressedTexture2D::5380776610528836661::1713388078::1713388082::1::::<><>::
-index.png::CompressedTexture2D::5701199175543815304::1713388078::1713388082::1::::<><>::
-::res://other/::1712020696
+::res://other/::1712020698
+16.gdshader::Shader::-1::1713389682::0::1::::<><>::
 blizzyfont.ttf::FontFile::7524209724760977971::1713118826::1713118840::1::::<><>::
 funny.tres::CompressedTexture2D::9158870031430679128::1712971882::0::1::::<><>::
 playertail.tres::CapsuleShape2D::6155115463121234724::1713037004::0::1::::<><>::
 racerhitbox.tres::CapsuleShape2D::3652893046141514672::1712623654::0::1::::<><>::
-rerro.gdshader::Shader::-1::1713328644::0::1::::<><>::
-16.gdshader::Shader::-1::1713328644::0::1::::<><>::
+rerro.gdshader::Shader::-1::1713389682::0::1::::<><>::
 theme.tres::Theme::561966194783888069::1713316256::0::1::::<><>::uid://c1xux2welxirq::::res://sprites/other/temp_or_other/close.png<>uid://0kua6vphlfsj::::res://sprites/other/temp_or_other/close2.png
-whiteflash.gdshader::Shader::-1::1713328644::0::1::::<><>::
-::res://scenes/::1711928692
+whiteflash.gdshader::Shader::-1::1713389682::0::1::::<><>::
+::res://scenes/::1711928694
 char_select.tscn::PackedScene::1742914170956437908::1713328052::0::1::::<><>::res://scripts/load_data.gd<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>res://scripts/Blizzy_Select.gd<>uid://k38fnb0twikn::::res://sprites/character_assets/blizzy/blizzy.png<>uid://w13fo3gsq30x::::res://audio/finaksfx/blizzy-select.wav<>uid://d0b5wxm48pfwh::::res://sprites/character_assets/blizzy/blizzypressed.png<>res://scripts/Yogu_Select.gd<>uid://cqrgcuepe2wpv::::res://sprites/character_assets/blizzy/blizzyhover.png<>uid://d2j3ajfba0wi6::::res://sprites/other/temp_or_other/notunlockedtemp.png<>uid://ptmby8shylbe::::res://audio/finaksfx/yogu-select.wav<>res://scripts/Robot_Select.gd<>uid://pglwgsbniilh::::res://sprites/character_assets/yogu/Yogu.png<>res://scripts/Germ_Select.gd<>uid://bpqk5kgvp4g4k::::res://sprites/character_assets/yogu/Yogupressed.png<>uid://b4rk0s7wttr8m::::res://audio/finaksfx/robot-select.wav<>res://scripts/Penvort_Select.gd<>uid://bqdusovaskbnb::::res://sprites/character_assets/yogu/Yoguhover.png<>uid://by0pwir3b572x::::res://sprites/ui/menu_assets/Locked.png<>res://scripts/Oart_Select.gd<>uid://dwnyk74w1uq0n::::res://audio/finaksfx/germ-select.wav<>uid://bdbj5p2bn766x::::res://sprites/character_assets/robot/Robot.png<>res://scripts/Will_Select.gd<>uid://pv4j6kbb4q3j::::res://sprites/character_assets/robot/Robotpressed.png<>uid://ddus3gxh4dfa::::res://audio/finaksfx/penvort-select.wav<>uid://cnpsp5gym1eo4::::res://sprites/character_assets/robot/Robothover.png<>res://scripts/Bane_Select.gd<>res://scripts/Difficulty_Set.gd<>uid://bh8c8f5f8axbo::::res://audio/finaksfx/oart-select.wav<>uid://cpvu6oxw27d0t::::res://sprites/character_assets/germ/Germ.png<>res://scripts/setlaps.gd<>uid://cnbwmwftdv5di::::res://sprites/character_assets/germ/Germpressed.png<>uid://4gis2grff87j::::res://audio/finaksfx/will-select.wav<>uid://c05pfgvcb86ta::::res://sprites/character_assets/germ/Germhover.png<>uid://c54fs52atvb1g::::res://audio/finaksfx/wrong.wav<>uid://cajtjhef1umrm::::res://sprites/character_assets/penvort/Penvort.png<>uid://cdms4s56xbv4j::::res://audio/finaksfx/bane-select.wav<>uid://ciwvp1b506w::::res://sprites/character_assets/penvort/Penvortpressed.png<>uid://digtceh06q3d1::::res://sprites/character_assets/penvort/Penvorthover.png<>uid://bg46mvgylxwlw::::res://sprites/character_assets/oart/Oart.png<>uid://xsqjpk12o6ed::::res://sprites/character_assets/oart/Oartpressed.png<>res://scripts/windisplay.gd<>res://scripts/lossdisplay.gd<>uid://coq7rj4n5kg35::::res://sprites/character_assets/oart/Oarthover.png<>res://other/rerro.gdshader<>uid://rkgp6i1y8jyk::::res://sprites/character_assets/will/Will.png<>uid://dk2m3vdiv267m::::res://audio/music/GO v2.mp3<>uid://cep5nj0xjhrwo::::res://sprites/character_assets/will/Willpressed.png<>uid://def4etr0qkjj6::::res://sprites/character_assets/will/Willhover.png<>uid://7y50i3tg7a42::::res://sprites/character_assets/bane/Bane.png<>uid://bb4y71j84s0cf::::res://sprites/character_assets/bane/Banepressed.png<>uid://dfmsneh4rig3j::::res://sprites/character_assets/bane/Banehover.png<>uid://ch42awuyk6dvy::::res://sprites/ui/menu_assets/selectscreen.png<>res://scripts/Label3.gd<>res://scripts/Label4.gd
 Finale.tscn::PackedScene::5623179794120550746::1713141844::0::1::::<><>::res://scripts/Finale.gd<>uid://xe3msl27potq::::res://sprites/stageassets/racetrackassets/trackfinale.png<>uid://cejvvnvcgu16p::::res://sprites/stageassets/racetrackassets/Start.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>uid://6i8xgojjq0mk::::res://sprites/character_assets/blizzy/blizzydrivin.png<>uid://cd0a7a0oexxnf::::res://sprites/stageassets/racetrackassets/finalesky.png<>uid://dy84j2lyva4w5::::res://sprites/character_assets/germ/germdrivin.png<>uid://bbh6bily08037::::res://sprites/character_assets/oart/oartdrivin.png<>res://scripts/noturning.gd<>uid://d371syh2hr3oj::::res://sprites/character_assets/penvort/penvortdrivin.png<>uid://rpro5w812yn4::::res://sprites/character_assets/robot/robotdrivin.png<>uid://dddcfb2t74ir::::res://sprites/character_assets/yogu/yogudrivin.png<>uid://4cjun8xkvd6u::::res://sprites/character_assets/racer_other/wheels1.png<>uid://xhjfv300n2ml::::res://sprites/character_assets/racer_other/wheels2.png<>uid://bp3eofct0v1bo::::res://sprites/character_assets/racer_other/wheels3.png<>uid://brbtlowyfa1ff::::res://sprites/character_assets/racer_other/wheels.png<>uid://bsbqu5xe065ou::::res://other/racerhitbox.tres<>res://scripts/BlizzyAI.gd<>res://scripts/YoguAI.gd<>res://scripts/Camera2D.gd<>res://scripts/RobotAI.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>res://scripts/GermAI.gd<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>res://scripts/PenvortAI.gd<>res://scripts/OartAI.gd<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/lapchecker.gd<>res://scripts/DriftMeter.gd<>res://scripts/lapverifynolame.gd<>res://scripts/enemyclipthrough.gd<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://dkb44fq6bnjro::::res://sprites/stageassets/racetrackassets/finaleaudience.png<>res://scripts/Timer.gd
 joke_racing_world.tscn::PackedScene::2403226295192823640::1713141836::0::1::::<><>::res://scripts/map3win.gd<>uid://bs5h0ng85dllo::::res://sprites/stageassets/racetrackassets/joketrack.png<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>uid://cejvvnvcgu16p::::res://sprites/stageassets/racetrackassets/Start.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>uid://6i8xgojjq0mk::::res://sprites/character_assets/blizzy/blizzydrivin.png<>res://scripts/noturning.gd<>uid://dy84j2lyva4w5::::res://sprites/character_assets/germ/germdrivin.png<>uid://bbh6bily08037::::res://sprites/character_assets/oart/oartdrivin.png<>uid://d371syh2hr3oj::::res://sprites/character_assets/penvort/penvortdrivin.png<>uid://rpro5w812yn4::::res://sprites/character_assets/robot/robotdrivin.png<>uid://dddcfb2t74ir::::res://sprites/character_assets/yogu/yogudrivin.png<>uid://4cjun8xkvd6u::::res://sprites/character_assets/racer_other/wheels1.png<>uid://xhjfv300n2ml::::res://sprites/character_assets/racer_other/wheels2.png<>uid://bp3eofct0v1bo::::res://sprites/character_assets/racer_other/wheels3.png<>uid://brbtlowyfa1ff::::res://sprites/character_assets/racer_other/wheels.png<>uid://bsbqu5xe065ou::::res://other/racerhitbox.tres<>res://scripts/BlizzyAI.gd<>res://scripts/YoguAI.gd<>res://scripts/RobotAI.gd<>res://scripts/GermAI.gd<>res://scripts/PenvortAI.gd<>res://scripts/OartAI.gd<>res://scripts/lapchecker.gd<>res://scripts/Camera2D.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>res://scripts/lapverifynolame.gd<>res://scripts/enemyclipthrough.gd<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://d05fqpxko7p7b::::res://sprites/stageassets/racetrackassets/jokeaudience.png<>res://scripts/Timer.gd
@@ -111,14 +107,14 @@ racing_world.tscn::PackedScene::5049908315608432311::1713141812::0::1::::<><>::r
 TitleSreen.tscn::PackedScene::6057073375488521616::1713328052::0::1::::<><>::uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>res://scripts/load_data.gd<>uid://b5giv1mdp140r::::res://sprites/ui/menu_assets/title.png<>uid://tqp7gy6nd43b::::res://sprites/ui/menu_assets/starttitle.png<>uid://ev4w6pifvphb::::res://sprites/ui/menu_assets/starttitlepressed.png<>uid://k2dosgxybrg5::::res://sprites/ui/menu_assets/starttitlehover.png<>uid://dwqee13en8h2h::::res://audio/music/Untitled.mp3<>res://scripts/tostartornottostartthatisthequestion.gd<>res://scripts/soundtoggle.gd<>uid://c32gn65ecl56c::::res://audio/finaksfx/title.wav<>res://scripts/introsound.gd<>uid://bg46mvgylxwlw::::res://sprites/character_assets/oart/Oart.png<>uid://cajtjhef1umrm::::res://sprites/character_assets/penvort/Penvort.png<>uid://bdbj5p2bn766x::::res://sprites/character_assets/robot/Robot.png<>uid://pglwgsbniilh::::res://sprites/character_assets/yogu/Yogu.png<>uid://cpvu6oxw27d0t::::res://sprites/character_assets/germ/Germ.png<>uid://k38fnb0twikn::::res://sprites/character_assets/blizzy/blizzy.png<>res://other/rerro.gdshader<>uid://de0npey5bihk1::::res://sprites/other/temp_or_other/godotflosh.png
 winner.tscn::PackedScene::5110586976753299461::1713320668::0::1::::<><>::res://scripts/savewins.gd<>uid://dx5pe564dfs78::::res://sprites/ui/menu_assets/winner.png<>uid://vk13a2y6lj8b::::res://sprites/ui/menu_assets/tryagain.png<>uid://c6lw2qoo2obda::::res://sprites/ui/menu_assets/tryagain3.png<>uid://cmr1dd4w57ck4::::res://sprites/ui/menu_assets/tryagain2.png<>res://scripts/winner_again.gd<>uid://bcq3eoicfr18q::::res://sprites/ui/menu_assets/tryagain4.png<>uid://d30lbpe4u0qh8::::res://sprites/character_assets/bane/BaneWIN.png<>uid://ch18pwayca1j8::::res://sprites/character_assets/blizzy/blizzyWIN.png<>uid://b76t47k8knug7::::res://sprites/character_assets/germ/GermWIN.png<>uid://ddql0rpkv1ah8::::res://sprites/character_assets/oart/OartWIN.png<>uid://damqi7u6qbega::::res://sprites/character_assets/penvort/PenvortWIN.png<>uid://cqfp7ba66pcti::::res://sprites/character_assets/robot/RobotWIN.png<>uid://cur5t3or2nyh7::::res://sprites/character_assets/will/WillWIN.png<>res://scripts/finishscreenface.gd<>uid://b3gnqmuyfud8u::::res://sprites/character_assets/yogu/YoguWIN.png<>uid://fqa6tjq3c1an::::res://audio/music/vicroy.mp3<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>res://scripts/racetime.gd
 yes.gd::GDScript::-1::1712543308::0::1::::<>TextureButton<>::
-::res://scenes/towerrooms/::1712878852
+::res://scenes/towerrooms/::1712878854
 enemy.tscn::PackedScene::310350064147550340::1713328056::0::1::::<><>::res://scripts/towerscripts/testai.gd<>uid://cpj1mghuddc10::::res://sprites/other/temp_or_other/baddie3.png<>uid://3cop2flwink1::::res://sprites/other/temp_or_other/baddie.png<>uid://bak7euq8kbl5x::::res://sprites/other/temp_or_other/demon.png<>uid://27fhnfw7duox::::res://sprites/other/temp_or_other/chillguy.png<>res://scripts/enemyclipthrough.gd<>uid://b8dvubms17oyx::::res://sprites/other/temp_or_other/baddie2.png<>uid://b7ueh5fc2e6wj::::res://sprites/other/temp_or_other/baddie4.png<>res://scripts/towerscripts/testaidamage.gd<>res://scripts/towerscripts/testairecievedamage.gd<>res://scripts/towerscripts/Detect.gd<>uid://bw0xocbcd6lvu::::res://sprites/ui/bars/enemyhealthunder.png<>res://scripts/towerscripts/Undetect.gd<>uid://tvcgujxru3qc::::res://sprites/ui/bars/enemyhealthover.png<>uid://b4m32wp04eesd::::res://sprites/ui/bars/enemyhealthprogress.png<>res://scripts/towerscripts/testaihealth.gd<>res://scripts/towerscripts/enemyseerange.gd<>res://scripts/towerscripts/enemyforgetrange.gd<>res://scripts/towerscripts/EnemyRegenTimer.gd
 floor1.tscn::PackedScene::2472778608492393464::1713328442::0::1::::<><>::res://scripts/towerscripts/testroom.gd<>uid://dw66ppsorvykk::::res://sprites/stageassets/towerassets/towerlevel1.png<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://dj6kwaqdkuhuy::::res://sprites/other/temp_or_other/rainbow.jpg<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>uid://dghkolp8poebe::::res://scenes/pickup.tscn
 floor2.tscn::PackedScene::2455084641350871969::1713328054::0::1::::<><>::res://scripts/towerscripts/floor2.gd<>uid://cnx5kfrq5ut4k::::res://sprites/stageassets/towerassets/towerlevel2.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>uid://dghkolp8poebe::::res://scenes/pickup.tscn<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png
 floor3.tscn::PackedScene::7227702415445766025::1713328054::0::1::::<><>::res://other/rerro.gdshader<>res://scripts/towerscripts/floor3.gd<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://bgmkj177gflcq::::res://sprites/stageassets/towerassets/towerlevel3.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>uid://dghkolp8poebe::::res://scenes/pickup.tscn
-floor4.tscn::PackedScene::5527778945015224251::1713328644::0::1::::<><>::res://scripts/towerscripts/floor4.gd<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://bd5imlxfu5qxm::::res://sprites/stageassets/towerassets/floor4.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://dghkolp8poebe::::res://scenes/pickup.tscn<>res://scripts/towerscripts/windowthingies.gd<>uid://bls871660wpfg::::res://sprites/stageassets/towerassets/towerpanel3.png
+floor4.tscn::PackedScene::5527778945015224251::1713388142::0::1::::<><>::res://scripts/towerscripts/floor4.gd<>res://other/rerro.gdshader<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://bd5imlxfu5qxm::::res://sprites/stageassets/towerassets/floor4.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://dghkolp8poebe::::res://scenes/pickup.tscn<>res://scripts/towerscripts/windowthingies.gd<>uid://bls871660wpfg::::res://sprites/stageassets/towerassets/towerpanel3.png
 tutorial.tscn::PackedScene::7260338907444363147::1713328052::0::1::::<><>::res://other/rerro.gdshader<>res://scripts/towerscripts/tutorial.gd<>uid://diendpdoptdll::::res://sprites/ui/menu_assets/titlebackround.png<>uid://cyq8kdpsrxurq::::res://sprites/stageassets/towerassets/tutorial.png<>uid://5ig03wmyusyv::::res://scenes/player.tscn<>res://scripts/Camera2D.gd<>uid://cjseqmfk4kpj::::res://sprites/stageassets/racetrackassets/skytemp.png<>res://scripts/noturning.gd<>uid://cfacud55ldfw5::::res://sprites/ui/bars/drift_bar_under.png<>uid://cld0tosi7a7ib::::res://sprites/ui/bars/drift_bar_over.png<>uid://cuq7tce3tgl83::::res://sprites/ui/bars/drift_bar_progress.png<>res://scripts/DriftMeter.gd<>uid://fe2e7usck4xu::::res://sprites/ui/bars/hpunder.png<>uid://c6xfe5bbe14ev::::res://sprites/ui/bars/hpover.png<>uid://dvjrtferq1b7i::::res://sprites/ui/bars/hpfill.png<>res://scripts/HealthBar.gd<>uid://eoloj1c3dknk::::res://scenes/towerrooms/enemy.tscn<>res://scripts/towerscripts/windowthingies.gd<>uid://dnpml348760on::::res://sprites/stageassets/towerassets/towerpanel.png<>uid://c3elmxtp63kyq::::res://sprites/stageassets/towerassets/towerpanel2.png
-::res://scripts/::1711935404
+::res://scripts/::1711935406
 AutoRegen.gd::GDScript::-1::1713105816::0::1::::<>Timer<>::
 Bane_Select.gd::GDScript::-1::1712723036::0::1::::<>TextureButton<>::
 BlizzyAI.gd::GDScript::-1::1712971730::0::1::::<>PathFollow2D<>::
@@ -174,16 +170,16 @@ windisplay.gd::GDScript::-1::1712508036::0::1::::<>Label<>::
 winner_again.gd::GDScript::-1::1712723260::0::1::::<>TextureButton<>::
 YoguAI.gd::GDScript::-1::1712971732::0::1::::<>PathFollow2D<>::
 Yogu_Select.gd::GDScript::-1::1712722892::0::1::::<>TextureButton<>::
-::res://scripts/towerscripts/::1712882871
+::res://scripts/towerscripts/::1712882872
 Buttonmapselectscreen.gd::GDScript::-1::1713228734::0::1::::<>Button<>::
 Detect.gd::GDScript::-1::1713069198::0::1::::<>Area2D<>::
+enemyforgetrange.gd::GDScript::-1::1713326830::0::1::::<>CollisionShape2D<>::
 EnemyRegenTimer.gd::GDScript::-1::1713238598::0::1::::<>Timer<>::
+enemyseerange.gd::GDScript::-1::1713326822::0::1::::<>CollisionShape2D<>::
 floor2.gd::GDScript::-1::1713320428::0::1::::<>Node2D<>::
 floor3.gd::GDScript::-1::1713320400::0::1::::<>Node2D<>::
-itemspawn.gd::GDScript::-1::1713320718::0::1::::<>Node2D<>::
 floor4.gd::GDScript::-1::1713320498::0::1::::<>Node2D<>::
-enemyforgetrange.gd::GDScript::-1::1713326830::0::1::::<>CollisionShape2D<>::
-enemyseerange.gd::GDScript::-1::1713326822::0::1::::<>CollisionShape2D<>::
+itemspawn.gd::GDScript::-1::1713320718::0::1::::<>Node2D<>::
 testai.gd::GDScript::-1::1713326608::0::1::::<>CharacterBody2D<>::
 testaidamage.gd::GDScript::-1::1713327312::0::1::::<>Area2D<>::
 testaihealth.gd::GDScript::-1::1713326184::0::1::::<>TextureProgressBar<>::
@@ -193,9 +189,9 @@ tutorial.gd::GDScript::-1::1713325188::0::1::::<>Node2D<>::
 Undetect.gd::GDScript::-1::1713071016::0::1::::<>Area2D<>::
 WarpDamage.gd::GDScript::-1::1712897888::0::1::::<>Area2D<>::
 windowthingies.gd::GDScript::-1::1713320140::0::1::::<>Window<>::
-::res://sprites/::1711928954
-::res://sprites/character_assets/::1713106826
-::res://sprites/character_assets/bane/::1713105964
+::res://sprites/::1711928956
+::res://sprites/character_assets/::1713106828
+::res://sprites/character_assets/bane/::1713105966
 bandrivin.png::CompressedTexture2D::6536654478630520117::1712539464::1713106834::1::::<><>::
 Bane.png::CompressedTexture2D::2297454681458961845::1712539342::1713106834::1::::<><>::
 banediscord.png::CompressedTexture2D::7320257360316247611::1712513186::1713106834::1::::<><>::
@@ -203,7 +199,7 @@ Banehover.png::CompressedTexture2D::7536095145756441225::1712540256::1713106834:
 BaneLOSE.png::CompressedTexture2D::2483770196276791297::1712540460::1713106834::1::::<><>::
 Banepressed.png::CompressedTexture2D::2517992216479421421::1712540268::1713106834::1::::<><>::
 BaneWIN.png::CompressedTexture2D::9176829584884865527::1712540366::1713106834::1::::<><>::
-::res://sprites/character_assets/blizzy/::1713106221
+::res://sprites/character_assets/blizzy/::1713106222
 blizzy.png::CompressedTexture2D::761704288735321921::1712539254::1713106834::1::::<><>::
 blizzydiscord.png::CompressedTexture2D::3750981761615893055::1712510736::1713106834::1::::<><>::
 blizzydrivin.png::CompressedTexture2D::2194414246021554742::1712539422::1713106834::1::::<><>::
@@ -211,7 +207,7 @@ blizzyhover.png::CompressedTexture2D::5931326218292329443::1712540064::171310683
 blizzyLOSE.png::CompressedTexture2D::2892908348383780901::1712540376::1713106834::1::::<><>::
 blizzypressed.png::CompressedTexture2D::8917909544970102959::1712540076::1713106834::1::::<><>::
 blizzyWIN.png::CompressedTexture2D::5319868698734706139::1712540282::1713106834::1::::<><>::
-::res://sprites/character_assets/germ/::1713106199
+::res://sprites/character_assets/germ/::1713106200
 Germ.png::CompressedTexture2D::5870296426152650273::1712539294::1713106834::1::::<><>::
 germdiscord.png::CompressedTexture2D::3940962068690665523::1712513162::1713106834::1::::<><>::
 germdrivin.png::CompressedTexture2D::8913697065453274510::1712539620::1713106834::1::::<><>::
@@ -219,7 +215,7 @@ Germhover.png::CompressedTexture2D::6590413822494360730::1712540088::1713106834:
 GermLOSE.png::CompressedTexture2D::6825418191118084449::1712540412::1713106834::1::::<><>::
 Germpressed.png::CompressedTexture2D::5688719079908271326::1712540100::1713106836::1::::<><>::
 GermWIN.png::CompressedTexture2D::4697666499080310628::1712540318::1713106836::1::::<><>::
-::res://sprites/character_assets/oart/::1713106367
+::res://sprites/character_assets/oart/::1713106368
 Oart.png::CompressedTexture2D::2869325470056907212::1712539324::1713106836::1::::<><>::
 oartdiscord.png::CompressedTexture2D::7807441495658627814::1712513206::1713106836::1::::<><>::
 oartdrivin.png::CompressedTexture2D::2472944622484052372::1712539552::1713106836::1::::<><>::
@@ -227,7 +223,7 @@ Oarthover.png::CompressedTexture2D::5790489042789152894::1712540144::1713106836:
 OartLOSE.png::CompressedTexture2D::4574772158118248156::1712540434::1713106836::1::::<><>::
 Oartpressed.png::CompressedTexture2D::1652490551793512935::1712540156::1713106836::1::::<><>::
 OartWIN.png::CompressedTexture2D::7403572074378868399::1712540344::1713106836::1::::<><>::
-::res://sprites/character_assets/penvort/::1713106385
+::res://sprites/character_assets/penvort/::1713106386
 Penvort.png::CompressedTexture2D::4792590836285838046::1712539306::1713106836::1::::<><>::
 penvortdiscord.png::CompressedTexture2D::283203089361547036::1712513250::1713106836::1::::<><>::
 penvortdrivin.png::CompressedTexture2D::9192221819787185133::1712539564::1713106834::1::::<><>::
@@ -235,12 +231,12 @@ Penvorthover.png::CompressedTexture2D::7734316483243298368::1712540114::17131068
 PenvortLOSE.png::CompressedTexture2D::8801818412731549709::1712540424::1713106834::1::::<><>::
 Penvortpressed.png::CompressedTexture2D::4654906262444696::1712540128::1713106834::1::::<><>::
 PenvortWIN.png::CompressedTexture2D::7185022055436739652::1712540330::1713106834::1::::<><>::
-::res://sprites/character_assets/racer_other/::1713106592
+::res://sprites/character_assets/racer_other/::1713106594
 wheels1.png::CompressedTexture2D::2040188124665360422::1712539502::1713106834::1::::<><>::
 wheels2.png::CompressedTexture2D::1629350577272299175::1712539514::1713106834::1::::<><>::
 wheels3.png::CompressedTexture2D::3497324051066891440::1712539526::1713106834::1::::<><>::
 wheels.png::CompressedTexture2D::3582869440298989287::1712539490::1713106834::1::::<><>::
-::res://sprites/character_assets/robot/::1713106412
+::res://sprites/character_assets/robot/::1713106414
 Robot.png::CompressedTexture2D::2599652448737376865::1712539282::1713106834::1::::<><>::
 robotdiscord.png::CompressedTexture2D::477510481695379176::1712513272::1713106834::1::::<><>::
 robotdrivin.png::CompressedTexture2D::1225234809370550223::1712539448::1713106834::1::::<><>::
@@ -248,7 +244,7 @@ Robothover.png::CompressedTexture2D::5717383279846733593::1712540200::1713106834
 RobotLOSE.png::CompressedTexture2D::6174572073945715309::1712540400::1713106834::1::::<><>::
 Robotpressed.png::CompressedTexture2D::1097963096060942233::1712540210::1713106834::1::::<><>::
 RobotWIN.png::CompressedTexture2D::5907152708635339998::1712540304::1713106834::1::::<><>::
-::res://sprites/character_assets/will/::1713106547
+::res://sprites/character_assets/will/::1713106548
 Will.png::CompressedTexture2D::1214246850049311654::1712539610::1713106834::1::::<><>::
 willdiscord.png::CompressedTexture2D::4444468618586233170::1712513290::1713106834::1::::<><>::
 willdrivin.png::CompressedTexture2D::7821280307609814581::1712539478::1713106834::1::::<><>::
@@ -256,7 +252,7 @@ Willhover.png::CompressedTexture2D::7452108275730577189::1712540234::1713106834:
 WillLOSE.png::CompressedTexture2D::6587213600299207698::1712540448::1713106834::1::::<><>::
 Willpressed.png::CompressedTexture2D::5086407645740584870::1712540244::1713106834::1::::<><>::
 WillWIN.png::CompressedTexture2D::6213569594923141030::1712540356::1713106834::1::::<><>::
-::res://sprites/character_assets/yogu/::1713106564
+::res://sprites/character_assets/yogu/::1713106566
 Yogu.png::CompressedTexture2D::1065926438490895437::1712539268::1713106834::1::::<><>::
 yogudiscord.png::CompressedTexture2D::3831325391129467883::1712513316::1713106834::1::::<><>::
 yogudrivin.png::CompressedTexture2D::216945652157379173::1712539436::1713106834::1::::<><>::
@@ -264,7 +260,7 @@ Yoguhover.png::CompressedTexture2D::3516882567101659375::1712540168::1713106834:
 YoguLOSE.png::CompressedTexture2D::8842090002572935228::1712540388::1713106834::1::::<><>::
 Yogupressed.png::CompressedTexture2D::3472944661551019380::1712540220::1713106834::1::::<><>::
 YoguWIN.png::CompressedTexture2D::4364913127965021426::1712540294::1713106834::1::::<><>::
-::res://sprites/other/::1713106723
+::res://sprites/other/::1713106724
 ::res://sprites/other/discord/::1712513210
 banediscord.png::CompressedTexture2D::7320257360316247611::1712513186::1713106734::1::::<><>::
 blizzydiscord.png::CompressedTexture2D::3750981761615893055::1712510736::1713106734::1::::<><>::
@@ -284,7 +280,7 @@ yogudiscord.png::CompressedTexture2D::3831325391129467883::1712513316::171310673
 219bannertr.png::CompressedTexture2D::6296235934803533007::1712628370::1713106734::1::::<><>::
 itchlogo.png::CompressedTexture2D::8987526298384958066::1712626946::1713106734::1::::<><>::
 title.png::CompressedTexture2D::4504996881274730103::1712628728::1713106734::1::::<><>::
-::res://sprites/other/temp_or_other/::1713106002
+::res://sprites/other/temp_or_other/::1713106004
 1racertemp.png::CompressedTexture2D::1421579667793206239::1711931338::1713106734::1::::<><>::
 2racertemp.png::CompressedTexture2D::7285948846526641181::1711931364::1713106734::1::::<><>::
 3racertemp.png::CompressedTexture2D::417519369879451511::1711931390::1713106734::1::::<><>::
@@ -337,7 +333,7 @@ track1discord.png::CompressedTexture2D::7270597359551284560::1712513382::1713106
 track2discord.png::CompressedTexture2D::3248232219359369602::1712513400::1713106734::1::::<><>::
 white.png::CompressedTexture2D::5473544996791876359::1712445924::1713106734::1::::<><>::
 yes.png::CompressedTexture2D::5715409192958988775::1712543170::1713106734::1::::<><>::
-::res://sprites/other/towerloseandwin/::1713052423
+::res://sprites/other/towerloseandwin/::1713052424
 blizzylose.png::CompressedTexture2D::726190067649029281::1713052556::1713106734::1::::<><>::
 blizzywin.png::CompressedTexture2D::7386825695492879103::1713052580::1713106734::1::::<><>::
 germlose.png::CompressedTexture2D::8924729127057878036::1713052828::1713106734::1::::<><>::
@@ -350,8 +346,8 @@ robotlose.png::CompressedTexture2D::5252317926051528518::1713052440::1713106734:
 robotwin.png::CompressedTexture2D::8910779123374426159::1713052480::1713106734::1::::<><>::
 yogulose.png::CompressedTexture2D::2128393895700772808::1713052710::1713106734::1::::<><>::
 yoguwin.png::CompressedTexture2D::4280517452715051343::1713052744::1713106734::1::::<><>::
-::res://sprites/stageassets/::1713106915
-::res://sprites/stageassets/pickups/::1713112035
+::res://sprites/stageassets/::1713106916
+::res://sprites/stageassets/pickups/::1713112036
 axel.png::CompressedTexture2D::988793601902119481::1713112626::1713112628::1::::<><>::
 battery.png::CompressedTexture2D::6410358592262954392::1713112294::1713112298::1::::<><>::
 blackhole.png::CompressedTexture2D::2248123098520648133::1713140458::1713140460::1::::<><>::
@@ -364,7 +360,7 @@ oil.png::CompressedTexture2D::8122199643298295123::1713112050::1713112054::1::::
 theorb.png::CompressedTexture2D::3677827110424296379::1713112756::1713112758::1::::<><>::
 voidbox.png::CompressedTexture2D::6921569585730425979::1713113200::1713113206::1::::<><>::
 wrench.png::CompressedTexture2D::4704991905605929722::1713140232::1713140234::1::::<><>::
-::res://sprites/stageassets/racetrackassets/::1713106294
+::res://sprites/stageassets/racetrackassets/::1713106296
 finaleaudience.png::CompressedTexture2D::7865027734771134028::1712707954::1713106922::1::::<><>::
 finalesky.png::CompressedTexture2D::5035074526819233043::1712540710::1713106924::1::::<><>::
 house.png::CompressedTexture2D::3911777848603237179::1712707116::1713106922::1::::<><>::
@@ -379,7 +375,7 @@ track2audience.png::CompressedTexture2D::7757510733248126294::1712707966::171310
 trackfinale.png::CompressedTexture2D::1624323383698580454::1712706204::1713106922::1::::<><>::
 trackfinalenograinjustincase.png::CompressedTexture2D::4198349192163585086::1712616904::1713106924::1::::<><>::
 tracktemp.png::CompressedTexture2D::9111923708740776491::1712784140::1713106922::1::::<><>::
-::res://sprites/stageassets/towerassets/::1713106507
+::res://sprites/stageassets/towerassets/::1713106508
 floor4.png::CompressedTexture2D::2659426326240437354::1713309670::1713309670::1::::<><>::
 floor4base.png::CompressedTexture2D::2563715396862583507::1713309484::1713309512::1::::<><>::
 towerlevel1.png::CompressedTexture2D::8769322151492601270::1713061262::1713106922::1::::<><>::
@@ -389,8 +385,8 @@ towerpanel2.png::CompressedTexture2D::6747077054827045720::1713315244::171331525
 towerpanel3.png::CompressedTexture2D::3197718984389612620::1713320120::1713320122::1::::<><>::
 towerpanel.png::CompressedTexture2D::8103432449327283877::1713313666::1713313668::1::::<><>::
 tutorial.png::CompressedTexture2D::6492425359047877738::1713228380::1713228382::1::::<><>::
-::res://sprites/ui/::1713106869
-::res://sprites/ui/bars/::1713106059
+::res://sprites/ui/::1713106870
+::res://sprites/ui/bars/::1713106060
 drift_bar_over.png::CompressedTexture2D::5552664399109757201::1712785540::1713106878::1::::<><>::
 drift_bar_progress.png::CompressedTexture2D::6211625270588275978::1712785522::1713106878::1::::<><>::
 drift_bar_under.png::CompressedTexture2D::5123942940732064678::1712785658::1713106878::1::::<><>::
@@ -400,7 +396,7 @@ enemyhealthunder.png::CompressedTexture2D::3983606286217221554::1712956918::1713
 hpfill.png::CompressedTexture2D::8652873555816520252::1712893040::1713106878::1::::<><>::
 hpover.png::CompressedTexture2D::6996488513945177857::1712892924::1713106878::1::::<><>::
 hpunder.png::CompressedTexture2D::360849943650945734::1712892946::1713106878::1::::<><>::
-::res://sprites/ui/mapselect/::1713106179
+::res://sprites/ui/mapselect/::1713106180
 finaleicon.png::CompressedTexture2D::6912006041138763291::1712540740::1713106878::1::::<><>::
 jokemapicon.png::CompressedTexture2D::6868604258535213356::1712416780::1713106878::1::::<><>::
 jokemapiconhover.png::CompressedTexture2D::2969037557693275975::1712416818::1713106878::1::::<><>::
@@ -408,7 +404,7 @@ jokemapiconpressed.png::CompressedTexture2D::3024077403655437060::1712416834::17
 mapselectbarkcorn.png::CompressedTexture2D::8244290453212986631::1712539768::1713106878::1::::<><>::
 track1icon.png::CompressedTexture2D::7119444758628922129::1712539660::1713106878::1::::<><>::
 track2icon.png::CompressedTexture2D::6163630135923607890::1712539686::1713106878::1::::<><>::
-::res://sprites/ui/menu_assets/::1713106652
+::res://sprites/ui/menu_assets/::1713106654
 Locked.png::CompressedTexture2D::4123512864937998829::1712539354::1713106878::1::::<><>::
 loser.png::CompressedTexture2D::7113343257796080363::1712539858::1713106878::1::::<><>::
 selectscreen.png::CompressedTexture2D::5325670774039684486::1712539410::1713106878::1::::<><>::
