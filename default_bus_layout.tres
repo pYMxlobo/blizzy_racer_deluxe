@@ -17,7 +17,6 @@ release_ms = 260.0
 mix = 0.2
 
 [resource]
-bus/0/volume_db = -80.0
 bus/0/effect/0/effect = SubResource("AudioEffectLowPassFilter_2dm4s")
 bus/0/effect/0/enabled = true
 bus/0/effect/1/effect = SubResource("AudioEffectCompressor_hgafj")

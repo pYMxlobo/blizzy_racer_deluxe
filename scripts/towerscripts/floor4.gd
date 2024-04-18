@@ -5,7 +5,7 @@ extends Node2D
 @export var player : Node2D
 
 
-var win = preload("res://scenes/winner.tscn")
+var win = preload("res://scenes/towerrooms/floor5.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func surebuddy(skibidi):
@@ -29,4 +29,4 @@ func _process(delta):
 		surebuddy(0)
 		get_tree().root
 		get_tree().change_scene_to_packed(win)
-		Global.winstotal = Global.twinstotal + 1
+
