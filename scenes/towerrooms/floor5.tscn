@@ -693,6 +693,7 @@ position = Vector2(5430, -5871)
 scale = Vector2(1.7, 1.7)
 forget_range = 1800.0
 see_range = 60.0
+enemy_count = false
 enemy_value = 3
 speed = 800
 en_health = 5000
