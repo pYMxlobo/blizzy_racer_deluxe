@@ -1,10 +1,12 @@
-[gd_scene load_steps=41 format=3 uid="uid://cmd57j2etvb3g"]
+[gd_scene load_steps=43 format=3 uid="uid://cmd57j2etvb3g"]
 
 [ext_resource type="Script" path="res://scripts/Finale.gd" id="1_afxdw"]
 [ext_resource type="Texture2D" uid="uid://xe3msl27potq" path="res://sprites/stageassets/racetrackassets/trackfinale.png" id="1_ibkpv"]
 [ext_resource type="Texture2D" uid="uid://cejvvnvcgu16p" path="res://sprites/stageassets/racetrackassets/Start.png" id="2_uonbh"]
 [ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="4_6ivhq"]
 [ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="5_b70u6"]
+[ext_resource type="Texture2D" uid="uid://dspa1hjshv1u5" path="res://sprites/stageassets/racetrackassets/ashes.png" id="5_ehyir"]
+[ext_resource type="Script" path="res://scripts/Sand.gd" id="6_c27kh"]
 [ext_resource type="Texture2D" uid="uid://cd0a7a0oexxnf" path="res://sprites/stageassets/racetrackassets/finalesky.png" id="6_k2grm"]
 [ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="6_xmy5x"]
 [ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="7_dwpo2"]
@@ -195,6 +197,16 @@ texture_repeat = 1
 position = Vector2(-1.90735e-06, -3.8147e-06)
 scale = Vector2(13.912, 13.912)
 texture = ExtResource("1_ibkpv")
+
+[node name="Sand" type="Sprite2D" parent="."]
+z_index = 3675
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("5_ehyir")
+region_enabled = true
+region_rect = Rect2(0, 0, 24576, 23040)
+script = ExtResource("6_c27kh")
+speed = 5
 
 [node name="Start" type="Sprite2D" parent="."]
 z_index = 465

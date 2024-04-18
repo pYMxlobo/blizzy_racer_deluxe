@@ -19,3 +19,6 @@ res://scripts/White.gd
 res://scenes/mapselectpage2.tscn
 res://scripts/towerpageleft.gd
 res://scripts/firstscreenright.gd
+res://scenes/racing_world2.tscn
+res://scripts/Sand.gd
+res://scenes/Finale.tscn

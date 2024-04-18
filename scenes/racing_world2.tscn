@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://chf6dp65nkly1"]
+[gd_scene load_steps=43 format=3 uid="uid://chf6dp65nkly1"]
 
 [ext_resource type="Script" path="res://scripts/map2win.gd" id="1_4g4v4"]
 [ext_resource type="Texture2D" uid="uid://c0hd1hx6khcn5" path="res://sprites/stageassets/racetrackassets/track2.png" id="1_tqgqe"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://4cjun8xkvd6u" path="res://sprites/character_assets/racer_other/wheels1.png" id="13_kc7pj"]
 [ext_resource type="Texture2D" uid="uid://xhjfv300n2ml" path="res://sprites/character_assets/racer_other/wheels2.png" id="14_8tfei"]
 [ext_resource type="Texture2D" uid="uid://bp3eofct0v1bo" path="res://sprites/character_assets/racer_other/wheels3.png" id="15_3gu5i"]
+[ext_resource type="Script" path="res://scripts/Sand.gd" id="15_12ltf"]
 [ext_resource type="Texture2D" uid="uid://brbtlowyfa1ff" path="res://sprites/character_assets/racer_other/wheels.png" id="16_ars2i"]
 [ext_resource type="Shape2D" uid="uid://bsbqu5xe065ou" path="res://other/racerhitbox.tres" id="17_tcxcp"]
 [ext_resource type="Script" path="res://scripts/BlizzyAI.gd" id="18_3g0qw"]
@@ -32,6 +33,7 @@
 [ext_resource type="Script" path="res://scripts/lapverifynolame.gd" id="33_jhrw8"]
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="34_i3tnw"]
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="35_vqweh"]
+[ext_resource type="Texture2D" uid="uid://c5poeyw5tuk4d" path="res://sprites/stageassets/racetrackassets/sand.png" id="36_juxnc"]
 [ext_resource type="Script" path="res://scripts/enemyclipthrough.gd" id="38_868df"]
 [ext_resource type="Texture2D" uid="uid://dir2clcae6q0m" path="res://sprites/stageassets/racetrackassets/track2audience.png" id="38_o4fiy"]
 [ext_resource type="Script" path="res://scripts/Timer.gd" id="39_n8hpx"]
@@ -172,6 +174,16 @@ texture_repeat = 1
 position = Vector2(-1.90735e-06, -3.8147e-06)
 scale = Vector2(13.912, 13.912)
 texture = ExtResource("1_tqgqe")
+
+[node name="Sand" type="Sprite2D" parent="."]
+z_index = 3675
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("36_juxnc")
+region_enabled = true
+region_rect = Rect2(0, 0, 24576, 23040)
+script = ExtResource("15_12ltf")
+speed = 30
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
