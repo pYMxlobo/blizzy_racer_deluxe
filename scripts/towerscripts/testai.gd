@@ -15,6 +15,8 @@ extends CharacterBody2D
 
 @export var speed = 400
 
+@export var react_speed = 0.5
+
 @export var en_health = 50
 var en_hehe = en_health
 
@@ -39,6 +41,7 @@ var is_detected = false
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
 
 func _ready():
+	$Timer.wait_time = react_speed
 	if ai == false:
 		$Timer.paused = true
 	en_hehe = en_health

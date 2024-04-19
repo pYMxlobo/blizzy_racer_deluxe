@@ -127,8 +127,7 @@ debug_color = Color(0.619608, 0, 0.141176, 0.419608)
 script = ExtResource("3_qer27")
 
 [node name="DamageCooldown" type="Timer" parent="Area2D"]
-wait_time = 2.0
-autostart = true
+wait_time = 1.5
 
 [node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("5_l6npc")

@@ -29,3 +29,6 @@ res://scripts/towerscripts/Buttonmapselectscreen.gd
 res://scripts/towerscripts/testai.gd
 res://scripts/towerscripts/enemyforgetrange.gd
 res://scripts/towerscripts/enemyseerange.gd
+res://scripts/towerscripts/testairecievedamage.gd
+res://scripts/towerscripts/testaidamage.gd
+res://scenes/racing_world3.tscn

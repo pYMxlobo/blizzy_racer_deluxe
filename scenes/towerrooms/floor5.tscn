@@ -696,6 +696,7 @@ see_range = 60.0
 enemy_count = false
 enemy_value = 3
 speed = 800
+react_speed = 0.44
 en_health = 5000
 weakness = 0.8
 en_attack_damage = 35.0

@@ -185,9 +185,10 @@ navigation_polygon = SubResource("NavigationPolygon_rtre0")
 [node name="tutor" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_6oh3g")]
 position = Vector2(6, 585)
 ID = 5
-forget_range = 500.0
-see_range = 30.0
+forget_range = 600.0
+see_range = 300.0
 speed = 50
+react_speed = 1.0
 en_health = 200
 do_regen = true
 regen_mult = 0.5
