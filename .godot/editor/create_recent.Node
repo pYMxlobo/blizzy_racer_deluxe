@@ -12,4 +12,3 @@ CollisionShape2D
 Area2D
 Label
 Button
-NavigationObstacle2D

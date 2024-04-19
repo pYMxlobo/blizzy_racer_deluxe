@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 @export var forget_range :float = 1500
 
-@export var see_range : float = 50
+@export var see_range : float = 450
 
 
 @export var enemy_count = true

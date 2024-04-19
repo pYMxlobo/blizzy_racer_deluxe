@@ -25,3 +25,7 @@ res://scenes/Finale.tscn
 res://scenes/towerrooms/floor5.tscn
 res://scripts/towerscripts/floor5.gd
 res://scripts/towerscripts/floor4.gd
+res://scripts/towerscripts/Buttonmapselectscreen.gd
+res://scripts/towerscripts/testai.gd
+res://scripts/towerscripts/enemyforgetrange.gd
+res://scripts/towerscripts/enemyseerange.gd
