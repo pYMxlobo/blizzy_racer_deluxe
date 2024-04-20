@@ -32,3 +32,5 @@ res://scripts/towerscripts/enemyseerange.gd
 res://scripts/towerscripts/testairecievedamage.gd
 res://scripts/towerscripts/testaidamage.gd
 res://scenes/racing_world3.tscn
+res://scripts/load_data.gd
+res://scripts/map3_win.gd

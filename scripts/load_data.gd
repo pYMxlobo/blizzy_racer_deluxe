@@ -1,6 +1,6 @@
 extends Node2D
 
-
+# wiki https://github.com/pYMxlobo/blizzy_racer_deluxe/wiki
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if FileAccess.file_exists("user://data.save"):
