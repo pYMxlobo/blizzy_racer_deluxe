@@ -268,6 +268,8 @@ func bgm():
 		backmusic = $BGMJOKE
 	elif Global.bgm == 5:
 		backmusic = $BGMCLIMBER
+	elif Global.bgm == 6:
+		backmusic = $BGMSKY
 	backmusic.play()
 
 #this. this goddamn thing. this sucks. really bad.

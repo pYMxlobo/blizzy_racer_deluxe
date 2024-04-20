@@ -40,3 +40,4 @@ res://scripts/right2.gd
 res://scripts/left2.gd
 res://scenes/racing_world.tscn
 res://scripts/Finale.gd
+res://scripts/PlayerRacer.gd

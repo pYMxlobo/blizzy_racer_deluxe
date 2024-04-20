@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://5ig03wmyusyv"]
+[gd_scene load_steps=34 format=3 uid="uid://5ig03wmyusyv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="1_voco8"]
 [ext_resource type="Shader" path="res://other/whiteflash.gdshader" id="2_r4eco"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://bhw4yhmn8gpyn" path="res://audio/music/Sandy Wheels v2.mp3" id="19_br8xy"]
 [ext_resource type="AudioStream" uid="uid://8v6xdjjd8xaj" path="res://audio/music/The Race of a Lifetime.mp3" id="20_5ollv"]
 [ext_resource type="AudioStream" uid="uid://p8wknopohf2i" path="res://audio/music/song.mp3" id="21_4t6sx"]
+[ext_resource type="AudioStream" uid="uid://tc1i83mwyjgs" path="res://audio/music/sky above the sky.mp3" id="22_vey52"]
 [ext_resource type="AudioStream" uid="uid://cmtuw8tukviua" path="res://audio/finaksfx/vroom.mp3" id="22_xortt"]
 [ext_resource type="AudioStream" uid="uid://j0b2towbmq8w" path="res://audio/finaksfx/vroom-secondary.mp3" id="23_f8fbh"]
 [ext_resource type="AudioStream" uid="uid://ocmeeh5ignh2" path="res://audio/music/Climber.mp3" id="23_whbmv"]
@@ -184,6 +185,10 @@ bus = &"Music"
 [node name="BGMFINAL" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_5ollv")
 volume_db = 4.0
+bus = &"Music"
+
+[node name="BGMSKY" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("22_vey52")
 bus = &"Music"
 
 [node name="BGMJOKE" type="AudioStreamPlayer2D" parent="."]

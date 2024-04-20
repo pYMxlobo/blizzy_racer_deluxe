@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tc1i83mwyjgs"
+path="res://.godot/imported/sky above the sky.mp3-c63637afb187af7b3ab6062cc4ee7f25.mp3str"
+
+[deps]
+
+source_file="res://audio/music/sky above the sky.mp3"
+dest_files=["res://.godot/imported/sky above the sky.mp3-c63637afb187af7b3ab6062cc4ee7f25.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

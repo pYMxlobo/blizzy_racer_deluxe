@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cx2gnlvm8xy2o"
+path="res://.godot/imported/sky above the sky.wav-58f103272ed97e82ac8a3052d374efa3.sample"
+
+[deps]
+
+source_file="res://audio/sky above the sky.wav"
+dest_files=["res://.godot/imported/sky above the sky.wav-58f103272ed97e82ac8a3052d374efa3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

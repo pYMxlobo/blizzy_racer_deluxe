@@ -8,7 +8,7 @@ func _ready():
 	randomize()
 	Global.ai_lap = 0
 	Global.player_lap = 0
-	Global.bgm = 2
+	Global.bgm = 6
 	OS.delay_msec(100)
 
 func surebuddy(skibidi):
