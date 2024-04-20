@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjyr512gsum80"]
+[gd_scene load_steps=12 format=3 uid="uid://cjyr512gsum80"]
 
 [ext_resource type="Texture2D" uid="uid://c8oyhks1tj80d" path="res://sprites/ui/mapselect/track1icon.png" id="1_jiydb"]
 [ext_resource type="Script" path="res://scripts/map1selected.gd" id="2_rg44c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dsb5ypnjlumaq" path="res://sprites/ui/menu_assets/mappagearrowleftpressed.png" id="8_yrp32"]
 [ext_resource type="Texture2D" uid="uid://66ojr6rohdow" path="res://sprites/ui/menu_assets/mappagearrowlefthover.png" id="9_uqbrv"]
 [ext_resource type="Script" path="res://scripts/firstscreenright.gd" id="10_eomfr"]
+[ext_resource type="Script" path="res://scripts/left2.gd" id="11_txk8k"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -20,6 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="map1" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 191.0
 offset_right = 281.0
@@ -28,6 +30,7 @@ texture_normal = ExtResource("1_jiydb")
 script = ExtResource("2_rg44c")
 
 [node name="desert" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 199.0
 offset_right = 609.0
@@ -36,6 +39,7 @@ texture_normal = ExtResource("3_g7xnw")
 script = ExtResource("4_esrnk")
 
 [node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 675.0
 offset_top = 205.0
 offset_right = 931.0
@@ -45,6 +49,7 @@ texture_normal = ExtResource("5_7evp1")
 script = ExtResource("6_ejrjj")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 157.0
 offset_right = 236.0
@@ -55,6 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 393.0
 offset_top = 161.0
 offset_right = 565.0
@@ -66,6 +72,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 718.0
 offset_top = 166.0
 offset_right = 890.0
@@ -77,6 +84,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="right" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 920.0
 offset_top = 268.0
 offset_right = 960.0
@@ -88,14 +96,17 @@ flip_h = true
 script = ExtResource("10_eomfr")
 
 [node name="left" type="TextureButton" parent="."]
+layout_mode = 0
 offset_top = 268.0
 offset_right = 40.0
 offset_bottom = 368.0
 texture_normal = ExtResource("7_dws5w")
 texture_pressed = ExtResource("8_yrp32")
 texture_hover = ExtResource("9_uqbrv")
+script = ExtResource("11_txk8k")
 
 [connection signal="pressed" from="map1" to="map1" method="_on_pressed"]
 [connection signal="pressed" from="desert" to="desert" method="_on_pressed"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="right" to="right" method="_on_pressed"]
+[connection signal="pressed" from="left" to="left" method="_on_pressed"]

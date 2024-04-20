@@ -26,7 +26,7 @@ func _process(_delta):
 		get_tree().root
 		get_tree().change_scene_to_packed(win)
 		Global.winstotal = Global.winstotal + 1
-	elif Global.ai_lap >= (Global.howmanylaps * 7):
+	elif Global.ai_lap >= (Global.howmanylaps * 6):
 		Global.race = false
 		OS.delay_msec(100)
 		surebuddy(0)

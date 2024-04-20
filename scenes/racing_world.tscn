@@ -254,6 +254,7 @@ texture_under = ExtResource("9_w71s3")
 texture_over = ExtResource("10_roq6b")
 texture_progress = ExtResource("11_tn0hg")
 script = ExtResource("31_gj24r")
+metadata/_edit_use_anchors_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-5492, -1083)

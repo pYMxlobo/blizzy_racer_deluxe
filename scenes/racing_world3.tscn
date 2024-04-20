@@ -415,7 +415,7 @@ position = Vector2(-12672, 277)
 shape = SubResource("RectangleShape2D_acgmr")
 
 [node name="no cheating" type="Area2D" parent="."]
-position = Vector2(20419, -1432)
+position = Vector2(22200, -7380)
 script = ExtResource("34_a1m3h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="no cheating"]

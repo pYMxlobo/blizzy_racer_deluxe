@@ -34,3 +34,9 @@ res://scripts/towerscripts/testaidamage.gd
 res://scenes/racing_world3.tscn
 res://scripts/load_data.gd
 res://scripts/map3_win.gd
+res://scenes/mapselectpage3.tscn
+res://scripts/skyselected.gd
+res://scripts/right2.gd
+res://scripts/left2.gd
+res://scenes/racing_world.tscn
+res://scripts/Finale.gd
