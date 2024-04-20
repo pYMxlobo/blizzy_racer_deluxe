@@ -202,7 +202,6 @@ update_rotation = false
 update_scale = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(-10589, 6894)
 zoom = Vector2(0.355, 0.355)
 position_smoothing_enabled = true
