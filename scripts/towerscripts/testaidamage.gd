@@ -28,8 +28,8 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 	var local_shape_owner = shape_find_owner(local_shape_index)
 	var _local_shape_node = shape_owner_get_owner(local_shape_owner)
 	if body.name == "Player":
-		if Global.flash == true:
-			Global.health = Global.health - get_parent().en_attack_damage
+		if Global.flash == false:
+			Global.health = Global.health - (get_parent().en_attack_damage * 0.9)
 			random_window_pos()
 			print(Global.health)
 			$DamageCooldown.start()

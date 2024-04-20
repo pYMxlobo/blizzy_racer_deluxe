@@ -468,7 +468,6 @@ death_stat_incr = true
 max_speed_incr = 0
 max_drift_incr = 0.0
 drift_charge_incr = 0.0
-attack_incr = 3
 rotate_speed_incr = 0.0
 
 [node name="item" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
