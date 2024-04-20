@@ -114,6 +114,7 @@ texture_normal = ExtResource("5_xf5kf")
 script = ExtResource("6_bh5mn")
 
 [node name="right" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 920.0
 offset_top = 268.0
 offset_right = 960.0
@@ -123,6 +124,18 @@ texture_pressed = ExtResource("8_ydi07")
 texture_hover = ExtResource("9_ur4tn")
 flip_h = true
 script = ExtResource("10_sixp1")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 366.0
+offset_top = 144.0
+offset_right = 590.0
+offset_bottom = 186.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(2.11775e-06, 0.869212, 0.985914, 1)
+theme_override_font_sizes/font_size = 26
+text = "The Sky Above The Sky"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="right" to="right" method="_on_pressed"]
