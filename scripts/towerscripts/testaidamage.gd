@@ -6,9 +6,7 @@ var window2 = 0
 
 var attacking = false
 
-func this_thing():
-	DisplayServer.window_get_size()
-	get_viewport().get_visible_rect().size
+
 
 func screensize(sigma1, sigma2):
 	DisplayServer.get_display_safe_area().size = Vector2i(sigma1, sigma2)
@@ -43,5 +41,5 @@ func _on_damage_cooldown_timeout():
 	random_window_pos()
 	print(Global.health)
 
-func _on_body_shape_exited(_body_rid, body, body_shape_index, local_shape_index):
+func _on_body_shape_exited(_body_rid, _body, _body_shape_index, _local_shape_index):
 	$DamageCooldown.stop()

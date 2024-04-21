@@ -231,7 +231,6 @@ wait_time = 0.05
 one_shot = true
 
 [node name="AutoRegen" type="Timer" parent="."]
-autostart = true
 script = ExtResource("28_w0tc7")
 
 [connection signal="finished" from="READY" to="." method="_on_ready_finished"]

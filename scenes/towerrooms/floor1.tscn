@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bbh3kjtx43xy3"]
+[gd_scene load_steps=24 format=3 uid="uid://bbh3kjtx43xy3"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/testroom.gd" id="1_ngm4d"]
 [ext_resource type="Texture2D" uid="uid://dw66ppsorvykk" path="res://sprites/stageassets/towerassets/towerlevel1.png" id="2_3ncjk"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="17_nr21n"]
 [ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="18_88hnb"]
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="19_trmgg"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="20_jvfe7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0s14"]
 shader = ExtResource("3_8l7cj")
@@ -150,6 +151,7 @@ texture = ExtResource("5_bp6bc")
 z_as_relative = false
 position = Vector2(20, -1164)
 motion_mode = 1
+next_floor = 1
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -530,5 +532,9 @@ player = NodePath("../Player")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("20_jvfe7")
+connected_scene = "floor2"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

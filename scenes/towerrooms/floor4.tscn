@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ck0xygu7o1d1l"]
+[gd_scene load_steps=25 format=3 uid="uid://ck0xygu7o1d1l"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/floor4.gd" id="1_8hjir"]
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="1_j21vf"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="17_rhqgc"]
 [ext_resource type="Script" path="res://scripts/towerscripts/windowthingies.gd" id="18_4kxqo"]
 [ext_resource type="Texture2D" uid="uid://bls871660wpfg" path="res://sprites/stageassets/towerassets/towerpanel3.png" id="19_rfj1x"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="21_v6kgc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7bgnr"]
 shader = ExtResource("1_j21vf")
@@ -212,6 +213,7 @@ polygon = PackedVector2Array(8700, -8463, 8831, -8564, 8866, -8720, 8751, -8882,
 
 [node name="Player" parent="." instance=ExtResource("4_i6rg1")]
 position = Vector2(7651, 17277)
+next_floor = 4
 coins_needed = 30
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -785,5 +787,9 @@ player = NodePath("../../Player")
 position = Vector2(-11624, 9351)
 ID = 11
 player = NodePath("../../Player")
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("21_v6kgc")
+connected_scene = "floor5"
 
 [connection signal="close_requested" from="panel1" to="panel1" method="_on_close_requested"]

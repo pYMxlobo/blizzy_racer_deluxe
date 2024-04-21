@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dbo7yrsogkgpf"]
+[gd_scene load_steps=24 format=3 uid="uid://dbo7yrsogkgpf"]
 
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="1_2rl75"]
 [ext_resource type="Script" path="res://scripts/towerscripts/tutorial.gd" id="1_eicsg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://scripts/towerscripts/windowthingies.gd" id="18_dj0k5"]
 [ext_resource type="Texture2D" uid="uid://dnpml348760on" path="res://sprites/stageassets/towerassets/towerpanel.png" id="18_oybyk"]
 [ext_resource type="Texture2D" uid="uid://c3elmxtp63kyq" path="res://sprites/stageassets/towerassets/towerpanel2.png" id="20_hs1du"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="21_bhbl5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_31blg"]
 shader = ExtResource("1_2rl75")
@@ -247,6 +248,10 @@ texture = ExtResource("2_44amj")
 position = Vector2(198, 153)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("20_hs1du")
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("21_bhbl5")
+connected_scene = "floor1"
 
 [connection signal="close_requested" from="panel1" to="panel1" method="_on_close_requested"]
 [connection signal="close_requested" from="panel2" to="panel2" method="_on_close_requested"]

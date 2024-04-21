@@ -23,7 +23,6 @@ var drift_multi = 2.0
 @export var coins_needed = 0
 var temp_pa = Global.player_attack
 
-
 @onready var warp_time = $WarpFlash.wait_time
 #@export var camera : Node2D
 #@onready var warptail = $Funny/CollisionShape2D.shape.height
@@ -31,13 +30,13 @@ var temp_pa = Global.player_attack
 
 var is_going = false
 
+var regen_time : float = 1
 
+var crit_multi : float = 2
 
+var reward_multi : float = 1
 
-
-
-
-
+var darkness = 2.625
 
 
 # this should be called when saving the players data
@@ -232,8 +231,7 @@ func _ready():
 	temp_max = max_forward_speed
 	temp_held_back = held_back
 	max_forward_speed = temp_max
-
-
+	$AutoRegen.wait_time = regen_time
 
 @onready var backmusic : AudioStreamPlayer2D = $BGMTEST
 
@@ -277,7 +275,7 @@ func releasethedrift():
 	Global.flash = true
 	Global.ws = position
 	if Global.drift_charge >= (Global.max_drift * 0.8287292817679558):
-		Global.player_attack = Global.player_attack * 2
+		Global.player_attack = Global.player_attack * crit_multi
 		$WARP.play()
 		backmusic.stop()
 		$FORWARD.stop()
@@ -319,6 +317,7 @@ func _process(_delta):
 		rotation_speed = 0
 	if Global.health > Global.max_health:
 		Global.health = Global.max_health
+	$AutoRegen.wait_time = regen_time
 	temp_update()
 
 var momentum = float(velocity.angle())
@@ -416,8 +415,10 @@ func _on_ready_finished():
 	OS.delay_msec(100)
 
 
-
-
-
 func _on_warp_flash_timeout():
 	Global.flash = false
+
+
+
+
+

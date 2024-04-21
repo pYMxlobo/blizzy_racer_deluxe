@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://da8fg5o6ogrcr"]
+[gd_scene load_steps=29 format=3 uid="uid://da8fg5o6ogrcr"]
 
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="1_oxoc3"]
 [ext_resource type="Script" path="res://scripts/towerscripts/floor3.gd" id="1_thtlh"]
@@ -18,6 +18,13 @@
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="15_su044"]
 [ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="16_4kcxr"]
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="17_seurx"]
+[ext_resource type="Script" path="res://scripts/towerscripts/windowthingies.gd" id="19_dfekw"]
+[ext_resource type="Texture2D" uid="uid://dcxjvvd2b0urf" path="res://sprites/stageassets/towerassets/towerpanelempty.png" id="20_aw1dx"]
+[ext_resource type="Texture2D" uid="uid://dfxaq1kvqov5t" path="res://sprites/stageassets/towerassets/clockback.png" id="21_765i4"]
+[ext_resource type="Texture2D" uid="uid://r745dtujnrw" path="res://sprites/stageassets/towerassets/clockoverlay.png" id="22_8ai2e"]
+[ext_resource type="Texture2D" uid="uid://dlobkb8jyhp1y" path="res://sprites/stageassets/towerassets/clockfill.png" id="23_85501"]
+[ext_resource type="Script" path="res://scripts/towerscripts/floor3timer.gd" id="24_qyn4t"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="25_1nwdl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6byyi"]
 shader = ExtResource("1_oxoc3")
@@ -92,6 +99,73 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(-235, -3231, 356, -3294, 1613, -3101, 2704, -2754, 2980, -2503, 3069, -1601, 3098, -674, 2936, 580, 2790, 1358, 2409, 2320, 1885, 2774, 980, 3050, 164, 3094, -36, 3164, -642, 3088, -1614, 2793, -2207, 2380, -2677, 1532, -3087, -71, -3090, -998, -2410, -2100, -1398, -2852)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfam6"]
+shader = ExtResource("1_oxoc3")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_thtlh")
 player = NodePath("Player")
@@ -99,9 +173,9 @@ player = NodePath("Player")
 [node name="shader" type="Sprite2D" parent="."]
 z_index = 4096
 material = SubResource("ShaderMaterial_6byyi")
-position = Vector2(-320.282, 155.853)
+position = Vector2(-56.5808, 35.9871)
 rotation = 3.14159
-scale = Vector2(5195.62, 5044.47)
+scale = Vector2(2882.24, 2635.19)
 texture = ExtResource("2_toi7i")
 
 [node name="Track" type="Sprite2D" parent="."]
@@ -112,6 +186,7 @@ scale = Vector2(13.912, 13.912)
 texture = ExtResource("3_btp5a")
 
 [node name="Player" parent="." instance=ExtResource("4_ia6b0")]
+next_floor = 3
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -151,6 +226,7 @@ texture_under = ExtResource("8_3ekl2")
 texture_over = ExtResource("9_hmr5i")
 texture_progress = ExtResource("10_tlcxr")
 script = ExtResource("11_dfqea")
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="Camera2D"]
 offset_left = -1266.0
@@ -165,6 +241,7 @@ texture_under = ExtResource("12_x381l")
 texture_over = ExtResource("13_1wvnx")
 texture_progress = ExtResource("14_6mv2t")
 script = ExtResource("15_su044")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D"]
 offset_left = -1298.0
@@ -172,10 +249,11 @@ offset_top = 727.0
 offset_right = 848.0
 offset_bottom = 930.0
 theme_override_font_sizes/font_size = 60
-text = "GOAL: SURVIVE. THERE IS NO TIME LIMIT.
+text = "GOAL: DEFEAT ALL ENEMIES. THERE IS A 3 MINUTE TIME LIMIT.
 "
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -352,3 +430,51 @@ player = NodePath("../../Player")
 visible = false
 ID = 7
 player = NodePath("../../../Player")
+
+[node name="panel1" type="Window" parent="."]
+disable_3d = true
+title = "Tower Panel"
+initial_position = 1
+size = Vector2i(397, 305)
+transient = true
+unresizable = true
+content_scale_mode = 1
+content_scale_aspect = 1
+script = ExtResource("19_dfekw")
+
+[node name="shader" type="Sprite2D" parent="panel1"]
+z_index = 4096
+material = SubResource("ShaderMaterial_jfam6")
+position = Vector2(41.2368, 41.6887)
+rotation = 3.14159
+scale = Vector2(1551.9, 1181.92)
+texture = ExtResource("2_toi7i")
+
+[node name="Towerpanel" type="Sprite2D" parent="panel1"]
+position = Vector2(198, 153)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_aw1dx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="panel1" node_paths=PackedStringArray("timer")]
+z_index = 585
+offset_right = 795.0
+offset_bottom = 610.0
+scale = Vector2(0.48, 0.48)
+max_value = 180.0
+fill_mode = 4
+texture_under = ExtResource("21_765i4")
+texture_over = ExtResource("22_8ai2e")
+texture_progress = ExtResource("23_85501")
+script = ExtResource("24_qyn4t")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="panel1/TextureProgressBar"]
+wait_time = 180.0
+autostart = true
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("25_1nwdl")
+connected_scene = "floor4"
+
+[connection signal="close_requested" from="panel1" to="panel1" method="_on_close_requested"]
+[connection signal="timeout" from="panel1/TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 extends TextureButton
 
-@onready var next = preload("res://scenes/map_select.tscn")
+@onready var next = load("res://scenes/map_select.tscn")
 
 #
 func surebuddy(skibidi):

@@ -5,7 +5,7 @@ extends Node2D
 @export var player : Node2D
 
 
-var win = preload("res://scenes/towerrooms/floor3.tscn")
+#@onready var win = load("res://scenes/towerrooms/floor3.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func surebuddy(skibidi):
@@ -20,7 +20,7 @@ func _ready():
 	Global.bgm = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Global.enemy_total <= 0:
 		set_process_input(false)
 		player.max_forward_speed = player.max_forward_speed * 1.01
@@ -32,5 +32,4 @@ func _process(delta):
 		Global.player_attack = Global.player_attack + 2
 		player.savetowerdata()
 		surebuddy(0)
-		get_tree().root
-		get_tree().change_scene_to_packed(win)
+		$switcher.switch()

@@ -126,6 +126,7 @@ flip_h = true
 script = ExtResource("10_sixp1")
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 366.0
 offset_top = 144.0
 offset_right = 590.0

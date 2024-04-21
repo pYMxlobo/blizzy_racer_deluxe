@@ -47,7 +47,7 @@ func _ready():
 	en_hehe = en_health
 	if enemy_count == true:
 		Global.enemy_total = Global.enemy_total + enemy_value
-	
+	print(Global.enemy_total)
 	#just some space so that it hopefully doesnt attach this if to the other if
 	
 	

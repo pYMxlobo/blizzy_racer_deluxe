@@ -15,8 +15,8 @@ func surebuddy(skibidi):
 		position.x = skibidi
 		position.y = skibidi
 
-var win = preload("res://scenes/winner.tscn")
-var lose = preload("res://scenes/loser.tscn")
+var win = load("res://scenes/winner.tscn")
+var lose = load("res://scenes/loser.tscn")
 
 
 func _process(_delta):

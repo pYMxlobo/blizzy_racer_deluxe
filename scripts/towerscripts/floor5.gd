@@ -3,7 +3,7 @@ extends Node2D
 @export var player : Node2D
 @export var timer : Timer
 
-var win = preload("res://scenes/winner.tscn")
+#@onready var win = load("res://scenes/towerrooms/floor6.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func surebuddy(skibidi):
@@ -30,6 +30,4 @@ func _on_timer_timeout():
 	player.backward_accel = player.backward_accel + 2
 	player.savetowerdata()
 	surebuddy(0)
-	get_tree().root
-	get_tree().change_scene_to_packed(win)
-	Global.twinstotal = Global.twinstotal + 1
+	$switcher.switch()

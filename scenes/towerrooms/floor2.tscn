@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ba8i5dp3afmw4"]
+[gd_scene load_steps=22 format=3 uid="uid://ba8i5dp3afmw4"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/floor2.gd" id="1_0towh"]
 [ext_resource type="Texture2D" uid="uid://cnx5kfrq5ut4k" path="res://sprites/stageassets/towerassets/towerlevel2.png" id="1_2t0xq"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="16_sbdsh"]
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="17_fd2kx"]
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="18_e1xmo"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="19_fq05q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nsk24"]
 shader = ExtResource("17_fd2kx")
@@ -114,6 +115,7 @@ texture = ExtResource("1_2t0xq")
 
 [node name="Player" parent="." instance=ExtResource("2_ugpdm")]
 position = Vector2(-2713, 538)
+next_floor = 2
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -235,3 +237,7 @@ position = Vector2(-3947, 2537)
 scale = Vector2(2, 2)
 ID = 7
 player = NodePath("../Player")
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("19_fq05q")
+connected_scene = "floor3"

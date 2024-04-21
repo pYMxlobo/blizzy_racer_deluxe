@@ -4,7 +4,7 @@ func surebuddy(skibidi):
 		position.x = skibidi
 		position.y = skibidi
 
-var next = preload("res://scenes/map_select.tscn")
+var next = load("res://scenes/map_select.tscn")
 
 func _on_pressed():
 	OS.delay_msec(100)

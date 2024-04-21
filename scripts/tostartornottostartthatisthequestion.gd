@@ -1,6 +1,6 @@
 extends TextureButton
 
-var next = preload("res://scenes/char_select.tscn")
+var next = load("res://scenes/char_select.tscn")
 
 func surebuddy(skibidi):
 		position.x = skibidi

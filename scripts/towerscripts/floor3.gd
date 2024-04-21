@@ -5,7 +5,7 @@ extends Node2D
 @export var player : Node2D
 
 
-var win = preload("res://scenes/towerrooms/floor4.tscn")
+#@onready var win = load("res://scenes/towerrooms/floor4.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func surebuddy(skibidi):
@@ -27,5 +27,10 @@ func _process(delta):
 		Global.max_drift = Global.max_drift + 0.1
 		player.savetowerdata()
 		surebuddy(0)
-		get_tree().root
-		get_tree().change_scene_to_packed(win)
+		$switcher.switch()
+
+
+
+
+func _on_timer_timeout():
+	Global.health = 0

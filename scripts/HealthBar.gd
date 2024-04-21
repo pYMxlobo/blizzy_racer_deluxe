@@ -1,7 +1,7 @@
 extends TextureProgressBar
 
 
-var lose = preload("res://scenes/loser.tscn")
+var lose = load("res://scenes/loser.tscn")
 
 
 func surebuddy(skibidi):
@@ -18,6 +18,7 @@ func _process(delta):
 	value = Global.health
 	if Global.health <= 0:
 		Global.race = false
+		Global.enemy_total = 0
 		Global.tlosestotal = Global.tlosestotal + 1
 		OS.delay_msec(100)
 		surebuddy(0)

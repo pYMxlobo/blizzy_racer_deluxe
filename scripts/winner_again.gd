@@ -5,7 +5,7 @@ func surebuddy(skibidi):
 		position.x = skibidi
 		position.y = skibidi
 
-var next = preload("res://scenes/char_select.tscn")
+var next = load("res://scenes/char_select.tscn")
 
 func _on_pressed():
 	surebuddy(0)
