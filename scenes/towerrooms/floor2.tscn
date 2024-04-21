@@ -115,7 +115,6 @@ texture = ExtResource("1_2t0xq")
 
 [node name="Player" parent="." instance=ExtResource("2_ugpdm")]
 position = Vector2(-2713, 538)
-next_floor = 2
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]

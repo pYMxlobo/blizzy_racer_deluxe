@@ -213,7 +213,6 @@ polygon = PackedVector2Array(8700, -8463, 8831, -8564, 8866, -8720, 8751, -8882,
 
 [node name="Player" parent="." instance=ExtResource("4_i6rg1")]
 position = Vector2(7651, 17277)
-next_floor = 4
 coins_needed = 30
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]

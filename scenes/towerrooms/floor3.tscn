@@ -186,7 +186,6 @@ scale = Vector2(13.912, 13.912)
 texture = ExtResource("3_btp5a")
 
 [node name="Player" parent="." instance=ExtResource("4_ia6b0")]
-next_floor = 3
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]

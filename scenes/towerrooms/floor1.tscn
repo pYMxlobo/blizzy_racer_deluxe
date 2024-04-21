@@ -151,7 +151,6 @@ texture = ExtResource("5_bp6bc")
 z_as_relative = false
 position = Vector2(20, -1164)
 motion_mode = 1
-next_floor = 1
 do_start_countdown = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]

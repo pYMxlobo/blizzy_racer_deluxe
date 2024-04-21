@@ -61,7 +61,11 @@ func savetowerdata():
 	file.store_var(Global.player_selected)
 	file.store_var(Global.ai_difficulty)
 	file.store_var(warp_time)
-	file.store_var(Global.regen_mult)
+	file.store_var(regen_time)
+	file.store_var(crit_multi)
+	file.store_var(reward_multi)
+	file.store_var(darkness)
+	file.store_var(Global.health)
 
 
 # and this should be called when you gotta load that stuff
@@ -88,7 +92,11 @@ func loadtowerdata():
 		Global.player_selected = file.get_var()
 		Global.ai_difficulty = file.get_var()
 		warp_time = file.get_var()
-		Global.regen_mult = file.get_var()
+		regen_time = file.get_var()
+		crit_multi = file.get_var()
+		reward_multi = file.get_var()
+		darkness = file.get_var()
+		Global.health = file.get_var()
 		load_racer_sprite()
 	else:
 		print("you has no tower data D:")
@@ -217,9 +225,9 @@ func _ready():
 	OS.delay_msec(40)
 	if Global.fresh == true:
 		load_stats()
+		Global.health = Global.max_health
 	else:
 		loadtowerdata()
-	Global.health = Global.max_health
 	if do_start_countdown == true:
 		$READY.play()
 	elif do_start_countdown == false:
@@ -274,15 +282,15 @@ func bgm():
 func releasethedrift():
 	Global.flash = true
 	Global.ws = position
-	if Global.drift_charge >= (Global.max_drift * 0.8287292817679558):
+	if Global.drift_charge >= (Global.max_drift * 0.825):
 		Global.player_attack = Global.player_attack * crit_multi
 		$WARP.play()
-		backmusic.stop()
+		backmusic.stream_paused = true
 		$FORWARD.stop()
 		$TURN.stop()
 		OS.delay_msec(1000)
 		Global.flash = true
-		backmusic.play()
+		backmusic.stream_paused = false
 	max_forward_speed = max_forward_speed * (drift_multi * 1.5)
 	forward = forward * Global.drift_charge
 	rotation_speed = temp_rotation_speed
