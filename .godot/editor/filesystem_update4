@@ -76,3 +76,4 @@ res://scripts/tostartornottostartthatisthequestion.gd
 res://scripts/switcher.gd
 res://scripts/saveloses.gd
 res://scripts/HealthBar.gd
+res://scenes/towerrooms/floor7.tscn
