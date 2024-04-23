@@ -1,10 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://chf6dp65nkly1"]
+[gd_scene load_steps=44 format=3 uid="uid://chf6dp65nkly1"]
 
 [ext_resource type="Script" path="res://scripts/map2win.gd" id="1_4g4v4"]
 [ext_resource type="Texture2D" uid="uid://c0hd1hx6khcn5" path="res://sprites/stageassets/racetrackassets/track2.png" id="1_tqgqe"]
 [ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/stageassets/racetrackassets/skytemp.png" id="2_edo1y"]
 [ext_resource type="Texture2D" uid="uid://cejvvnvcgu16p" path="res://sprites/stageassets/racetrackassets/Start.png" id="3_8ser5"]
 [ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="4_pbb7q"]
+[ext_resource type="Texture2D" uid="uid://8sf60vhsvskn" path="res://sprites/stageassets/racetrackassets/track2pyramid.png" id="5_tb4ov"]
 [ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_y1i44"]
 [ext_resource type="Script" path="res://scripts/noturning.gd" id="7_lt3su"]
 [ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_t8hrl"]
@@ -175,6 +176,14 @@ position = Vector2(-1.90735e-06, -3.8147e-06)
 scale = Vector2(13.912, 13.912)
 texture = ExtResource("1_tqgqe")
 
+[node name="Track2" type="Sprite2D" parent="."]
+z_index = 3040
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-1.90735e-06, -3.8147e-06)
+scale = Vector2(13.912, 13.912)
+texture = ExtResource("5_tb4ov")
+
 [node name="Sand" type="Sprite2D" parent="."]
 z_index = 3675
 texture_filter = 1
@@ -184,6 +193,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 24576, 23040)
 script = ExtResource("15_12ltf")
 speed = 30
+speedx = 10
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

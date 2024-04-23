@@ -29,6 +29,8 @@ func _ready():
 		$Item.play("Blackhole")
 	elif ID == 11:
 		$Item.play("Coin")
+	elif ID == 12:
+		$Item.play("Jam")
 
 
 
@@ -93,4 +95,8 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 		elif ID == 11:
 			OS.delay_msec(25)
 			Global.coin = Global.coin + coin_value
+			queue_free()
+		elif ID == 12:
+			OS.delay_msec(25)
+			Global.health = Global.health + 30
 			queue_free()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27fhnfw7duox"
-path="res://.godot/imported/chillguy.png-b5c448c94f41f44342e7fc1f7124560e.ctex"
+uid="uid://d437lbntyycy"
+path="res://.godot/imported/frostedsmall.png-980e311caff3c134822a734b132ff015.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/chillguy.png"
-dest_files=["res://.godot/imported/chillguy.png-b5c448c94f41f44342e7fc1f7124560e.ctex"]
+source_file="res://sprites/character_assets/enemy/frostedsmall.png"
+dest_files=["res://.godot/imported/frostedsmall.png-980e311caff3c134822a734b132ff015.ctex"]
 
 [params]
 

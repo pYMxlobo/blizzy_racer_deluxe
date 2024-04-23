@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dghkolp8poebe"]
+[gd_scene load_steps=17 format=3 uid="uid://dghkolp8poebe"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/itemspawn.gd" id="1_4n2ua"]
 [ext_resource type="Texture2D" uid="uid://oc8jy2gji3dt" path="res://sprites/stageassets/pickups/axel.png" id="1_b76gt"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dko5up7lejps5" path="res://sprites/stageassets/pickups/coin.png" id="6_xlv7r"]
 [ext_resource type="Texture2D" uid="uid://dnyppala0ut2b" path="res://sprites/stageassets/pickups/oil.png" id="7_1yj3r"]
 [ext_resource type="Texture2D" uid="uid://bsntjmdlqiyhn" path="res://sprites/stageassets/pickups/theorb.png" id="8_4qx86"]
+[ext_resource type="Texture2D" uid="uid://ba4rwsvs242he" path="res://sprites/stageassets/pickups/jam.png" id="9_axiqr"]
 [ext_resource type="Texture2D" uid="uid://c5u4ifiaebq40" path="res://sprites/stageassets/pickups/voidbox.png" id="9_krslj"]
 [ext_resource type="Texture2D" uid="uid://b8ber83ypric5" path="res://sprites/stageassets/pickups/wrench.png" id="12_84o7l"]
 
@@ -74,6 +75,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_axiqr")
+}],
+"loop": true,
+"name": &"Jam",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_tk8o7")
 }],
 "loop": true,
@@ -129,7 +138,8 @@ ID 7 = the orb
 ID 8 = voidbox
 ID 9 = wrench
 ID 10 = black hole
-ID 11 = coin"
+ID 11 = coin
+ID 12 = jam"
 script = ExtResource("1_4n2ua")
 
 [node name="Item" type="AnimatedSprite2D" parent="."]

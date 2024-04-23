@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3cop2flwink1"
-path="res://.godot/imported/baddie.png-56afd506a2c518352bb12977bfcad9b6.ctex"
+uid="uid://27fhnfw7duox"
+path="res://.godot/imported/chillguy.png-c427f1edc32af55652f1b3793e34d1df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/baddie.png"
-dest_files=["res://.godot/imported/baddie.png-56afd506a2c518352bb12977bfcad9b6.ctex"]
+source_file="res://sprites/character_assets/enemy/chillguy.png"
+dest_files=["res://.godot/imported/chillguy.png-c427f1edc32af55652f1b3793e34d1df.ctex"]
 
 [params]
 

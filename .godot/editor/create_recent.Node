@@ -1,9 +1,10 @@
+AudioStreamPlayer2D
+Timer
 NavigationRegion2D
 CollisionPolygon2D
 Area2D
 Node2D
 AudioStreamPlayer
-Timer
 TextureProgressBar
 TextureButton
 Node

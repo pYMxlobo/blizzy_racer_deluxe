@@ -63,6 +63,8 @@ func _ready():
 		$Char.play("Demon")
 	elif ID == 5:
 		$Char.play("Chill")
+	elif ID == 6:
+		$Char.play("Frosted")
 
 
 func _physics_process(_delta: float) -> void:

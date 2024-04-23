@@ -1,11 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://uwjs7c3wd3n7"]
+[gd_scene load_steps=34 format=3 uid="uid://uwjs7c3wd3n7"]
 
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="1_h2xps"]
+[ext_resource type="Script" path="res://scripts/towerscripts/floor7.gd" id="1_sqyyy"]
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="2_dd3ec"]
 [ext_resource type="Texture2D" uid="uid://u43wq3e1mmq6" path="res://sprites/stageassets/towerassets/floor7.png" id="3_6qfvs"]
 [ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="4_pshsb"]
+[ext_resource type="Texture2D" uid="uid://cy2qgb6nixh6i" path="res://sprites/stageassets/towerassets/snowlayertop.png" id="4_uca6f"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="5_8ykos"]
+[ext_resource type="Script" path="res://scripts/Sand.gd" id="5_30gxv"]
 [ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/stageassets/racetrackassets/skytemp.png" id="6_40unb"]
+[ext_resource type="Texture2D" uid="uid://b4wsli6wcgkik" path="res://sprites/stageassets/towerassets/snowlayermiddle.png" id="6_xg7lq"]
+[ext_resource type="Texture2D" uid="uid://bp6aualvye8ux" path="res://sprites/stageassets/towerassets/snowlayerbottom.png" id="7_wp133"]
 [ext_resource type="Script" path="res://scripts/noturning.gd" id="7_ymjtm"]
 [ext_resource type="Texture2D" uid="uid://cfacud55ldfw5" path="res://sprites/ui/bars/drift_bar_under.png" id="8_c44qw"]
 [ext_resource type="Texture2D" uid="uid://cld0tosi7a7ib" path="res://sprites/ui/bars/drift_bar_over.png" id="9_x4vms"]
@@ -15,6 +20,16 @@
 [ext_resource type="Texture2D" uid="uid://c6xfe5bbe14ev" path="res://sprites/ui/bars/hpover.png" id="13_lrjii"]
 [ext_resource type="Texture2D" uid="uid://dvjrtferq1b7i" path="res://sprites/ui/bars/hpfill.png" id="14_upgdd"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="15_lrll2"]
+[ext_resource type="Script" path="res://scripts/towerscripts/Pain.gd" id="16_0l0rv"]
+[ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="16_07ql7"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="22_7ihlm"]
+[ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="24_78g1f"]
+[ext_resource type="Script" path="res://scripts/towerscripts/windowthingies.gd" id="25_byj2u"]
+[ext_resource type="Texture2D" uid="uid://dcxjvvd2b0urf" path="res://sprites/stageassets/towerassets/towerpanelempty.png" id="26_lvarn"]
+[ext_resource type="Texture2D" uid="uid://dfxaq1kvqov5t" path="res://sprites/stageassets/towerassets/clockback.png" id="27_dm7n0"]
+[ext_resource type="Texture2D" uid="uid://r745dtujnrw" path="res://sprites/stageassets/towerassets/clockoverlay.png" id="28_ok08w"]
+[ext_resource type="Texture2D" uid="uid://dlobkb8jyhp1y" path="res://sprites/stageassets/towerassets/clockfill.png" id="29_viev6"]
+[ext_resource type="Script" path="res://scripts/towerscripts/floor3timer.gd" id="30_4yr2w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8i5iq"]
 shader = ExtResource("1_h2xps")
@@ -90,7 +105,75 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-7960, 5347, -7913, 567
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 75.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1i1y"]
+shader = ExtResource("1_h2xps")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_sqyyy")
 
 [node name="shader" type="Sprite2D" parent="."]
 z_index = 4096
@@ -106,6 +189,42 @@ texture_repeat = 1
 position = Vector2(33, 0)
 scale = Vector2(13.912, 13.912)
 texture = ExtResource("3_6qfvs")
+
+[node name="SnowTop" type="Sprite2D" parent="."]
+z_index = 3675
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("4_uca6f")
+region_enabled = true
+region_rect = Rect2(0, 0, 24576, 23040)
+script = ExtResource("5_30gxv")
+speed = 0
+speedx = 2
+speedy = 20
+
+[node name="SnowMiddle" type="Sprite2D" parent="SnowTop"]
+z_index = 3675
+z_as_relative = false
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("6_xg7lq")
+region_enabled = true
+region_rect = Rect2(0, 0, 24576, 23040)
+script = ExtResource("5_30gxv")
+speed = 0
+speedx = 23
+speedy = 8
+
+[node name="SnowBottom" type="Sprite2D" parent="SnowTop/SnowMiddle"]
+z_index = 3675
+z_as_relative = false
+texture_filter = 1
+texture_repeat = 2
+texture = ExtResource("7_wp133")
+region_enabled = true
+region_rect = Rect2(0, 0, 24576, 23040)
+script = ExtResource("5_30gxv")
+speed = 5
 
 [node name="Player" parent="." instance=ExtResource("4_pshsb")]
 position = Vector2(3411, 2599)
@@ -152,6 +271,8 @@ script = ExtResource("11_xqp76")
 metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="Camera2D"]
+z_index = 3805
+z_as_relative = false
 offset_left = -1266.0
 offset_top = -833.0
 offset_right = 538.0
@@ -172,8 +293,7 @@ offset_top = 727.0
 offset_right = 848.0
 offset_bottom = 930.0
 theme_override_font_sizes/font_size = 60
-text = "GOAL: DEFEAT ALL ENEMIES. THERE IS No time limit.
-"
+text = "GOAL: LAST 8 MINUTES WITHIN THE BLIZZARD."
 vertical_alignment = 1
 uppercase = true
 metadata/_edit_use_anchors_ = true
@@ -188,3 +308,518 @@ polygon = PackedVector2Array(2287, 2434, 2349, 2312, 2379, 2129, 2332, 1970, 220
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_nftml")
+
+[node name="enemy" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(992, -6068)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy2" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(4974, -3873)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy3" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-4986, -4765)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy4" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-4576, -2564)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy5" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-2800, -4148)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy6" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-7133, 575)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy7" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-6164, 1715)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy8" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-5651, 5421)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy9" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-3199, 5507)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy10" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-4510, 6704)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy11" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(336, 6675)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy12" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-1403, 2969)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy13" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-3883, 2770)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy14" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(1790, -2419)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy15" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-1289, -2305)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy16" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(2874, 5963)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy17" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(6152, 4623)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy18" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(6181, 2028)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy19" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(4042, -24)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="enemy20" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(5667, -2048)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+speed = 1400
+react_speed = 0.2
+en_health = 300
+weakness = 0.99
+en_attack_damage = 25.0
+do_regen = true
+regen_mult = 0.1
+player = NodePath("../../Player")
+
+[node name="boss" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("16_07ql7")]
+position = Vector2(-8178, 2571)
+scale = Vector2(1.5, 1.5)
+ID = 6
+forget_range = 1750.0
+see_range = 500.0
+enemy_value = 3
+speed = 2800
+react_speed = 0.1
+en_health = 900
+weakness = 0.9
+en_attack_damage = 50.0
+do_regen = true
+regen_mult = 1.1
+player = NodePath("../../Player")
+death_stat_incr = true
+max_speed_incr = 0
+max_drift_incr = 0.0
+max_health_incr = 0
+drift_charge_incr = 0.0
+attack_incr = 7
+rotate_speed_incr = 0.0
+
+[node name="Pain" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+script = ExtResource("16_0l0rv")
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("22_7ihlm")
+connected_scene = "winner"
+scene_folder = "res://scenes/"
+win = true
+
+[node name="item" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-2286, 1953)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5292, -1304)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-5521, 1953)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-7185, 8)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-8021, 1429)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(466, 3959)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(2552, 2729)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-1933, 209)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(3258, 713)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5898, 633)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5929, 5652)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-784, 6196)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item13" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(1151, 7204)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item14" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(3852, 6408)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item15" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(1665, 4533)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item16" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-89, -718)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item17" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-2830, -1434)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item18" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-805, -3802)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item19" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-6207, -3229)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item20" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-2696, -5230)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item21" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-6957, -5020)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item22" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-5854, -6352)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item23" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-4435, -5497)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item24" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(-4056, -6105)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item25" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(1441, -2272)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item26" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(122, -7223)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item27" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5248, -6012)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item28" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5020, -5743)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item29" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(5396, -5555)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item30" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(1885, -7075)
+ID = 12
+player = NodePath("../Player")
+
+[node name="item31" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
+position = Vector2(2369, -4290)
+ID = 12
+player = NodePath("../Player")
+
+[node name="panel1" type="Window" parent="."]
+disable_3d = true
+title = "Tower Panel"
+initial_position = 1
+size = Vector2i(397, 305)
+transient = true
+unresizable = true
+content_scale_mode = 1
+content_scale_aspect = 1
+script = ExtResource("25_byj2u")
+
+[node name="shader" type="Sprite2D" parent="panel1"]
+z_index = 4096
+material = SubResource("ShaderMaterial_t1i1y")
+position = Vector2(41.2368, 41.6887)
+rotation = 3.14159
+scale = Vector2(1551.9, 1181.92)
+texture = ExtResource("2_dd3ec")
+
+[node name="Towerpanel" type="Sprite2D" parent="panel1"]
+position = Vector2(198, 153)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_lvarn")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="panel1" node_paths=PackedStringArray("timer")]
+z_index = 585
+offset_right = 795.0
+offset_bottom = 610.0
+scale = Vector2(0.48, 0.48)
+max_value = 480.0
+fill_mode = 4
+texture_under = ExtResource("27_dm7n0")
+texture_over = ExtResource("28_ok08w")
+texture_progress = ExtResource("29_viev6")
+script = ExtResource("30_4yr2w")
+timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="panel1/TextureProgressBar"]
+wait_time = 480.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Pain" to="Pain" method="_on_timeout"]
+[connection signal="close_requested" from="panel1" to="panel1" method="_on_close_requested"]
+[connection signal="timeout" from="panel1/TextureProgressBar/Timer" to="." method="_on_timer_timeout"]

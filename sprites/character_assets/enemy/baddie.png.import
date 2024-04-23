@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct4ob53ms01y3"
-path="res://.godot/imported/baddiesword.png-84230503278edc2fdc5ced50f51c4d9f.ctex"
+uid="uid://3cop2flwink1"
+path="res://.godot/imported/baddie.png-a0142e26d54741f2a8485ffd73fe8cbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/baddiesword.png"
-dest_files=["res://.godot/imported/baddiesword.png-84230503278edc2fdc5ced50f51c4d9f.ctex"]
+source_file="res://sprites/character_assets/enemy/baddie.png"
+dest_files=["res://.godot/imported/baddie.png-a0142e26d54741f2a8485ffd73fe8cbf.ctex"]
 
 [params]
 

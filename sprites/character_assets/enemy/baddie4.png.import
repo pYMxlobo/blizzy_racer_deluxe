@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ueh5fc2e6wj"
-path="res://.godot/imported/baddie4.png-22316faf7b5c60527d2dabd5248a7685.ctex"
+path="res://.godot/imported/baddie4.png-080b81d1f1f5eb5716129b94c9fa7e2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/baddie4.png"
-dest_files=["res://.godot/imported/baddie4.png-22316faf7b5c60527d2dabd5248a7685.ctex"]
+source_file="res://sprites/character_assets/enemy/baddie4.png"
+dest_files=["res://.godot/imported/baddie4.png-080b81d1f1f5eb5716129b94c9fa7e2e.ctex"]
 
 [params]
 

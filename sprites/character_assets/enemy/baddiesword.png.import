@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bak7euq8kbl5x"
-path="res://.godot/imported/demon.png-2147bcbc762095f91846dc2b49a5e9d5.ctex"
+uid="uid://ct4ob53ms01y3"
+path="res://.godot/imported/baddiesword.png-3388274e161f3568e52879b17adc7dae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/demon.png"
-dest_files=["res://.godot/imported/demon.png-2147bcbc762095f91846dc2b49a5e9d5.ctex"]
+source_file="res://sprites/character_assets/enemy/baddiesword.png"
+dest_files=["res://.godot/imported/baddiesword.png-3388274e161f3568e52879b17adc7dae.ctex"]
 
 [params]
 

@@ -29,4 +29,4 @@ func _process(delta):
 		player.savetowerdata()
 		surebuddy(0)
 		$switcher.switch()
-		Global.twinstotal = Global.twinstotal + 1
+

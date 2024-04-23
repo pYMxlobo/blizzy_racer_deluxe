@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8dvubms17oyx"
-path="res://.godot/imported/baddie2.png-6a225926d692a733406f6f8fa16309d6.ctex"
+uid="uid://b4wsli6wcgkik"
+path="res://.godot/imported/snowlayermiddle.png-070ccb33c6f08194b5374f008db6888f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/temp_or_other/baddie2.png"
-dest_files=["res://.godot/imported/baddie2.png-6a225926d692a733406f6f8fa16309d6.ctex"]
+source_file="res://sprites/stageassets/towerassets/snowlayermiddle.png"
+dest_files=["res://.godot/imported/snowlayermiddle.png-070ccb33c6f08194b5374f008db6888f.ctex"]
 
 [params]
 

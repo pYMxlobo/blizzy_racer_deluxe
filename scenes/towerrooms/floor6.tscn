@@ -1113,8 +1113,7 @@ rotate_speed_incr = 0.0
 
 [node name="switcher" type="Node2D" parent="."]
 script = ExtResource("20_4tn0p")
-connected_scene = "winner"
-scene_folder = "res://scenes/"
+connected_scene = "floor7"
 
 [connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Node2D2/Timer" to="Node2D2" method="_on_timer_timeout"]

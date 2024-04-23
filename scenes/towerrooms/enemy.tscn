@@ -1,21 +1,23 @@
-[gd_scene load_steps=26 format=3 uid="uid://eoloj1c3dknk"]
+[gd_scene load_steps=28 format=3 uid="uid://eoloj1c3dknk"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/testai.gd" id="1_1ba84"]
-[ext_resource type="Texture2D" uid="uid://cpj1mghuddc10" path="res://sprites/other/temp_or_other/baddie3.png" id="2_4bsks"]
-[ext_resource type="Texture2D" uid="uid://3cop2flwink1" path="res://sprites/other/temp_or_other/baddie.png" id="2_6b4sa"]
-[ext_resource type="Texture2D" uid="uid://bak7euq8kbl5x" path="res://sprites/other/temp_or_other/demon.png" id="3_o8hr7"]
-[ext_resource type="Texture2D" uid="uid://27fhnfw7duox" path="res://sprites/other/temp_or_other/chillguy.png" id="3_ourh0"]
+[ext_resource type="Texture2D" uid="uid://cpj1mghuddc10" path="res://sprites/character_assets/enemy/baddie3.png" id="2_kpph1"]
+[ext_resource type="Texture2D" uid="uid://27fhnfw7duox" path="res://sprites/character_assets/enemy/chillguy.png" id="3_5a0j4"]
 [ext_resource type="Script" path="res://scripts/enemyclipthrough.gd" id="3_qer27"]
-[ext_resource type="Texture2D" uid="uid://b8dvubms17oyx" path="res://sprites/other/temp_or_other/baddie2.png" id="3_siliy"]
-[ext_resource type="Texture2D" uid="uid://b7ueh5fc2e6wj" path="res://sprites/other/temp_or_other/baddie4.png" id="4_iuco6"]
+[ext_resource type="Texture2D" uid="uid://bak7euq8kbl5x" path="res://sprites/character_assets/enemy/demon.png" id="4_7fj0i"]
 [ext_resource type="Script" path="res://scripts/towerscripts/testaidamage.gd" id="4_ygwp1"]
+[ext_resource type="Texture2D" uid="uid://d437lbntyycy" path="res://sprites/character_assets/enemy/frostedsmall.png" id="5_6mg2g"]
 [ext_resource type="Script" path="res://scripts/towerscripts/testairecievedamage.gd" id="5_l6npc"]
 [ext_resource type="Script" path="res://scripts/towerscripts/Detect.gd" id="6_70ukf"]
 [ext_resource type="Texture2D" uid="uid://bw0xocbcd6lvu" path="res://sprites/ui/bars/enemyhealthunder.png" id="6_i3dg3"]
+[ext_resource type="Texture2D" uid="uid://b8dvubms17oyx" path="res://sprites/character_assets/enemy/baddie2.png" id="6_osu2g"]
 [ext_resource type="Script" path="res://scripts/towerscripts/Undetect.gd" id="7_8jqgt"]
 [ext_resource type="Texture2D" uid="uid://tvcgujxru3qc" path="res://sprites/ui/bars/enemyhealthover.png" id="7_jrqre"]
+[ext_resource type="Texture2D" uid="uid://b7ueh5fc2e6wj" path="res://sprites/character_assets/enemy/baddie4.png" id="7_pjdjf"]
+[ext_resource type="Texture2D" uid="uid://3cop2flwink1" path="res://sprites/character_assets/enemy/baddie.png" id="8_ow7tw"]
 [ext_resource type="Texture2D" uid="uid://b4m32wp04eesd" path="res://sprites/ui/bars/enemyhealthprogress.png" id="8_s7850"]
 [ext_resource type="Script" path="res://scripts/towerscripts/testaihealth.gd" id="9_df6ad"]
+[ext_resource type="AudioStream" uid="uid://bpeo2tv6k4qdn" path="res://audio/finaksfx/enemyhurt.mp3" id="12_fm8xe"]
 [ext_resource type="Script" path="res://scripts/towerscripts/enemyseerange.gd" id="12_wmxfr"]
 [ext_resource type="Script" path="res://scripts/towerscripts/enemyforgetrange.gd" id="13_yk4od"]
 [ext_resource type="Script" path="res://scripts/towerscripts/EnemyRegenTimer.gd" id="15_h1ufx"]
@@ -24,7 +26,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_4bsks")
+"texture": ExtResource("2_kpph1")
 }],
 "loop": true,
 "name": &"Blue",
@@ -32,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ourh0")
+"texture": ExtResource("3_5a0j4")
 }],
 "loop": true,
 "name": &"Chill",
@@ -40,7 +42,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_o8hr7")
+"texture": ExtResource("4_7fj0i")
 }],
 "loop": true,
 "name": &"Demon",
@@ -48,7 +50,15 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_siliy")
+"texture": ExtResource("5_6mg2g")
+}],
+"loop": true,
+"name": &"Frosted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_osu2g")
 }],
 "loop": true,
 "name": &"Green",
@@ -56,7 +66,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_iuco6")
+"texture": ExtResource("7_pjdjf")
 }],
 "loop": true,
 "name": &"Red",
@@ -64,7 +74,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6b4sa")
+"texture": ExtResource("8_ow7tw")
 }],
 "loop": true,
 "name": &"Yellow",
@@ -93,7 +103,8 @@ ID 1 = green
 ID 2 = blue
 ID 3 = red
 ID 4 = demon
-ID 5 = chill tutorial guy"
+ID 5 = chill tutorial guy
+ID 6 = frosted"
 collision_layer = 2
 collision_mask = 3
 motion_mode = 1
@@ -139,6 +150,18 @@ debug_color = Color(1, 0.411765, 0.380392, 0.419608)
 [node name="DamageCooldown" type="Timer" parent="Hurtbox"]
 autostart = true
 
+[node name="SoundWait" type="Timer" parent="Hurtbox"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Owie" type="AudioStreamPlayer2D" parent="Hurtbox"]
+stream = ExtResource("12_fm8xe")
+volume_db = 10.0
+pitch_scale = 2.23
+attenuation = 0.277392
+max_polyphony = 20
+bus = &"SFX"
+
 [node name="Detect" type="Area2D" parent="."]
 z_index = -910
 script = ExtResource("6_70ukf")
@@ -179,6 +202,7 @@ script = ExtResource("15_h1ufx")
 [connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="Hurtbox" to="Hurtbox" method="_on_body_shape_exited"]
 [connection signal="timeout" from="Hurtbox/DamageCooldown" to="Hurtbox" method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="Hurtbox/SoundWait" to="Hurtbox" method="_on_sound_wait_timeout"]
 [connection signal="body_shape_entered" from="Detect" to="Detect" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="Undetect" to="Undetect" method="_on_body_shape_exited"]
 [connection signal="timeout" from="EnemyRegenTimer" to="EnemyRegenTimer" method="_on_timeout"]
