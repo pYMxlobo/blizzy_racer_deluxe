@@ -199,6 +199,8 @@ zoom = Vector2(0.355, 0.355)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 script = ExtResource("5_fssjj")
+random_strength = 11.0
+shake_fade = 10.0
 
 [node name="Sky" type="Sprite2D" parent="Camera2D"]
 z_index = -4096

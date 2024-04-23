@@ -53,3 +53,5 @@ var fresh = true
 var update_temps = false
 
 var coin = 0
+
+var shake = false

@@ -80,9 +80,14 @@ func makepath() -> void:
 
 func _process(_delta):
 	if en_hehe <= 0:
+		OS.delay_msec(20)
+		$Hurtbox/SoundWait.stop()
+		$Area2D/ShakeTimer.stop()
+		player.shakestop()
 		print("death")
 		if enemy_count == true:
 			Global.enemy_total = Global.enemy_total - enemy_value
+			player.shakestop()
 		if death_stat_incr == true:
 			player.max_forward_speed = player.max_forward_speed + max_speed_incr
 			Global.max_health = Global.max_health + max_health_incr
@@ -90,6 +95,8 @@ func _process(_delta):
 			Global.max_drift = Global.max_drift + max_drift_incr
 			Global.player_attack = Global.player_attack + attack_incr
 			player.rotation_speed = player.rotation_speed + rotate_speed_incr
+			player.shakestop()
+		player.shakestop()
 		queue_free()
 	if Global.seeing == true:
 		$NavigationAgent2D.debug_enabled = true

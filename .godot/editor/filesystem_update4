@@ -80,3 +80,4 @@ res://scenes/towerrooms/floor7.tscn
 res://scripts/towerscripts/Pain.gd
 res://scripts/towerscripts/floor7.gd
 res://scripts/towerscripts/itemspawn.gd
+res://scripts/Camera2D.gd

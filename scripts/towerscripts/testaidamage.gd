@@ -31,8 +31,12 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 			random_window_pos()
 			print(Global.health)
 			$DamageCooldown.start()
+			$ShakeTimer.start()
+			Global.shake = true
 		else:
 			$DamageCooldown.start()
+			$ShakeTimer.start()
+			Global.shake = true
 #		elif Global.flash == true:
 #			get_parent().en_health = get_parent().en_health - Global.player_attack
 
@@ -43,3 +47,8 @@ func _on_damage_cooldown_timeout():
 
 func _on_body_shape_exited(_body_rid, _body, _body_shape_index, _local_shape_index):
 	$DamageCooldown.stop()
+	$ShakeTimer.stop()
+
+
+func _on_shake_timer_timeout():
+	Global.shake = false

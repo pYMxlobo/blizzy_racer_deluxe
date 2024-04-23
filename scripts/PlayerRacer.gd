@@ -222,6 +222,7 @@ func load_stats():
 	Global.fresh = false
 
 func _ready():
+	Global.shake = false
 	OS.delay_msec(40)
 	if Global.fresh == true:
 		load_stats()
@@ -427,6 +428,7 @@ func _on_warp_flash_timeout():
 	Global.flash = false
 
 
-
+func shakestop():
+	Global.shake = false
 
 

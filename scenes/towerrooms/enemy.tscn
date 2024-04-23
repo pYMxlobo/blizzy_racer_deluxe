@@ -140,6 +140,10 @@ script = ExtResource("3_qer27")
 [node name="DamageCooldown" type="Timer" parent="Area2D"]
 wait_time = 1.5
 
+[node name="ShakeTimer" type="Timer" parent="Area2D"]
+wait_time = 0.15
+one_shot = true
+
 [node name="Hurtbox" type="Area2D" parent="."]
 script = ExtResource("5_l6npc")
 
@@ -151,7 +155,7 @@ debug_color = Color(1, 0.411765, 0.380392, 0.419608)
 autostart = true
 
 [node name="SoundWait" type="Timer" parent="Hurtbox"]
-wait_time = 0.2
+wait_time = 0.15
 one_shot = true
 
 [node name="Owie" type="AudioStreamPlayer2D" parent="Hurtbox"]
@@ -199,6 +203,7 @@ script = ExtResource("15_h1ufx")
 [connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="Area2D" method="_on_body_shape_exited"]
 [connection signal="timeout" from="Area2D/DamageCooldown" to="Area2D" method="_on_damage_cooldown_timeout"]
+[connection signal="timeout" from="Area2D/ShakeTimer" to="Area2D" method="_on_shake_timer_timeout"]
 [connection signal="body_shape_entered" from="Hurtbox" to="Hurtbox" method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="Hurtbox" to="Hurtbox" method="_on_body_shape_exited"]
 [connection signal="timeout" from="Hurtbox/DamageCooldown" to="Hurtbox" method="_on_damage_cooldown_timeout"]

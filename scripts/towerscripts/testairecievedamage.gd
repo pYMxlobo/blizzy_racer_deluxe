@@ -14,6 +14,8 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 				get_parent().en_hehe = get_parent().en_hehe - (Global.player_attack * get_parent().weakness)
 				print(get_parent().en_hehe)
 				$SoundWait.start()
+				Global.shake = true
+
 
 func _on_damage_cooldown_timeout():
 	can_damage = true
@@ -31,8 +33,10 @@ func _on_body_shape_exited(_body_rid, body, body_shape_index, local_shape_index)
 				get_parent().en_hehe = get_parent().en_hehe - (Global.player_attack * get_parent().weakness)
 				print(get_parent().en_hehe)
 				$SoundWait.start()
+				Global.shake = true
 
 
 func _on_sound_wait_timeout():
 	OS.delay_msec(20)
 	$Owie.play()
+	Global.shake = false

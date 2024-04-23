@@ -1,5 +1,5 @@
-AudioStreamPlayer2D
 Timer
+AudioStreamPlayer2D
 NavigationRegion2D
 CollisionPolygon2D
 Area2D
@@ -12,4 +12,3 @@ Window
 PopupPanel
 Popup
 StaticBody2D
-AnimatedSprite2D
