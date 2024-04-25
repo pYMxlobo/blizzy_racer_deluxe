@@ -24,6 +24,6 @@ func _process(delta):
 		surebuddy(0)
 		get_tree().root
 		get_tree().change_scene_to_packed(lose)
-
+		Global.fresh = true
 
 

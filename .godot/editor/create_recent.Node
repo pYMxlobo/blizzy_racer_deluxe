@@ -1,3 +1,4 @@
+GPUParticles2D
 Timer
 AudioStreamPlayer2D
 NavigationRegion2D
@@ -11,4 +12,3 @@ Node
 Window
 PopupPanel
 Popup
-StaticBody2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://5ig03wmyusyv"]
+[gd_scene load_steps=42 format=3 uid="uid://5ig03wmyusyv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="1_voco8"]
 [ext_resource type="Shader" path="res://other/whiteflash.gdshader" id="2_r4eco"]
@@ -30,6 +30,8 @@
 [ext_resource type="AudioStream" uid="uid://csuu0bgpwwqqr" path="res://audio/finaksfx/warp2.mp3" id="25_yx7nr"]
 [ext_resource type="AudioStream" uid="uid://dl33po5l513qa" path="res://audio/finaksfx/ready.mp3" id="26_7i0pl"]
 [ext_resource type="Script" path="res://scripts/AutoRegen.gd" id="28_w0tc7"]
+[ext_resource type="Texture2D" uid="uid://btbwwaeky1rd1" path="res://sprites/character_assets/racer_other/sparks.png" id="31_f8d8g"]
+[ext_resource type="Script" path="res://scripts/turnparticles.gd" id="32_5j30b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_731qk"]
 shader = ExtResource("2_r4eco")
@@ -142,6 +144,49 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="Curve" id="Curve_yqcbr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.62, 0.428571), -3.53218, -3.53218, 0, 0, Vector2(0.84, 0.21978), -0.695971, -0.695971, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_doklj"]
+curve = SubResource("Curve_yqcbr")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_b8p7o"]
+
+[sub_resource type="Curve" id="Curve_el21w"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.366667, 46.1538), 0.0, 0.0, 0, 0, Vector2(1, 182.418), -291.631, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_otdfi"]
+curve = SubResource("Curve_el21w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6ns01"]
+particle_flag_disable_z = true
+angle_min = -10.0
+angle_max = 10.0
+directional_velocity_min = -30.0
+directional_velocity_max = 30.0
+directional_velocity_curve = SubResource("CurveXYZTexture_b8p7o")
+gravity = Vector3(0, 120.345, 0)
+linear_accel_min = 53.93
+linear_accel_max = 100.0
+linear_accel_curve = SubResource("CurveTexture_otdfi")
+radial_accel_min = -31.46
+radial_accel_max = 62.92
+damping_max = 31.461
+attractor_interaction_enabled = false
+scale_min = 0.6
+alpha_curve = SubResource("CurveTexture_doklj")
+hue_variation_max = 0.02
+turbulence_enabled = true
+turbulence_noise_scale = 0.894
+collision_mode = 1
+collision_friction = 0.29
+collision_bounce = 0.0
+collision_use_scale = true
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_voco8")
 
@@ -232,6 +277,36 @@ one_shot = true
 
 [node name="AutoRegen" type="Timer" parent="."]
 script = ExtResource("28_w0tc7")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -30
+position = Vector2(-64, 49)
+scale = Vector2(0.48, 0.48)
+emitting = false
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_6ns01")
+texture = ExtResource("31_f8d8g")
+lifetime = 0.5
+randomness = 0.49
+fixed_fps = 15
+interpolate = false
+local_coords = true
+script = ExtResource("32_5j30b")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+z_index = -30
+position = Vector2(61, 50)
+scale = Vector2(0.48, 0.48)
+emitting = false
+amount = 48
+process_material = SubResource("ParticleProcessMaterial_6ns01")
+texture = ExtResource("31_f8d8g")
+lifetime = 0.5
+randomness = 0.49
+fixed_fps = 15
+interpolate = false
+local_coords = true
+script = ExtResource("32_5j30b")
 
 [connection signal="finished" from="READY" to="." method="_on_ready_finished"]
 [connection signal="timeout" from="WarpFlash" to="." method="_on_warp_flash_timeout"]

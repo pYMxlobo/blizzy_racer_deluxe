@@ -38,7 +38,7 @@ var reward_multi : float = 1
 
 var darkness = 2.625
 
-
+var turning = false
 # this should be called when saving the players data
 func savetowerdata():
 	var file = FileAccess.open("user://tower.save", FileAccess.WRITE)
@@ -362,6 +362,7 @@ func movement(delta: float) -> void:
 			forward = 0
 		else:
 			if is_going == true:
+				turning = true
 				Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
 				rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
 				held_back = held_back - 0.02
@@ -370,13 +371,16 @@ func movement(delta: float) -> void:
 			forward = 0
 		else:
 			if is_going == true:
+				turning = true
 				Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
 				rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
 				held_back = held_back - 0.02
 	if Input.is_action_just_released("left"):
+		turning = false
 		if is_going == true:
 			releasethedrift()
 	if Input.is_action_just_released("right"):
+		turning = false
 		if is_going == true:
 			releasethedrift()
 	if Input.is_action_just_pressed("left"):

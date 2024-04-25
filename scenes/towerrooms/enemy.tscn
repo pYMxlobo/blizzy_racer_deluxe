@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://eoloj1c3dknk"]
+[gd_scene load_steps=36 format=3 uid="uid://eoloj1c3dknk"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/testai.gd" id="1_1ba84"]
 [ext_resource type="Texture2D" uid="uid://cpj1mghuddc10" path="res://sprites/character_assets/enemy/baddie3.png" id="2_kpph1"]
@@ -17,8 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://3cop2flwink1" path="res://sprites/character_assets/enemy/baddie.png" id="8_ow7tw"]
 [ext_resource type="Texture2D" uid="uid://b4m32wp04eesd" path="res://sprites/ui/bars/enemyhealthprogress.png" id="8_s7850"]
 [ext_resource type="Script" path="res://scripts/towerscripts/testaihealth.gd" id="9_df6ad"]
-[ext_resource type="AudioStream" uid="uid://bpeo2tv6k4qdn" path="res://audio/finaksfx/enemyhurt.mp3" id="12_fm8xe"]
+[ext_resource type="AudioStream" uid="uid://ddu58ru5gtodg" path="res://audio/finaksfx/enemyhurtpowerful.mp3" id="12_uqfo2"]
 [ext_resource type="Script" path="res://scripts/towerscripts/enemyseerange.gd" id="12_wmxfr"]
+[ext_resource type="Texture2D" uid="uid://21a5tlkw3laa" path="res://sprites/character_assets/enemy/hurtparticle.png" id="13_g4n24"]
 [ext_resource type="Script" path="res://scripts/towerscripts/enemyforgetrange.gd" id="13_yk4od"]
 [ext_resource type="Script" path="res://scripts/towerscripts/EnemyRegenTimer.gd" id="15_h1ufx"]
 
@@ -90,6 +91,52 @@ radius = 92.0054
 [sub_resource type="CircleShape2D" id="CircleShape2D_frt7r"]
 radius = 50.0
 
+[sub_resource type="Curve" id="Curve_ofgwx"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 90.1099), 0.0, -174.927, 0, 0, Vector2(1, 116.484), 144.231, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7sq4b"]
+curve = SubResource("Curve_ofgwx")
+
+[sub_resource type="Curve" id="Curve_340yy"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, -200), 0.0, -335.075, 0, 0, Vector2(0.266667, -147.253), 0.0, 0.0, 0, 0, Vector2(0.5, -41.7582), 0.0, 0.0, 0, 0, Vector2(0.806667, 6.59341), 0.0, 0.0, 0, 0, Vector2(1, 41.7582), -824.176, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_hjt1q"]
+curve = SubResource("Curve_340yy")
+
+[sub_resource type="Curve" id="Curve_0smpx"]
+max_value = 3.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.89011), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7f2mh"]
+curve = SubResource("Curve_0smpx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t3avo"]
+lifetime_randomness = 0.47
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+inherit_velocity_ratio = 1.137
+direction = Vector3(0, 0, 0)
+spread = 180.0
+linear_accel_curve = SubResource("CurveTexture_7sq4b")
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+radial_accel_curve = SubResource("CurveTexture_hjt1q")
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+attractor_interaction_enabled = false
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 2.0
+scale_over_velocity_curve = SubResource("CurveTexture_7f2mh")
+turbulence_influence_max = 0.521
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq212"]
 radius = 450.0
 
@@ -159,12 +206,24 @@ wait_time = 0.15
 one_shot = true
 
 [node name="Owie" type="AudioStreamPlayer2D" parent="Hurtbox"]
-stream = ExtResource("12_fm8xe")
-volume_db = 10.0
-pitch_scale = 2.23
+stream = ExtResource("12_uqfo2")
 attenuation = 0.277392
 max_polyphony = 20
 bus = &"SFX"
+
+[node name="HurtParticle" type="GPUParticles2D" parent="Hurtbox"]
+z_index = 90
+scale = Vector2(2, 2)
+emitting = false
+amount = 128
+process_material = SubResource("ParticleProcessMaterial_t3avo")
+texture = ExtResource("13_g4n24")
+lifetime = 0.15
+speed_scale = 0.35
+explosiveness = 0.49
+randomness = 0.67
+fixed_fps = 15
+interpolate = false
 
 [node name="Detect" type="Area2D" parent="."]
 z_index = -910
