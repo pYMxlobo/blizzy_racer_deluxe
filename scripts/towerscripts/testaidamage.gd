@@ -27,7 +27,7 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 	var _local_shape_node = shape_owner_get_owner(local_shape_owner)
 	if body.name == "Player":
 		if Global.flash == false:
-			Global.health = Global.health - (get_parent().en_attack_damage * 0.9)
+			Global.health = Global.health - (((get_parent().en_attack_damage * 0.9) * get_parent().player.defense) - get_parent().player.flat_defense) 
 			random_window_pos()
 			print(Global.health)
 			$DamageCooldown.start()
@@ -41,7 +41,7 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 #			get_parent().en_health = get_parent().en_health - Global.player_attack
 
 func _on_damage_cooldown_timeout():
-	Global.health = Global.health - get_parent().en_attack_damage
+	Global.health = Global.health - ((get_parent().en_attack_damage * get_parent().player.defense) - get_parent().player.flat_defense) 
 	random_window_pos()
 	print(Global.health)
 

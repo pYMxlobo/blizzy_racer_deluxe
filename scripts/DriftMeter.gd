@@ -6,9 +6,11 @@ func _ready():
 	max_value = Global.max_drift
 
 
-func _process(delta):
+func _process(_delta):
 	max_value = Global.max_drift
 	value = Global.drift_charge
+	if Global.see_bars == true:
+		tooltip_text = str(Global.drift_charge)
 #	parent_rotation = get_parent().rotation
 #	rotation = rotation - parent_rotation
 

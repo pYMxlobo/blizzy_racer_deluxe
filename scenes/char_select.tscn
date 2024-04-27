@@ -26,10 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://ddus3gxh4dfa" path="res://audio/finaksfx/penvort-select.wav" id="17_shphh"]
 [ext_resource type="Texture2D" uid="uid://cnpsp5gym1eo4" path="res://sprites/character_assets/robot/Robothover.png" id="18_irl2k"]
 [ext_resource type="Script" path="res://scripts/Bane_Select.gd" id="18_y5t1c"]
-[ext_resource type="Script" path="res://scripts/Difficulty_Set.gd" id="20_27wdd"]
 [ext_resource type="AudioStream" uid="uid://bh8c8f5f8axbo" path="res://audio/finaksfx/oart-select.wav" id="20_oupj0"]
 [ext_resource type="Texture2D" uid="uid://cpvu6oxw27d0t" path="res://sprites/character_assets/germ/Germ.png" id="21_qaf2b"]
-[ext_resource type="Script" path="res://scripts/setlaps.gd" id="21_w5cpy"]
 [ext_resource type="Texture2D" uid="uid://cnbwmwftdv5di" path="res://sprites/character_assets/germ/Germpressed.png" id="22_ew5mp"]
 [ext_resource type="AudioStream" uid="uid://4gis2grff87j" path="res://audio/finaksfx/will-select.wav" id="23_25rve"]
 [ext_resource type="Texture2D" uid="uid://c05pfgvcb86ta" path="res://sprites/character_assets/germ/Germhover.png" id="23_m8py1"]
@@ -54,6 +52,8 @@
 [ext_resource type="Texture2D" uid="uid://ch42awuyk6dvy" path="res://sprites/ui/menu_assets/selectscreen.png" id="47_ciklh"]
 [ext_resource type="Script" path="res://scripts/Label3.gd" id="52_2c3wb"]
 [ext_resource type="Script" path="res://scripts/Label4.gd" id="53_4nfq1"]
+[ext_resource type="Script" path="res://scripts/DifficultySelect.gd" id="55_rteww"]
+[ext_resource type="Script" path="res://scripts/LapSelect.gd" id="56_n6vjc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jf7ln"]
 shader = ExtResource("35_njfwq")
@@ -271,34 +271,6 @@ z_index = -4096
 position = Vector2(480, 320)
 texture = ExtResource("47_ciklh")
 
-[node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 859.0
-offset_top = 603.0
-offset_right = 952.0
-offset_bottom = 634.0
-size_flags_horizontal = 8
-text = "20"
-placeholder_text = "Difficulty"
-alignment = 2
-expand_to_text_length = true
-virtual_keyboard_type = 2
-drag_and_drop_selection_enabled = false
-script = ExtResource("20_27wdd")
-
-[node name="LineEdit2" type="LineEdit" parent="."]
-offset_left = 858.0
-offset_top = 564.0
-offset_right = 951.0
-offset_bottom = 595.0
-size_flags_horizontal = 8
-text = "3"
-placeholder_text = "Lap Total"
-alignment = 2
-expand_to_text_length = true
-virtual_keyboard_type = 2
-drag_and_drop_selection_enabled = false
-script = ExtResource("21_w5cpy")
-
 [node name="Label" type="Label" parent="."]
 offset_right = 959.0
 offset_bottom = 23.0
@@ -347,6 +319,33 @@ stream = ExtResource("36_ix08o")
 autoplay = true
 bus = &"Music"
 
+[node name="LapSelect" type="SpinBox" parent="."]
+offset_left = 876.0
+offset_top = 564.0
+offset_right = 960.0
+offset_bottom = 595.0
+min_value = 2.0
+max_value = 21.0
+value = 3.0
+alignment = 2
+update_on_text_changed = true
+prefix = "Laps :"
+script = ExtResource("56_n6vjc")
+
+[node name="DifficultySelect" type="SpinBox" parent="."]
+offset_left = 846.0
+offset_top = 603.0
+offset_right = 960.0
+offset_bottom = 634.0
+min_value = 10.0
+max_value = 60.0
+step = 0.1
+value = 20.0
+alignment = 2
+update_on_text_changed = true
+prefix = "Difficulty :"
+script = ExtResource("55_rteww")
+
 [connection signal="mouse_entered" from="Blizzy_Select" to="Blizzy_Select" method="_on_mouse_entered"]
 [connection signal="pressed" from="Blizzy_Select" to="Blizzy_Select" method="_on_pressed"]
 [connection signal="mouse_entered" from="Yogu_Select" to="Yogu_Select" method="_on_mouse_entered"]
@@ -363,7 +362,5 @@ bus = &"Music"
 [connection signal="pressed" from="Will_Select" to="Will_Select" method="_on_pressed"]
 [connection signal="mouse_entered" from="Bane_Select" to="Bane_Select" method="_on_mouse_entered"]
 [connection signal="pressed" from="Bane_Select" to="Bane_Select" method="_on_pressed"]
-[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_text_changed"]
-[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
-[connection signal="text_changed" from="LineEdit2" to="LineEdit2" method="_on_text_changed"]
-[connection signal="text_submitted" from="LineEdit2" to="LineEdit2" method="_on_text_submitted"]
+[connection signal="value_changed" from="LapSelect" to="LapSelect" method="_on_value_changed"]
+[connection signal="value_changed" from="DifficultySelect" to="DifficultySelect" method="_on_value_changed"]

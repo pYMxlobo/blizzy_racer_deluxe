@@ -12,6 +12,7 @@ func _on_body_shape_entered(_body_rid, body, body_shape_index, local_shape_index
 		if can_damage == true:
 			if Global.flash == true:
 				get_parent().en_hehe = get_parent().en_hehe - (Global.player_attack * get_parent().weakness)
+				Global.health = Global.health + ((Global.player_attack * get_parent().weakness) * (get_parent().player.hp_steal / 100))
 				print(get_parent().en_hehe)
 				$SoundWait.start()
 				$HurtParticle.emitting = true
@@ -32,6 +33,7 @@ func _on_body_shape_exited(_body_rid, body, body_shape_index, local_shape_index)
 		if can_damage == true:
 			if Global.flash == true:
 				get_parent().en_hehe = get_parent().en_hehe - (Global.player_attack * get_parent().weakness)
+				Global.health = Global.health + ((Global.player_attack * get_parent().weakness) * (get_parent().player.hp_steal / 100))
 				print(get_parent().en_hehe)
 				$SoundWait.start()
 				$HurtParticle.emitting = true

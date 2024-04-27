@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/sky above the sky.mp3-c63637afb187af7b3ab6062
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=14.0
+bpm=0.0
 beat_count=0
 bar_beats=4

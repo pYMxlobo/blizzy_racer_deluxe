@@ -1,22 +1,41 @@
-[gd_scene load_steps=17 format=3 uid="uid://dghkolp8poebe"]
+[gd_scene load_steps=28 format=3 uid="uid://dghkolp8poebe"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/itemspawn.gd" id="1_4n2ua"]
 [ext_resource type="Texture2D" uid="uid://oc8jy2gji3dt" path="res://sprites/stageassets/pickups/axel.png" id="1_b76gt"]
 [ext_resource type="Texture2D" uid="uid://cxlhw05bobgo3" path="res://sprites/stageassets/pickups/battery.png" id="2_nl772"]
+[ext_resource type="Texture2D" uid="uid://dve71hrrd3rlv" path="res://sprites/stageassets/pickups/armor.png" id="2_vxcn2"]
 [ext_resource type="Texture2D" uid="uid://blfw3mdhepadp" path="res://sprites/stageassets/pickups/brakefluid.png" id="3_uvm7q"]
 [ext_resource type="Texture2D" uid="uid://2m61ipoo4dtp" path="res://sprites/stageassets/pickups/eyesoftruth.png" id="4_mgqoy"]
 [ext_resource type="Texture2D" uid="uid://7bai2m4jobir" path="res://sprites/stageassets/pickups/blackhole.png" id="4_mtrqg"]
 [ext_resource type="Texture2D" uid="uid://354xfuhfahca" path="res://sprites/stageassets/pickups/gear.png" id="5_pbe3k"]
+[ext_resource type="Texture2D" uid="uid://dfat50b0h6eqc" path="res://sprites/stageassets/pickups/bracelet.png" id="6_o40cb"]
 [ext_resource type="Texture2D" uid="uid://8hs03x5flsbf" path="res://sprites/stageassets/pickups/metalplate.png" id="6_tk8o7"]
 [ext_resource type="Texture2D" uid="uid://dko5up7lejps5" path="res://sprites/stageassets/pickups/coin.png" id="6_xlv7r"]
 [ext_resource type="Texture2D" uid="uid://dnyppala0ut2b" path="res://sprites/stageassets/pickups/oil.png" id="7_1yj3r"]
 [ext_resource type="Texture2D" uid="uid://bsntjmdlqiyhn" path="res://sprites/stageassets/pickups/theorb.png" id="8_4qx86"]
+[ext_resource type="Texture2D" uid="uid://c7sw47vsno0ex" path="res://sprites/stageassets/pickups/cloak.png" id="8_vi5ks"]
 [ext_resource type="Texture2D" uid="uid://ba4rwsvs242he" path="res://sprites/stageassets/pickups/jam.png" id="9_axiqr"]
 [ext_resource type="Texture2D" uid="uid://c5u4ifiaebq40" path="res://sprites/stageassets/pickups/voidbox.png" id="9_krslj"]
+[ext_resource type="Texture2D" uid="uid://bouwgbo4ja3wu" path="res://sprites/stageassets/pickups/crystal.png" id="10_j56jy"]
 [ext_resource type="Texture2D" uid="uid://b8ber83ypric5" path="res://sprites/stageassets/pickups/wrench.png" id="12_84o7l"]
+[ext_resource type="Texture2D" uid="uid://ck0rq15j7lhxw" path="res://sprites/stageassets/pickups/glasses.png" id="13_yh11k"]
+[ext_resource type="Texture2D" uid="uid://ktl0h5kxe1n8" path="res://sprites/stageassets/pickups/pillow.png" id="17_kq1j1"]
+[ext_resource type="Texture2D" uid="uid://q2anxljjy2fc" path="res://sprites/stageassets/pickups/eyethatseesthrough.png" id="18_bgljp"]
+[ext_resource type="Texture2D" uid="uid://c3ufn1kh1q7xy" path="res://sprites/stageassets/pickups/shield.png" id="19_w1kln"]
+[ext_resource type="Texture2D" uid="uid://b3xk2toq4hpmf" path="res://sprites/stageassets/pickups/sledgehammer.png" id="20_clek1"]
+[ext_resource type="Texture2D" uid="uid://qugmey6a263f" path="res://sprites/stageassets/pickups/syringe.png" id="21_j26em"]
+[ext_resource type="Texture2D" uid="uid://cbllylm1oyl0h" path="res://sprites/stageassets/pickups/vampirejaw.png" id="23_77r6u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hadi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vxcn2")
+}],
+"loop": true,
+"name": &"Armor",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_b76gt")
@@ -43,11 +62,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_o40cb")
+}],
+"loop": true,
+"name": &"Bracelet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("3_uvm7q")
 }],
 "loop": true,
 "name": &"BrakeFluid",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vi5ks")
+}],
+"loop": true,
+"name": &"Cloak",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -59,11 +94,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_j56jy")
+}],
+"loop": true,
+"name": &"Crystal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_mgqoy")
 }],
 "loop": true,
 "name": &"EyesofTruth",
 "speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Flashlight",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -75,10 +123,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_yh11k")
+}],
+"loop": true,
+"name": &"Glasses",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("9_axiqr")
 }],
 "loop": true,
 "name": &"Jam",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Lance",
 "speed": 5.0
 }, {
 "frames": [{
@@ -99,11 +160,67 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("17_kq1j1")
+}],
+"loop": true,
+"name": &"Pillow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_bgljp")
+}],
+"loop": true,
+"name": &"SeeThrough",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_w1kln")
+}],
+"loop": true,
+"name": &"Shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_clek1")
+}],
+"loop": true,
+"name": &"Sledgehammer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tk8o7")
+}],
+"loop": true,
+"name": &"SteelPlate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_j26em")
+}],
+"loop": true,
+"name": &"Syringe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("8_4qx86")
 }],
 "loop": true,
 "name": &"TheOrb",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_77r6u")
+}],
+"loop": true,
+"name": &"VampireJaw",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -139,7 +256,21 @@ ID 8 = voidbox
 ID 9 = wrench
 ID 10 = black hole
 ID 11 = coin
-ID 12 = jam"
+ID 12 = jam
+ID 13 = armor
+ID 14 = cloak
+ID 15 = lance
+ID 16 = pillow
+ID 17 = bracelet
+ID 18 = crystal
+ID 19 = shield
+ID 20 = flashlight
+ID 21 = broken sowwy :3c
+ID 22 = steel plate
+ID 23 = glasses
+ID 24 = sledgehammer
+ID 25 = syringe
+ID 26 = vampire jaw"
 script = ExtResource("1_4n2ua")
 
 [node name="Item" type="AnimatedSprite2D" parent="."]

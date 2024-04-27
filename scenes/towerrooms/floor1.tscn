@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bbh3kjtx43xy3"]
+[gd_scene load_steps=28 format=3 uid="uid://bbh3kjtx43xy3"]
 
 [ext_resource type="Script" path="res://scripts/towerscripts/testroom.gd" id="1_ngm4d"]
 [ext_resource type="Texture2D" uid="uid://dw66ppsorvykk" path="res://sprites/stageassets/towerassets/towerlevel1.png" id="2_3ncjk"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="18_88hnb"]
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="19_trmgg"]
 [ext_resource type="Script" path="res://scripts/switcher.gd" id="20_jvfe7"]
+[ext_resource type="Script" path="res://scripts/itempopup.gd" id="21_4xpaw"]
+[ext_resource type="Texture2D" uid="uid://dcxjvvd2b0urf" path="res://sprites/stageassets/towerassets/towerpanelempty.png" id="21_toc3a"]
+[ext_resource type="PackedScene" uid="uid://dloabtqvsddqf" path="res://scenes/itemgetscreen.tscn" id="22_pl6j4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0s14"]
 shader = ExtResource("3_8l7cj")
@@ -96,6 +99,73 @@ vertices = PackedVector2Array(3022, -3188, 3790, -3185, 3789, -3185, 4587, -5713
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 10, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 16, 17), PackedInt32Array(18, 19, 20), PackedInt32Array(21, 22, 23), PackedInt32Array(24, 25, 26), PackedInt32Array(27, 28, 29), PackedInt32Array(30, 31, 32), PackedInt32Array(33, 34, 35, 36), PackedInt32Array(37, 38, 39), PackedInt32Array(40, 41, 42), PackedInt32Array(43, 40, 42, 44, 45), PackedInt32Array(46, 47, 48, 49, 50), PackedInt32Array(51, 52, 9, 11, 30), PackedInt32Array(36, 35, 53, 0), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(54, 57, 62), PackedInt32Array(63, 54, 62, 64), PackedInt32Array(65, 66, 67, 68, 69, 70), PackedInt32Array(71, 65, 70, 72, 73), PackedInt32Array(74, 73, 72, 75, 76), PackedInt32Array(77, 76, 75, 78, 79), PackedInt32Array(48, 47, 80, 81, 82), PackedInt32Array(83, 84, 85, 86), PackedInt32Array(87, 83, 86, 88), PackedInt32Array(89, 90, 91, 92, 93), PackedInt32Array(94, 95, 96, 97), PackedInt32Array(98, 99, 100, 101, 102), PackedInt32Array(103, 104, 105, 106, 107), PackedInt32Array(108, 109, 110, 111, 112), PackedInt32Array(29, 108, 112, 113, 27), PackedInt32Array(114, 115, 116, 117, 118), PackedInt32Array(114, 118, 119, 120), PackedInt32Array(121, 120, 119, 122), PackedInt32Array(121, 122, 123, 124), PackedInt32Array(125, 124, 123, 126, 127), PackedInt32Array(125, 127, 128, 129), PackedInt32Array(130, 129, 128), PackedInt32Array(131, 132, 133, 134), PackedInt32Array(135, 136, 137, 138, 139), PackedInt32Array(140, 141, 142, 143), PackedInt32Array(143, 142, 144, 145), PackedInt32Array(146, 147, 148, 149), PackedInt32Array(150, 149, 148, 151), PackedInt32Array(152, 150, 151, 153), PackedInt32Array(154, 152, 153, 155, 156), PackedInt32Array(154, 156, 157, 158), PackedInt32Array(159, 160, 161, 162, 163), PackedInt32Array(164, 165, 51, 166), PackedInt32Array(167, 166, 51), PackedInt32Array(168, 169, 170, 171), PackedInt32Array(172, 171, 170, 173), PackedInt32Array(173, 170, 174, 175), PackedInt32Array(176, 175, 174), PackedInt32Array(177, 176, 174, 178), PackedInt32Array(179, 177, 178, 180), PackedInt32Array(107, 181, 103), PackedInt32Array(182, 107, 106), PackedInt32Array(182, 106, 0, 53), PackedInt32Array(183, 184, 185, 26), PackedInt32Array(186, 187, 188, 189), PackedInt32Array(190, 189, 188, 191), PackedInt32Array(192, 190, 191), PackedInt32Array(192, 191, 193, 194), PackedInt32Array(195, 158, 157, 196, 197), PackedInt32Array(198, 199, 200, 201), PackedInt32Array(202, 27, 113), PackedInt32Array(202, 113, 203, 204), PackedInt32Array(130, 128, 204, 203, 205), PackedInt32Array(206, 207, 208, 209), PackedInt32Array(210, 209, 208), PackedInt32Array(210, 208, 211, 212), PackedInt32Array(213, 214, 215, 216), PackedInt32Array(216, 215, 217, 40), PackedInt32Array(43, 216, 40), PackedInt32Array(218, 219, 220, 221, 222, 223), PackedInt32Array(211, 224, 225, 226, 212), PackedInt32Array(227, 228, 229, 24, 230), PackedInt32Array(231, 232, 233, 234), PackedInt32Array(234, 233, 235), PackedInt32Array(236, 234, 235, 237), PackedInt32Array(238, 36, 0, 2), PackedInt32Array(239, 238, 2), PackedInt32Array(240, 239, 2, 241), PackedInt32Array(240, 241, 242, 243), PackedInt32Array(244, 167, 51, 30, 32), PackedInt32Array(230, 194, 193, 245), PackedInt32Array(246, 247, 248, 249), PackedInt32Array(250, 246, 249, 251), PackedInt32Array(252, 253, 254, 255), PackedInt32Array(243, 242, 256), PackedInt32Array(243, 256, 257), PackedInt32Array(258, 259, 12, 260), PackedInt32Array(18, 20, 260, 12, 14, 261), PackedInt32Array(18, 261, 262, 263), PackedInt32Array(26, 185, 264, 24), PackedInt32Array(24, 264, 265, 230), PackedInt32Array(227, 230, 245, 266), PackedInt32Array(266, 245, 102, 101), PackedInt32Array(98, 102, 267), PackedInt32Array(268, 269, 270, 271), PackedInt32Array(272, 273, 274, 275), PackedInt32Array(276, 275, 274, 277, 278), PackedInt32Array(278, 277, 279), PackedInt32Array(278, 279, 280, 281), PackedInt32Array(282, 281, 280, 283), PackedInt32Array(284, 285, 286, 287), PackedInt32Array(288, 287, 286, 3), PackedInt32Array(289, 290, 288, 3, 5, 291), PackedInt32Array(292, 289, 291, 293, 294), PackedInt32Array(295, 296, 292, 294, 297), PackedInt32Array(298, 295, 297, 299, 300, 301), PackedInt32Array(302, 265, 264, 303, 134), PackedInt32Array(60, 304, 61), PackedInt32Array(305, 306, 307, 308), PackedInt32Array(309, 310, 311, 312, 21), PackedInt32Array(218, 223, 313, 314), PackedInt32Array(41, 315, 316, 317, 318), PackedInt32Array(319, 320, 321, 322, 323), PackedInt32Array(324, 319, 323, 325, 326), PackedInt32Array(324, 326, 327, 328), PackedInt32Array(303, 329, 328, 327, 330, 331), PackedInt32Array(89, 93, 332, 333), PackedInt32Array(334, 333, 332, 335), PackedInt32Array(336, 337, 338, 339, 340, 341), PackedInt32Array(341, 340, 139, 342), PackedInt32Array(343, 344, 345, 346), PackedInt32Array(347, 348, 349, 64), PackedInt32Array(350, 351, 352, 353), PackedInt32Array(354, 355, 356, 267), PackedInt32Array(97, 96, 357, 358), PackedInt32Array(358, 357, 347, 64), PackedInt32Array(359, 360, 361, 362, 363), PackedInt32Array(364, 365, 366, 367), PackedInt32Array(364, 367, 368, 162), PackedInt32Array(162, 368, 369), PackedInt32Array(237, 370, 371, 270, 372, 236), PackedInt32Array(373, 283, 374, 375, 376), PackedInt32Array(283, 377, 378, 354, 267, 282), PackedInt32Array(379, 380, 381, 382), PackedInt32Array(50, 379, 382, 383, 46), PackedInt32Array(384, 385, 386, 387), PackedInt32Array(77, 79, 252, 255), PackedInt32Array(388, 77, 255, 389), PackedInt32Array(388, 389, 390), PackedInt32Array(391, 392, 393, 394, 395), PackedInt32Array(130, 205, 396, 397, 251), PackedInt32Array(398, 399, 131, 134, 303), PackedInt32Array(400, 401, 402, 403, 180), PackedInt32Array(178, 400, 180), PackedInt32Array(179, 180, 404, 405), PackedInt32Array(300, 406, 301), PackedInt32Array(390, 300, 299, 45), PackedInt32Array(388, 390, 45, 407), PackedInt32Array(407, 45, 44, 408), PackedInt32Array(48, 82, 409), PackedInt32Array(410, 48, 409, 411, 412), PackedInt32Array(32, 413, 414, 415, 244), PackedInt32Array(416, 244, 415, 342), PackedInt32Array(416, 342, 139, 138), PackedInt32Array(417, 418, 419, 420), PackedInt32Array(412, 421, 350, 410), PackedInt32Array(61, 359, 363, 422, 407, 58), PackedInt32Array(423, 424, 425, 426, 427), PackedInt32Array(428, 429, 423, 427, 430, 431), PackedInt32Array(431, 430, 432, 433), PackedInt32Array(433, 432, 434, 435), PackedInt32Array(435, 434, 158, 313), PackedInt32Array(314, 313, 158), PackedInt32Array(195, 314, 158), PackedInt32Array(405, 404, 436, 305, 437), PackedInt32Array(438, 58, 407, 408, 197, 439), PackedInt32Array(196, 439, 197), PackedInt32Array(195, 197, 42, 41), PackedInt32Array(318, 195, 41), PackedInt32Array(440, 318, 317), PackedInt32Array(372, 440, 317, 236), PackedInt32Array(271, 270, 371, 384), PackedInt32Array(387, 271, 384), PackedInt32Array(441, 387, 386, 6), PackedInt32Array(442, 441, 6, 8), PackedInt32Array(257, 442, 8), PackedInt32Array(443, 243, 257, 8, 444), PackedInt32Array(445, 443, 444), PackedInt32Array(445, 444, 446, 447), PackedInt32Array(448, 447, 446), PackedInt32Array(383, 448, 446, 46), PackedInt32Array(379, 50, 449), PackedInt32Array(352, 379, 449, 420), PackedInt32Array(352, 420, 419, 353), PackedInt32Array(350, 353, 410), PackedInt32Array(450, 412, 411, 451), PackedInt32Array(450, 451, 452, 453), PackedInt32Array(454, 453, 452, 335, 455), PackedInt32Array(145, 144, 456), PackedInt32Array(391, 395, 457, 458), PackedInt32Array(455, 459, 460, 461, 454), PackedInt32Array(18, 263, 37, 462), PackedInt32Array(463, 437, 305), PackedInt32Array(64, 349, 464, 63), PackedInt32Array(465, 63, 464, 466), PackedInt32Array(467, 468, 465, 466, 469), PackedInt32Array(467, 469, 470, 471), PackedInt32Array(472, 98, 267, 356), PackedInt32Array(473, 212, 226, 456), PackedInt32Array(474, 87, 88, 201, 200, 475), PackedInt32Array(226, 145, 456), PackedInt32Array(473, 456, 476), PackedInt32Array(473, 476, 477, 478), PackedInt32Array(478, 477, 479), PackedInt32Array(462, 250, 251, 18), PackedInt32Array(478, 479, 480), PackedInt32Array(39, 478, 480, 481, 37), PackedInt32Array(37, 481, 462), PackedInt32Array(397, 18, 251), PackedInt32Array(482, 205, 203), PackedInt32Array(482, 203, 472, 356), PackedInt32Array(373, 377, 283), PackedInt32Array(483, 376, 375, 484), PackedInt32Array(161, 483, 484, 162), PackedInt32Array(163, 463, 305, 159), PackedInt32Array(162, 369, 163), PackedInt32Array(308, 159, 305), PackedInt32Array(485, 308, 307), PackedInt32Array(486, 485, 307, 487), PackedInt32Array(488, 486, 487, 489), PackedInt32Array(489, 487, 87, 474), PackedInt32Array(490, 475, 200, 471, 491), PackedInt32Array(492, 491, 471, 470), PackedInt32Array(135, 492, 470, 15, 136), PackedInt32Array(302, 136, 15, 17, 265), PackedInt32Array(493, 494, 495, 391, 458), PackedInt32Array(331, 398, 303), PackedInt32Array(331, 330, 496, 497), PackedInt32Array(497, 496, 498, 499), PackedInt32Array(457, 499, 498, 458), PackedInt32Array(494, 493, 500, 501), PackedInt32Array(501, 500, 502, 503), PackedInt32Array(311, 503, 502, 312), PackedInt32Array(312, 504, 21), PackedInt32Array(505, 309, 21, 23, 334, 335), PackedInt32Array(335, 332, 506), PackedInt32Array(455, 335, 506, 507), PackedInt32Array(455, 507, 508), PackedInt32Array(455, 508, 509, 510, 345), PackedInt32Array(345, 510, 511), PackedInt32Array(345, 511, 346), PackedInt32Array(343, 346, 512)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1136, -1824, -1318, -1201, -2513, -1184, -2424, 469, -2072, 528, -1996, -374, -1776, -387, -1822, 507, 441, 672, 1428, 838, 1437, 1062, 475, 944, -280, 999, -68, 1779, 250, 1668, 2115, 1914, 2246, 592, 674, 249, 318, 278, 263, 219, 725, -167, 1000, -90, 1161, -128, 2657, 50, 2424, 2181, 1525, 2130, 1259, 3393, 1186, 4856, 2153, 5048, 2227, 3034, 3521, 3172, 3423, 5465, 3423, 5525, 4139, 5243, 4816, 5237, 4864, 4161, 4960, 3310, 4501, 3355, 4076, 3469, 4103, 4338, 4022, 4368, 3944, 3466, 3947, 2951, 4849, 2936, 4816, 2573, 3890, 2555, 3084, 2603, 2275, 2651, 1964, 2747, 1868, 3212, 1700, 4353, 1520, 4323, 1927, 2354, 2979, 2450, 2940, 1881, 3060, 1842, 3186, 1872, 3207, 2360, 5754, 2408, 5748, 1689, 4813, 1854, 3881, 1833, 3839, 1320, 3015, 1284, 3054, 776, 3500, 960, 4852, 1050, 4956, -255, 4144, -246, 3589, -295, 3473, -200, 3498, 253, 4140, 334, 4144, 421, 3513, 513, 3500, 960, 3053.66, 776.032, 3144, -411, 1588, -502, 1598, -706, 2830, -678, 3733, -797, 3757, -1510, 4837, -1296, 5460, -1301, 5570, -1605, 5570, -2985, 4864, -3022, 3730, -3064, 3033, -2991, 3031, -2646, 2895, -2087, 2942, -2693, 2895, -3055, 2415, -3068, 2358, -3020, 2333, -2693, 2276, -2706, 2295, -3347, 2355, -3331, 2381, -3179, 3022, -3198, 3790, -3195, 4450, -3135, 4875, -3107, 5728, -3119, 5783, -3245, 5747, -3962, 5289, -3964, 5301, -3760, 5561, -3770, 5561, -3298, 3653, -3424, 2561, -3356, 2484, -4028, 2127, -3994, 2094, -2503, 2455, -2454, 2530, -2816, 2708, -2829, 2659, -1872, 2491, -1882, 2457, -2367, 2093, -2372, 2142, -1450, 2882, -1460, 3181, -2348, 3210, -2795, 4185, -2893, 5347, -2797, 5334, -1488, 5044, -1445, 4905, -1495, 4959, -2370, 3385, -2296, 3096, -1268, 1968, -1202, 1919, -3213, 786, -3134, 752, -2831, 1557, -2808, 1559, -1268, 1144, -1295, 1084, -1473, 1370, -1516, 1417, -2719, 578, -2706, 533, -3230, 584, -3279, 1139, -3283, 1212, -3609, 722, -3717, 241.996, -3696.09, 38, -3956, 1904, -3952, 1910, -4405, 36, -4400, 38, -3956, 242, -3696, 148, -3692, 139, -2501, -45, -2586, -331, -2596, -255, -3382, -763, -3312, -926, -2812, -1043, -2819, -1003, -3293, -865, -3609, -865, -3736, -390, -3827, -355, -5062, -1902, -5051, -1877, -4092, -2202, -4054, -2928, -4096, -2911, -4538, -2821, -5079, -2862, -5893, -2815, -6019, -2596, -6082, -2626, -5449, -2649, -4989, -2683, -4381, -2141, -4381, -2115, -5100, -2032, -5589, -1552, -5580, -1535, -5940, -1377, -5918, -1435, -5355, -873, -5242, -327, -5219, -303, -5644, -841, -5672, -848, -5933, -322, -5989, 715, -5878, 1342, -5965, 2440, -6025, 3124, -6089, 4145, -6069, 5019, -6031, 5593, -6026, 5622, -5096, 5282, -5090, 5315, -5773, 4588, -5703, 3297, -5682, 2691, -5646, 1351, -5652, 4, -5573, -169, -4629, 987, -4577, 1032, -4958, 494, -4964, 492, -5147, 1014, -5083, 1572, -5114, 1552, -4527, 2204, -4584, 2236, -5133, 2744, -5158, 2735, -3788, 3151, -3763, 3260, -5067, 4590, -5093, 4595, -4702, 4285, -4730, 3557, -4604, 3547, -4296, 4484, -4301, 4482, -3893, 5016, -3898, 5031, -4596, 5920, -4591, 5991, -3979, 6026, -2081, 5747, -1116, 4232, -1043, 4222, -622, 5734, -675, 5895, 340, 5832, 398, 5326, 408, 5197, 491, 5278, 1275, 6059, 1270, 5941, 2580, 5429, 2575, 5452, 3886, 5139, 5193, 5149, 5929, 3169, 5836, 3323, 4763, 3320, 3830, 2660, 3815, 2632, 4879, 2564, 5015, 2854, 5085, 2617, 6239, 2347, 6219, 2375, 5388, 1649, 5234, 755, 5352, 813, 4291, 944, 2069, 510, 2066, 369, 2606, 125, 2653, 142, 2878, -87, 2845, -54, 2021, -465, 1986, -750, 4075, -442, 4057, -535, 4687, -417, 4813, 216, 4800, 265, 3531, 92, 3483, -388, 3495, -399, 3386, 278, 3429, 283, 3169, 545, 2873, 529, 3434, 475, 4270, 369, 4977, 307, 5315, 119, 5323, 73, 4967, -453, 4977, -445, 5775, 391, 5733, 1607, 5695, 1605, 5901, 455, 5927, -923, 5891, -999, 4829, -1071, 4131, -1581, 4149, -1571, 6195, -2777, 6429, -4053, 6237, -5187, 6221, -5557, 6431, -6403, 6471, -6093, 5075, -5587, 5019, -5465, 4039, -6007, 4107, -5945, 2662, -5645, 2893, -5092, 3020, -5018, 2083, -4779, 2103, -4854, 3118, -5367, 3101, -5508, 3151, -5530, 3531, -5484, 3564, -5360, 3584, -4305, 3615, -4286, 3571, -4274, 3086, -3422, 3042, -3217, 2998, -2097, 2985, -2015, 5213, -2285, 5264, -2323, 3359, -4139, 3409, -4104, 3860, -3901, 3930, -2910, 4019, -2916, 4425, -4218, 4498, -4297, 3943, -4790, 3933, -4755, 4502, -5112, 4580, -5097, 5467, -5873, 5433, -5869, 5983, -4646, 5994, -4653, 5071, -3930, 5072, -3953, 5145, -4423, 5173, -4419, 5672, -3464, 5655, -3579, 4915, -3014, 4893, -3141, 6100, -1829, 6014, -1878, 2807, -3472, 2820, -4461, 2938, -4463, 3426, -5333, 3414, -5244, 3259, -4747, 3300, -4683, 3224, -4624, 1969, -5102, 1882, -5180, 2134, -5240, 2717, -5425, 2748, -5378, 2159, -5447, 1618, -4800, 1640, -4782, 1188, -4455, 1212, -4455, 2613, -2304, 2528, -1573, 2656, -1612, 3907, -1004, 3899, -974, 3123, -843, 1185, -1949, 1160, -3323, 1143, -3387, 415, -3479, 379, -4075, 415, -4085, -684, -3619, -703, -3720, 140, -3269, 153, -3238, 492, -2900, 514, -2911, -1227, -4480, -1228, -4607, 839, -3882, 822, -3880, 2052, -2010, 1962, -1085, 2060, -1181, 3688, -1422, 3699, -1396, 2486, -2298, 2346, -4283, 2433, -4281, 1055, -4935, 1036, -4962, 1475, -5629, 1437, -5534, 2235, -5645, 2893, -5945, 2662, -5921, 2087, -5971, 1051, -5429, 1005, -5343, 781, -5341, -1631, -4515, -1635, -4473, -1977, -3691, -1855, -3559, -2531, -4093, -2607, -4125, -2341, -4693, -2387, -5713, -2295, -5783, -595, -5867, 23, -5861, 315, -5951, 331, -6007, -193, -6033, -907, -6095, -1713, -6135, -2303, -6331, -2925, -6419, -3387, -6365, -4581, -5139, -4657, -4991, -5633, -5351, -5617, -5574, -5469, -5615, -5111, -5805, -5127, -5639, -5875, -4683, -5781, -4043, -5849, -4045, -5735, -4461, -5601, -4453, -5303, -3609, -5339, -3577, -5863, -3313, -5895, -3367, -5087, -4427, -5077, -4869, -4899, -5025, -4179, -5925, -4187, -6191, -4081, -6265, -3843, -6196, -2917, -6171, -2864, -5885, -2887, -5913, -3601, -5103, -3655, -5109, -3421, -5551, -3397, -5611, -2735, -4749, -2711, -4681, -3123, -4663, -3883, -4529, -4501, -3363, -4567, -3428, -3732, -2036, -3702, -2087, -3494, -2562, -3420, -3793, -3524, -3672, -4153, -3943, -4181, -4259, -4024, -4278, -3475, -4390, -3206, -4382, -2996, -2755, -2920, -1727, -2922, -1604, -3420, -1534, -4189, -1492, -4418, -1545, -4672, -784, -4655, -757, -4193, -1216, -4191, -1367, -2498, -3068, -2539, -3151, -2180, -3140, -1926)])
 source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wriw5"]
+shader = ExtResource("3_8l7cj")
+shader_parameter/color_0 = Color(1, 0, 0, 1)
+shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
+shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
+shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
+shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
+shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
+shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
+shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
+shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
+shader_parameter/color_10 = Color(1, 1, 1, 1)
+shader_parameter/color_11 = Color(0, 0, 0, 1)
+shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
+shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
+shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
+shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
+shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
+shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
+shader_parameter/color_18 = Color(1, 1, 0, 1)
+shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
+shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
+shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
+shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
+shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
+shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
+shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
+shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
+shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
+shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
+shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
+shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("player", "timer")]
 script = ExtResource("1_ngm4d")
@@ -538,4 +608,77 @@ one_shot = true
 script = ExtResource("20_jvfe7")
 connected_scene = "floor2"
 
+[node name="randomitem" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(-2084, -1373)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(-5731, -3419)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(-5260, 3853)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(-1268, 2981)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(970, 1876)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(4326, 5522)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(3843, -1234)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(3586, -3936)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randomitem9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("19_trmgg")]
+position = Vector2(-4754, -5271)
+random_item = true
+player = NodePath("../Player")
+
+[node name="itempopup" type="Window" parent="."]
+disable_3d = true
+title = "Tower Panel"
+initial_position = 1
+size = Vector2i(288, 192)
+transient = true
+unresizable = true
+extend_to_title = true
+content_scale_mode = 1
+content_scale_aspect = 1
+script = ExtResource("21_4xpaw")
+
+[node name="Towerpanelempty" type="Sprite2D" parent="itempopup"]
+z_index = -120
+position = Vector2(3.8147e-06, 0)
+texture = ExtResource("21_toc3a")
+
+[node name="shader" type="Sprite2D" parent="itempopup"]
+z_index = 4096
+material = SubResource("ShaderMaterial_wriw5")
+position = Vector2(41.2368, 41.6887)
+rotation = 3.14159
+scale = Vector2(1551.9, 1181.92)
+texture = ExtResource("4_jbr37")
+
+[node name="Control" parent="itempopup" instance=ExtResource("22_pl6j4")]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="close_requested" from="itempopup" to="itempopup" method="_on_close_requested"]

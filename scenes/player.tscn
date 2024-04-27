@@ -308,6 +308,11 @@ interpolate = false
 local_coords = true
 script = ExtResource("32_5j30b")
 
+[node name="PillowTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="finished" from="READY" to="." method="_on_ready_finished"]
 [connection signal="timeout" from="WarpFlash" to="." method="_on_warp_flash_timeout"]
 [connection signal="timeout" from="AutoRegen" to="AutoRegen" method="_on_timeout"]
+[connection signal="timeout" from="PillowTimer" to="." method="_on_pillow_timer_timeout"]

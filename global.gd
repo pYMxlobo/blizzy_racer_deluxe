@@ -55,3 +55,9 @@ var update_temps = false
 var coin = 0
 
 var shake = false
+
+var see_bars = false
+
+var latest_item = 0
+
+var justpicked = false

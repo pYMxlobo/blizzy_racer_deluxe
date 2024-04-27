@@ -18,7 +18,7 @@ func _ready():
 	Global.bgm = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Global.enemy_total <= 0:
 		timer.start()
 

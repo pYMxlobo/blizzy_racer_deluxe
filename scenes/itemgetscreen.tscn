@@ -1,0 +1,281 @@
+[gd_scene load_steps=29 format=3 uid="uid://dloabtqvsddqf"]
+
+[ext_resource type="Texture2D" uid="uid://d0daurxehxccp" path="res://sprites/ui/other/itemget.png" id="1_3ysmr"]
+[ext_resource type="Script" path="res://scripts/itemgetscreen.gd" id="1_rpbul"]
+[ext_resource type="Texture2D" uid="uid://dve71hrrd3rlv" path="res://sprites/stageassets/pickups/armor.png" id="2_ttliy"]
+[ext_resource type="Texture2D" uid="uid://oc8jy2gji3dt" path="res://sprites/stageassets/pickups/axel.png" id="3_rq3cc"]
+[ext_resource type="Texture2D" uid="uid://cxlhw05bobgo3" path="res://sprites/stageassets/pickups/battery.png" id="4_w7srl"]
+[ext_resource type="Texture2D" uid="uid://7bai2m4jobir" path="res://sprites/stageassets/pickups/blackhole.png" id="5_kes6d"]
+[ext_resource type="Texture2D" uid="uid://dfat50b0h6eqc" path="res://sprites/stageassets/pickups/bracelet.png" id="6_jinui"]
+[ext_resource type="Texture2D" uid="uid://blfw3mdhepadp" path="res://sprites/stageassets/pickups/brakefluid.png" id="7_3ia8w"]
+[ext_resource type="Texture2D" uid="uid://c7sw47vsno0ex" path="res://sprites/stageassets/pickups/cloak.png" id="8_uus54"]
+[ext_resource type="Texture2D" uid="uid://dko5up7lejps5" path="res://sprites/stageassets/pickups/coin.png" id="9_dv7li"]
+[ext_resource type="Texture2D" uid="uid://bouwgbo4ja3wu" path="res://sprites/stageassets/pickups/crystal.png" id="10_bhelx"]
+[ext_resource type="Texture2D" uid="uid://2m61ipoo4dtp" path="res://sprites/stageassets/pickups/eyesoftruth.png" id="11_8uknc"]
+[ext_resource type="Texture2D" uid="uid://354xfuhfahca" path="res://sprites/stageassets/pickups/gear.png" id="12_kfwjd"]
+[ext_resource type="Texture2D" uid="uid://ck0rq15j7lhxw" path="res://sprites/stageassets/pickups/glasses.png" id="13_b8g11"]
+[ext_resource type="Texture2D" uid="uid://ba4rwsvs242he" path="res://sprites/stageassets/pickups/jam.png" id="14_ad5po"]
+[ext_resource type="Texture2D" uid="uid://8hs03x5flsbf" path="res://sprites/stageassets/pickups/metalplate.png" id="15_qxfhk"]
+[ext_resource type="Texture2D" uid="uid://dnyppala0ut2b" path="res://sprites/stageassets/pickups/oil.png" id="16_jtxde"]
+[ext_resource type="Texture2D" uid="uid://ktl0h5kxe1n8" path="res://sprites/stageassets/pickups/pillow.png" id="17_e0t1g"]
+[ext_resource type="Texture2D" uid="uid://q2anxljjy2fc" path="res://sprites/stageassets/pickups/eyethatseesthrough.png" id="18_00b14"]
+[ext_resource type="Texture2D" uid="uid://c3ufn1kh1q7xy" path="res://sprites/stageassets/pickups/shield.png" id="19_oopbs"]
+[ext_resource type="Texture2D" uid="uid://b3xk2toq4hpmf" path="res://sprites/stageassets/pickups/sledgehammer.png" id="20_k6r2m"]
+[ext_resource type="Texture2D" uid="uid://qugmey6a263f" path="res://sprites/stageassets/pickups/syringe.png" id="21_wrfce"]
+[ext_resource type="Texture2D" uid="uid://bsntjmdlqiyhn" path="res://sprites/stageassets/pickups/theorb.png" id="22_434e6"]
+[ext_resource type="Texture2D" uid="uid://cbllylm1oyl0h" path="res://sprites/stageassets/pickups/vampirejaw.png" id="23_2k0h1"]
+[ext_resource type="Texture2D" uid="uid://c5u4ifiaebq40" path="res://sprites/stageassets/pickups/voidbox.png" id="24_4un4x"]
+[ext_resource type="Texture2D" uid="uid://b8ber83ypric5" path="res://sprites/stageassets/pickups/wrench.png" id="25_1clfv"]
+[ext_resource type="Texture2D" uid="uid://dj6kwaqdkuhuy" path="res://sprites/other/temp_or_other/rainbow.jpg" id="26_quu5q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxpu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ttliy")
+}],
+"loop": true,
+"name": &"Armor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rq3cc")
+}],
+"loop": true,
+"name": &"Axel",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w7srl")
+}],
+"loop": true,
+"name": &"Battery",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kes6d")
+}],
+"loop": true,
+"name": &"Blackhole",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jinui")
+}],
+"loop": true,
+"name": &"Bracelet",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3ia8w")
+}],
+"loop": true,
+"name": &"BrakeFluid",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_uus54")
+}],
+"loop": true,
+"name": &"Cloak",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dv7li")
+}],
+"loop": true,
+"name": &"Coin",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bhelx")
+}],
+"loop": true,
+"name": &"Crystal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8uknc")
+}],
+"loop": true,
+"name": &"EyesofTruth",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Flashlight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_kfwjd")
+}],
+"loop": true,
+"name": &"Gear",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_b8g11")
+}],
+"loop": true,
+"name": &"Glasses",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ad5po")
+}],
+"loop": true,
+"name": &"Jam",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Lance",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_qxfhk")
+}],
+"loop": true,
+"name": &"MetalPlate",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jtxde")
+}],
+"loop": true,
+"name": &"Oil",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_e0t1g")
+}],
+"loop": true,
+"name": &"Pillow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_00b14")
+}],
+"loop": true,
+"name": &"SeeThrough",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_oopbs")
+}],
+"loop": true,
+"name": &"Shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_k6r2m")
+}],
+"loop": true,
+"name": &"Sledgehammer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_qxfhk")
+}],
+"loop": true,
+"name": &"SteelPlate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_wrfce")
+}],
+"loop": true,
+"name": &"Syringe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_434e6")
+}],
+"loop": true,
+"name": &"TheOrb",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2k0h1")
+}],
+"loop": true,
+"name": &"VampireJaw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_4un4x")
+}],
+"loop": true,
+"name": &"Voidbox",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_1clfv")
+}],
+"loop": true,
+"name": &"Wrench",
+"speed": 1.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.3
+anchor_bottom = 0.3
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rpbul")
+
+[node name="Itemget" type="Sprite2D" parent="."]
+z_index = -115
+position = Vector2(144, 96)
+texture = ExtResource("1_3ysmr")
+
+[node name="Item" type="AnimatedSprite2D" parent="."]
+z_index = -10
+position = Vector2(147, 124)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wxpu1")
+animation = &"Axel"
+
+[node name="Rainbow" type="Sprite2D" parent="."]
+z_index = -50
+position = Vector2(145.968, 122.992)
+rotation = -1.5708
+scale = Vector2(0.519744, 0.608089)
+texture = ExtResource("26_quu5q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 154.0
+offset_right = 288.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Axel"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

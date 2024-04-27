@@ -1,5 +1,7 @@
-GPUParticles2D
+Label
 Timer
+SpinBox
+GPUParticles2D
 AudioStreamPlayer2D
 NavigationRegion2D
 CollisionPolygon2D
@@ -11,4 +13,3 @@ TextureButton
 Node
 Window
 PopupPanel
-Popup

@@ -13,7 +13,7 @@ func _ready():
 	max_value = Global.max_health
 
 
-func _process(delta):
+func _process(_delta):
 	max_value = Global.max_health
 	value = Global.health
 	if Global.health <= 0:
@@ -25,5 +25,6 @@ func _process(delta):
 		get_tree().root
 		get_tree().change_scene_to_packed(lose)
 		Global.fresh = true
-
+	if Global.see_bars == true:
+		tooltip_text = str(Global.health + " / " + Global.max_health)
 

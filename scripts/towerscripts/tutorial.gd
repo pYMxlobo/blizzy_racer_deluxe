@@ -15,6 +15,9 @@ func _ready():
 	Global.enemy_total = 1
 	Global.fresh = true
 	Global.bgm = 5
+	Global.health = Global.max_health
+	player.savetowerdata()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

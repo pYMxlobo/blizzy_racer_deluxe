@@ -39,6 +39,28 @@ var reward_multi : float = 1
 var darkness = 2.625
 
 var turning = false
+
+var weather_def = 0
+
+var neg_stat_res : float = 1
+
+var pos_stat_add : float = 1
+
+var has_pillow = false
+
+var defense : float = 1
+
+var flat_defense = 0
+
+var hp_steal = 0
+
+var active_pillow = false
+
+var pillow_amount = 0
+
+
+
+
 # this should be called when saving the players data
 func savetowerdata():
 	var file = FileAccess.open("user://tower.save", FileAccess.WRITE)
@@ -66,6 +88,14 @@ func savetowerdata():
 	file.store_var(reward_multi)
 	file.store_var(darkness)
 	file.store_var(Global.health)
+	file.store_var(weather_def)
+	file.store_var(neg_stat_res)
+	file.store_var(pos_stat_add)
+	file.store_var(has_pillow)
+	file.store_var(defense)
+	file.store_var(flat_defense)
+	file.store_var(hp_steal)
+	file.store_var(pillow_amount)
 
 
 # and this should be called when you gotta load that stuff
@@ -97,6 +127,14 @@ func loadtowerdata():
 		reward_multi = file.get_var()
 		darkness = file.get_var()
 		Global.health = file.get_var()
+		weather_def = file.get_var()
+		neg_stat_res = file.get_var()
+		pos_stat_add = file.get_var()
+		has_pillow = file.get_var()
+		defense = file.get_var()
+		flat_defense = file.get_var()
+		hp_steal = file.get_var()
+		pillow_amount = file.get_var()
 		load_racer_sprite()
 	else:
 		print("you has no tower data D:")
@@ -320,6 +358,10 @@ func _process(_delta):
 		Global.flash = true
 		backmusic.stop()
 		OS.crash("Node2D")
+	if active_pillow == true:
+		Global.regen_mult = Global.regen_mult + (pillow_amount * 3)
+	elif active_pillow == false:
+		Global.regen_mult = Global.regen_mult - (pillow_amount * 3)
 	if held_back < 0:
 		held_back = 0
 	if rotation_speed < 0:
@@ -350,6 +392,16 @@ func movement(delta: float) -> void:
 	#if Input.is_action_just_pressed("up"):
 	#	is_going = true
 	#	pass
+	
+	if forward == 0:
+		$PillowTimer.start()
+	
+	if forward != 0:
+		active_pillow = false
+	
+	
+	
+	
 	if Input.is_action_just_released("up"):
 		Global.drift_charge = 0
 	if Input.is_action_just_released("down"):
@@ -432,7 +484,13 @@ func _on_warp_flash_timeout():
 	Global.flash = false
 
 
+func _on_pillow_timer_timeout():
+	active_pillow = true
+
+
+
 func shakestop():
 	Global.shake = false
+
 
 
