@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://uqojxsxkxked"]
+[gd_scene load_steps=24 format=3 uid="uid://uqojxsxkxked"]
 
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="1_i1jka"]
 [ext_resource type="Script" path="res://scripts/towerscripts/floor6.gd" id="1_yi652"]
@@ -17,13 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://dvjrtferq1b7i" path="res://sprites/ui/bars/hpfill.png" id="14_t2c3e"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="15_07u4n"]
 [ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="16_k5ore"]
-[ext_resource type="Texture2D" uid="uid://dcxjvvd2b0urf" path="res://sprites/stageassets/towerassets/towerpanelempty.png" id="17_cwkog"]
 [ext_resource type="Script" path="res://scripts/towerscripts/floor6wave2.gd" id="17_yiqt6"]
 [ext_resource type="AudioStream" uid="uid://nhjpbk7xjljb" path="res://audio/finaksfx/wavespawn.mp3" id="18_aaigv"]
 [ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="20_3mjwg"]
 [ext_resource type="Script" path="res://scripts/switcher.gd" id="20_4tn0p"]
-[ext_resource type="Script" path="res://scripts/itempopup.gd" id="22_r7wdy"]
-[ext_resource type="PackedScene" uid="uid://dloabtqvsddqf" path="res://scenes/itemgetscreen.tscn" id="24_rxycn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eak63"]
 shader = ExtResource("1_i1jka")
@@ -97,73 +94,6 @@ vertices = PackedVector2Array(-791, 5506, -2301, 5472, -2300, 5472, 187, -5946, 
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(0, 2, 9, 10, 11, 12, 13, 14), PackedInt32Array(15, 16, 17, 18, 19, 20, 14, 13, 21, 22, 23, 24, 25, 26, 3, 5, 27, 6, 8, 28)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-3008, -5860, -1787, -6109, 188, -5956, 1998, -5707, 3474, -5311, 4838, -4412, 5726, -3173, 6422, -1985, 6427, -831, 6207, 493, 5714, 1980, 4357, 4424, 2937, 5295, 1178, 5646, -791, 5516, -2301, 5482, -4140, 5290, -5514, 4153, -6250, 2868, -6357, 1443, -6159, -226, -6073, -1577, -5603, -3093, -4812, -4508, -3819, -5485)])
 source_geometry_group_name = &"navigation_polygon_source_group"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cj2tq"]
-shader = ExtResource("1_i1jka")
-shader_parameter/color_0 = Color(1, 0, 0, 1)
-shader_parameter/color_1 = Color(0.639216, 0, 0, 1)
-shader_parameter/color_2 = Color(0, 0.733333, 1, 1)
-shader_parameter/color_3 = Color(0, 0.439216, 0.6, 1)
-shader_parameter/color_4 = Color(0.0666667, 1, 0, 1)
-shader_parameter/color_5 = Color(0.0392157, 0.6, 0, 1)
-shader_parameter/color_6 = Color(0.564706, 0, 1, 1)
-shader_parameter/color_7 = Color(0.337255, 0, 0.6, 1)
-shader_parameter/color_8 = Color(1, 0.568627, 0, 1)
-shader_parameter/color_9 = Color(0.65098, 0.368627, 0, 1)
-shader_parameter/color_10 = Color(1, 1, 1, 1)
-shader_parameter/color_11 = Color(0, 0, 0, 1)
-shader_parameter/color_12 = Color(0.588235, 0.588235, 0.588235, 1)
-shader_parameter/color_13 = Color(0.388235, 0.388235, 0.388235, 1)
-shader_parameter/color_14 = Color(1, 0.968627, 0, 1)
-shader_parameter/color_15 = Color(0.760784, 0.737255, 0, 1)
-shader_parameter/color_16 = Color(0.141176, 1, 0.227451, 1)
-shader_parameter/color_17 = Color(0.521569, 1, 0.0392157, 1)
-shader_parameter/color_18 = Color(1, 1, 0, 1)
-shader_parameter/color_19 = Color(0.478431, 0, 0, 1)
-shader_parameter/color_20 = Color(0, 1, 0.533333, 1)
-shader_parameter/color_21 = Color(0, 0.568627, 0.305882, 1)
-shader_parameter/color_22 = Color(0.478431, 0, 0, 1)
-shader_parameter/color_23 = Color(0, 1, 0.533333, 1)
-shader_parameter/color_24 = Color(0, 0.568627, 0.305882, 1)
-shader_parameter/color_25 = Color(0.968627, 0.0705882, 1, 1)
-shader_parameter/color_26 = Color(0.658824, 0.0470588, 0.678431, 1)
-shader_parameter/color_27 = Color(0.0117647, 1, 0.835294, 1)
-shader_parameter/color_28 = Color(0.00784314, 0.611765, 0.509804, 1)
-shader_parameter/color_29 = Color(0.635294, 1, 0.0117647, 1)
-shader_parameter/color_30 = Color(0.411765, 0.65098, 0.00784314, 1)
-shader_parameter/color_31 = Color(1, 0, 0.266667, 1)
-shader_parameter/color_32 = Color(0.588235, 0, 0.196078, 1)
-shader_parameter/color_33 = Color(0.419608, 0.65098, 1, 1)
-shader_parameter/color_34 = Color(0.470588, 1, 0.662745, 1)
-shader_parameter/color_35 = Color(1, 0.945098, 0.180392, 1)
-shader_parameter/color_36 = Color(0.858824, 0.858824, 0.858824, 1)
-shader_parameter/color_37 = Color(0.921569, 0.921569, 0.921569, 1)
-shader_parameter/color_38 = Color(0.858824, 0.858824, 0.858824, 1)
-shader_parameter/color_39 = Color(0.921569, 0.921569, 0.921569, 1)
-shader_parameter/color_40 = Color(0.721569, 0.92549, 1, 1)
-shader_parameter/color_41 = Color(0.52549, 0.67451, 0.729412, 1)
-shader_parameter/color_42 = Color(1, 0.568627, 0, 1)
-shader_parameter/color_43 = Color(0.74902, 0.427451, 0, 1)
-shader_parameter/color_44 = Color(1, 0.435294, 0, 1)
-shader_parameter/color_45 = Color(0.741176, 0.321569, 0, 1)
-shader_parameter/color_46 = Color(1, 0.901961, 0.768627, 1)
-shader_parameter/color_47 = Color(0.458824, 0.541176, 0.137255, 1)
-shader_parameter/color_48 = Color(0.894118, 0.470588, 1, 1)
-shader_parameter/color_49 = Color(0.537255, 0.282353, 0.6, 1)
-shader_parameter/color_50 = Color(1, 0.752941, 0.380392, 1)
-shader_parameter/color_51 = Color(0.568627, 0.427451, 0.215686, 1)
-shader_parameter/color_52 = Color(0.780392, 0.831373, 1, 1)
-shader_parameter/color_53 = Color(0.443137, 0.47451, 0.568627, 1)
-shader_parameter/color_54 = Color(0.796078, 1, 0.388235, 1)
-shader_parameter/color_55 = Color(0.494118, 0.619608, 0.239216, 1)
-shader_parameter/color_56 = Color(1, 0.67451, 0.458824, 1)
-shader_parameter/color_57 = Color(1, 0.4, 0.560784, 1)
-shader_parameter/color_58 = Color(0.568627, 0.227451, 0.321569, 1)
-shader_parameter/color_59 = Color(0.701961, 0, 1, 1)
-shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
-shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
-shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
-shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_yi652")
@@ -1228,33 +1158,5 @@ player = NodePath("../../Player")
 script = ExtResource("20_4tn0p")
 connected_scene = "floor7"
 
-[node name="itempopup" type="Window" parent="."]
-disable_3d = true
-title = "Tower Panel"
-initial_position = 1
-size = Vector2i(288, 192)
-transient = true
-unresizable = true
-extend_to_title = true
-content_scale_mode = 1
-content_scale_aspect = 1
-script = ExtResource("22_r7wdy")
-
-[node name="Towerpanelempty" type="Sprite2D" parent="itempopup"]
-z_index = -120
-position = Vector2(3.8147e-06, 0)
-texture = ExtResource("17_cwkog")
-
-[node name="shader" type="Sprite2D" parent="itempopup"]
-z_index = 4096
-material = SubResource("ShaderMaterial_cj2tq")
-position = Vector2(41.2368, 41.6887)
-rotation = 3.14159
-scale = Vector2(1551.9, 1181.92)
-texture = ExtResource("2_loyje")
-
-[node name="Control" parent="itempopup" instance=ExtResource("24_rxycn")]
-
 [connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Node2D2/Timer" to="Node2D2" method="_on_timer_timeout"]
-[connection signal="close_requested" from="itempopup" to="itempopup" method="_on_close_requested"]
