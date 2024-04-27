@@ -386,9 +386,10 @@ one_shot = true
 
 [node name="itempopup" type="Window" parent="."]
 disable_3d = true
-title = "Tower Panel"
-initial_position = 1
+title = "Item Get!"
+initial_position = 5
 size = Vector2i(288, 192)
+visible = false
 transient = true
 unresizable = true
 extend_to_title = true

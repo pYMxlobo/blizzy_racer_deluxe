@@ -26,5 +26,5 @@ func _process(_delta):
 		get_tree().change_scene_to_packed(lose)
 		Global.fresh = true
 	if Global.see_bars == true:
-		tooltip_text = str(Global.health + " / " + Global.max_health)
+		tooltip_text = str(Global.health) + " / " + str(Global.max_health)
 

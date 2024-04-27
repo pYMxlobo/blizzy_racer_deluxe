@@ -1,16 +1,19 @@
-extends PathFollow2D
 
 
 
-var poges = 0.0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	float(progress)
-	poges = get_progress() + 0.3
-	set_progress(poges)
 
+                                                                            ___
+                                                                       < /  .  .\> _,,
+                                                                        #|         ___\
+                                                                     ##/          ___/
+                                                                   ##/          /
+          _________________________##/          /
+     /  |                                                                     /
+  //   |                                                                 _/
+///   |     ___      ____________      ___       /
+        |     |   |    |                          |    |   |     |
+        |     |   |    |                          |    |   |     |
+        |     |   |    |                          |    |   |     |
+        |##|   |##|                          |##|   |##|

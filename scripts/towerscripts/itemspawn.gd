@@ -153,7 +153,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			queue_free()
 		elif ID == 14:
 			OS.delay_msec(25)
-			player.neg_stat_res = player.neg_stat_res - 0.2
+			player.neg_stat_res = player.neg_stat_res - 0.05
 			queue_free()
 		elif ID == 15:
 			OS.delay_msec(25)
@@ -167,7 +167,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			queue_free()
 		elif ID == 17:
 			OS.delay_msec(25)
-			player.pos_stat_add = player.pos_stat_add + 0.15
+			player.pos_stat_add = player.pos_stat_add + 0.05
 			queue_free()
 		elif ID == 18: # --------------------------------------------------INCREASES A LOT OF STUFF SO DO THIS LATER
 			OS.delay_msec(25)
@@ -197,7 +197,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			queue_free()
 		elif ID == 19:
 			OS.delay_msec(25)
-			player.defense = player.defense - 0.15
+			player.defense = player.defense - 0.05
 			queue_free()
 		elif ID == 20:
 			OS.delay_msec(25)

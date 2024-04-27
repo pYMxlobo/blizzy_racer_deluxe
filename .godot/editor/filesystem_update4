@@ -34,3 +34,10 @@ res://scripts/RobotAI.gd
 res://scripts/Sand.gd
 res://scripts/turnparticles.gd
 res://scripts/YoguAI.gd
+res://scripts/towerscripts/itemspawn.gd
+res://scenes/towerrooms/floor8.tscn
+res://scenes/Finale.tscn
+res://scenes/joke_racing_world.tscn
+res://scenes/racing_world2.tscn
+res://scenes/racing_world3.tscn
+res://scenes/racing_world.tscn

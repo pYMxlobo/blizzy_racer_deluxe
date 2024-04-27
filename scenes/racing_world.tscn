@@ -226,7 +226,7 @@ update_scale = false
 position = Vector2(-5518, -801)
 zoom = Vector2(0.355, 0.355)
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 12.0
 script = ExtResource("26_6ev4e")
 
 [node name="Sky" type="Sprite2D" parent="Camera2D"]

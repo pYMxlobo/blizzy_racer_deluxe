@@ -163,7 +163,7 @@ z_index = 590
 position = Vector2(20, -1164)
 zoom = Vector2(0.355, 0.355)
 position_smoothing_enabled = true
-position_smoothing_speed = 8.0
+position_smoothing_speed = 12.0
 script = ExtResource("7_ytnjd")
 random_strength = 10.0
 shake_fade = 10.0
@@ -193,6 +193,7 @@ texture_under = ExtResource("10_q6cdi")
 texture_over = ExtResource("11_81bpd")
 texture_progress = ExtResource("12_gsjhs")
 script = ExtResource("13_5uoap")
+metadata/_edit_use_anchors_ = true
 
 [node name="HealthBar" type="TextureProgressBar" parent="Camera2D"]
 offset_left = -1266.0
@@ -207,6 +208,7 @@ texture_under = ExtResource("14_hq3cv")
 texture_over = ExtResource("15_e4jrl")
 texture_progress = ExtResource("16_rmkg7")
 script = ExtResource("17_nr21n")
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Camera2D"]
 offset_left = -1298.0
@@ -218,6 +220,7 @@ text = "GOAL: DEFEAT ALL FOES WITHIN THE LAByRINTH. THERE IS NO TIME LIMIT.
 "
 vertical_alignment = 1
 uppercase = true
+metadata/_edit_use_anchors_ = true
 
 [node name="pathfindingzone" type="NavigationRegion2D" parent="."]
 position = Vector2(6, 30)

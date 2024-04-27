@@ -1,3 +1,5 @@
+res://sprites/stageassets/towerassets
+res://scenes/towerrooms
 res://scripts
 res://scenes
 res://sprites/character_assets/enemy
@@ -6,8 +8,6 @@ res://audio/finaksfx
 C:/Users/minio/Downloads
 res://sprites/stageassets/racetrackassets
 res://scripts/towerscripts
-res://sprites/stageassets/towerassets
-res://scenes/towerrooms
 res://audio/music
 res://sprites/ui/mapselect
 res://sprites/ui/menu_assets
