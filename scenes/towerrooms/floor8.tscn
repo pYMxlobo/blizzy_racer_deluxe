@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://da1e6v7p2vjj8"]
+[gd_scene load_steps=23 format=3 uid="uid://da1e6v7p2vjj8"]
 
 [ext_resource type="Texture2D" uid="uid://3shg72i4rgad" path="res://sprites/stageassets/towerassets/floor8ground.png" id="1_mm12y"]
+[ext_resource type="Script" path="res://scripts/towerscripts/floor8.gd" id="1_nelvl"]
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="2_4biya"]
 [ext_resource type="Texture2D" uid="uid://dccryw74gr0f2" path="res://sprites/stageassets/towerassets/floor8roof.png" id="2_bbxui"]
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="3_ywhgc"]
@@ -16,6 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://c6xfe5bbe14ev" path="res://sprites/ui/bars/hpover.png" id="14_b66p8"]
 [ext_resource type="Texture2D" uid="uid://dvjrtferq1b7i" path="res://sprites/ui/bars/hpfill.png" id="15_8g2ue"]
 [ext_resource type="Script" path="res://scripts/HealthBar.gd" id="16_ksis7"]
+[ext_resource type="PackedScene" uid="uid://eoloj1c3dknk" path="res://scenes/towerrooms/enemy.tscn" id="17_2o3uk"]
+[ext_resource type="PackedScene" uid="uid://dghkolp8poebe" path="res://scenes/pickup.tscn" id="18_hvtb5"]
+[ext_resource type="Script" path="res://scripts/switcher.gd" id="19_1i1m0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fhxwi"]
 shader = ExtResource("2_4biya")
@@ -90,7 +94,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(
 outlines = Array[PackedVector2Array]([PackedVector2Array(-4737, 4424, -3672, 4906, -2865, 3588, -2895, 3297, -2718, 2869, -2205, 2798, -2116, 2855, -1746, 901, -4726, 1741, -5106, 2086, -5552, 1698, -5386, 1128, -5083, 998, -4780, 1218, -4726, 1741, -1746, 901, -1767, 480, -1495, 178, -2916, -1544, -3540, -1733, -3789, -2129, -3536, -2724, -3956, -4089, -4609, -4160, -4652, -4568, -4420, -4919, -3949, -4918, -3765, -4538, -1138, -4950, -963, -5189, -607, -5233, -361, -4997, -257, -4678, 2041, -3550, 2203, -3803, 2672, -3701, 3389, -3622, 3740, -3135, 3400, -2836, 3745, -1637, 4099, -1679, 4243, -1511, 4033, -1324, 3757, -1385, 2553, -434, 2395, -33, 4316, 1335, 4427, 935, 4811, 686, 5207, 790, 5329, 1856, 4750, 1957, 4441, 1738, 2407, 3376, 3879, 4818, 3838, 4244, 4404, 4145, 4589, 4416, 4443, 4765, 4166, 4799, 3879, 4818, 2407, 3376, 1963, 3434, 1691, 3127, 1849, 2762, 2417, 2807, 2650, 2932, 2407, 3376, 4441, 1738, 4316, 1335, 2395, -33, 1866, 69, 1570, -254, 1650, -694, 2059, -866, 2553, -434, 3757, -1385, 3745, -1637, 3400, -2836, 2588, -3033, 2041, -3550, -257, -4678, -635, -4458, -1077, -4531, -1138, -4950, -3765, -4538, -3956, -4089, -3536, -2724, -2802, -2749, -2396, -2314, -2478, -1819, -2916, -1544, -1495, 178, -872, 371, -680, 711, -1006, 1033, -1746, 901, -2116, 2855, -1927, 2977, -1837, 3510, -2382, 3819, -2865, 3588, -3672, 4906, -3144, 5138, -2135, 5367, -841, 5541, 1229, 5471, 1296.23, 5372.95, 1639, 5346, 2154, 5420, 2420, 5501, 3553, 5515, 4815, 5333, 5440, 4701, 5738, 3722, 5690, 2205, 5750, 1001, 5547, -438, 5625, -1241, 5343, -2823, 5097, -3866, 4498, -4303, 4090, -4969, 3299, -5394, 1663, -5766, -15, -6035, -1058, -5903, -2820, -5838, -3557, -5370, -4342, -5250, -5001, -4729, -5313, -4189, -5547, -3944, -5559, -3500, -5715, -3015, -5757, -2361, -5865, -1427, -5661, -336, -5559, 977, -5565, 2289, -5450, 3397, -5153, 3965)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_nelvl")
+player = NodePath("Player")
 
 [node name="Track" type="Sprite2D" parent="."]
 z_index = -1985
@@ -99,12 +105,10 @@ scale = Vector2(13.912, 13.912)
 texture = ExtResource("1_mm12y")
 
 [node name="Sprite2D" type="Sprite2D" parent="Track"]
-visible = false
 z_index = 2340
 texture = ExtResource("2_bbxui")
 
 [node name="shader" type="Sprite2D" parent="."]
-visible = false
 z_index = 4096
 material = SubResource("ShaderMaterial_fhxwi")
 position = Vector2(-320.282, 155.853)
@@ -233,3 +237,458 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_u33ld")
+
+[node name="enemy" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(1514, -4378)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy2" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-4285, -2717)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy3" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(3402, 304)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy4" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-3636, 923)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy5" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1189, -1146)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy6" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(1635, -2173)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy7" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1265, 1315)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy8" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(1454, 2373)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy9" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(4338, 3535)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy10" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-3726, 3007)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy11" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(985, 983)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy12" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-3077, -1056)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy13" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1778, -2822)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy14" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(4247, -2113)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy15" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-2866, -4680)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy16" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-238, -5405)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy17" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-117, -2822)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy18" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(3734, -4106)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy19" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1114, -89)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy20" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1778, 1376)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="enemy21" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("17_2o3uk")]
+position = Vector2(-1476, 2554)
+ID = 1
+forget_range = 1800.0
+see_range = 600.0
+speed = 650
+react_speed = 0.4
+en_health = 350
+weakness = 0.7
+en_attack_damage = 40.0
+do_regen = true
+regen_mult = 0.2
+player = NodePath("../../Player")
+
+[node name="randitem" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-259, -4902)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(2733, -2522)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-4561, -740)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(2884, 2749)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-2809, 2507)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4410, 136)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-5074, -3277)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-1193, -4108)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(1510, -5165)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-4376, 3578)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem11" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-100, 2423)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem12" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(3264, 4148)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem13" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(2537, 1825)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem14" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4590, 2110)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem15" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(2209, -927)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem16" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-3407, -2993)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem17" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-2651, -4091)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem18" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(2754, -3797)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem19" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-1587, 1313)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem20" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-3708, -1655)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem21" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(-2103, 4333)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem22" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4554, 5075)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem23" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4925, 2951)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem24" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4155, 1026)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem25" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(5488, 1226)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem26" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(934, -1005)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem27" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4319, -791)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem28" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(734, -2437)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem29" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(5110, -2552)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem30" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(763, -3899)
+random_item = true
+player = NodePath("../Player")
+
+[node name="randitem31" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hvtb5")]
+position = Vector2(4704, -3884)
+random_item = true
+player = NodePath("../Player")
+
+[node name="switcher" type="Node2D" parent="."]
+script = ExtResource("19_1i1m0")
+connected_scene = "winner"
+scene_folder = "res://scenes/"
+win = true

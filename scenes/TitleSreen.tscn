@@ -115,13 +115,33 @@ stream = ExtResource("7_nx7bk")
 autoplay = true
 bus = &"Music"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 4.0
-offset_top = 603.0
-offset_right = 68.0
-offset_bottom = 634.0
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 3.0
+offset_top = 602.0
+offset_right = 96.0
+offset_bottom = 630.0
+theme_override_font_sizes/font_size = 26
+button_pressed = true
 text = "music"
+alignment = 1
+icon_alignment = 1
+text_direction = 1
 script = ExtResource("8_nrcre")
+bus = "Music"
+
+[node name="CheckButton2" type="CheckButton" parent="."]
+offset_left = 3.0
+offset_top = 565.0
+offset_right = 96.0
+offset_bottom = 593.0
+theme_override_font_sizes/font_size = 26
+button_pressed = true
+text = "sfx"
+alignment = 1
+icon_alignment = 1
+text_direction = 1
+script = ExtResource("8_nrcre")
+bus = "SFX"
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_cb5bf")
@@ -166,29 +186,31 @@ texture = ExtResource("1_vmeeb")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
-offset_left = 844.0
+offset_left = 825.0
 offset_top = 2.0
 offset_right = 957.0
-offset_bottom = 51.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 26
 text = "MADE IN
 GODOT FLOSH"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Godotflosh" type="Sprite2D" parent="Label"]
-position = Vector2(56, 90)
+position = Vector2(67.4, 89.4)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("19_qib0c")
 
 [node name="LinkButton" type="LinkButton" parent="Label"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 56.0
-offset_right = 92.0
-offset_bottom = 125.0
+offset_left = 31.4
+offset_top = 55.4
+offset_right = 103.4
+offset_bottom = 124.4
 underline = 2
 uri = "https://godotengine.org/"
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="toggled" from="CheckButton" to="CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="CheckButton2" to="CheckButton2" method="_on_toggled"]
 [connection signal="timeout" from="AudioStreamPlayer2D2/Timer" to="AudioStreamPlayer2D2" method="_on_timer_timeout"]

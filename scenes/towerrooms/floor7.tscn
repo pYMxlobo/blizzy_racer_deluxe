@@ -622,9 +622,8 @@ player = NodePath("../Player")
 
 [node name="switcher" type="Node2D" parent="."]
 script = ExtResource("22_7ihlm")
-connected_scene = "winner"
-scene_folder = "res://scenes/"
-win = true
+connected_scene = "floor8"
+scene_folder = "res://scenes/towerrooms"
 
 [node name="item" parent="." node_paths=PackedStringArray("player") instance=ExtResource("24_78g1f")]
 position = Vector2(-2286, 1953)

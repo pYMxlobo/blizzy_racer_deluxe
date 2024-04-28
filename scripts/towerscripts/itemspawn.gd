@@ -115,6 +115,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			OS.delay_msec(25)
 			Global.max_health = Global.max_health + 10
 			player.defense = player.defense - 0.01
+			player.defense = clamp(player.defense, 0.01, 2)
 			queue_free()
 		elif ID == 6:
 			OS.delay_msec(25)
@@ -194,10 +195,14 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			player.regen_time = player.regen_time - 0.01
 			player.hp_steal = player.hp_steal + 1
 			player.reward_multi = player.reward_multi + 0.01
+			player.defense = clamp(player.defense, 0.01, 2)
+			player.flat_defense = clamp(player.flat_defense, 0, 999)
+			player.regen_time = clamp(player.regen_time, 0.05, 1 )
 			queue_free()
 		elif ID == 19:
 			OS.delay_msec(25)
 			player.defense = player.defense - 0.05
+			player.defense = clamp(player.defense, 0.01, 2)
 			queue_free()
 		elif ID == 20:
 			OS.delay_msec(25)
@@ -211,6 +216,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 			OS.delay_msec(25)
 			Global.max_health = Global.max_health + 20
 			player.flat_defense = player.flat_defense + 3
+			player.flat_defense = clamp(player.flat_defense, 0, 999)
 			queue_free()
 		elif ID == 23:
 			OS.delay_msec(25)
@@ -223,6 +229,7 @@ func _on_touch_body_shape_entered(_body_rid, body, _body_shape_index, _local_sha
 		elif ID == 25:
 			OS.delay_msec(25)
 			player.regen_time = player.regen_time - 0.05
+			player.regen_time = clamp(player.regen_time, 0.05, 1 )
 			queue_free()
 		elif ID == 26:
 			OS.delay_msec(25)

@@ -41,3 +41,9 @@ res://scenes/joke_racing_world.tscn
 res://scenes/racing_world2.tscn
 res://scenes/racing_world3.tscn
 res://scenes/racing_world.tscn
+res://scenes/loser.tscn
+res://scripts/loser_again.gd
+res://scenes/winner.tscn
+res://scripts/winner_again.gd
+res://scripts/towerscripts/floor8.gd
+res://scripts/soundtoggle.gd
