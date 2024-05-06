@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cskdd4i1afpky"]
+[gd_scene load_steps=22 format=3 uid="uid://cskdd4i1afpky"]
 
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="1_vmeeb"]
 [ext_resource type="Script" path="res://scripts/load_data.gd" id="1_w1cxp"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://k38fnb0twikn" path="res://sprites/character_assets/blizzy/blizzy.png" id="16_wxol6"]
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="17_m2jtw"]
 [ext_resource type="Texture2D" uid="uid://de0npey5bihk1" path="res://sprites/other/temp_or_other/godotflosh.png" id="19_qib0c"]
+[ext_resource type="Texture2D" uid="uid://swtnlgcv174w" path="res://iconretro.svg" id="20_uo2dv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3q0g"]
 shader = ExtResource("17_m2jtw")
@@ -158,7 +159,7 @@ position = Vector2(741, 123)
 texture = ExtResource("11_2vf45")
 
 [node name="Penvort" type="Sprite2D" parent="."]
-position = Vector2(145, 563)
+position = Vector2(153, 560)
 texture = ExtResource("12_ebfnp")
 
 [node name="Robot" type="Sprite2D" parent="."]
@@ -197,9 +198,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Godotflosh" type="Sprite2D" parent="Label"]
+visible = false
 position = Vector2(67.4, 89.4)
 scale = Vector2(0.075, 0.075)
 texture = ExtResource("19_qib0c")
+
+[node name="Iconretro" type="Sprite2D" parent="Label"]
+z_index = 3561
+position = Vector2(67.605, 89.395)
+scale = Vector2(0.0749902, 0.0749902)
+texture = ExtResource("20_uo2dv")
 
 [node name="LinkButton" type="LinkButton" parent="Label"]
 layout_mode = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://5ig03wmyusyv"]
+[gd_scene load_steps=53 format=3 uid="uid://5ig03wmyusyv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="1_voco8"]
 [ext_resource type="Shader" path="res://other/whiteflash.gdshader" id="2_r4eco"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/White.gd" id="3_q5ems"]
 [ext_resource type="Texture2D" uid="uid://c0en0kl3s2wiv" path="res://sprites/character_assets/bane/bandrivin.png" id="5_awiyf"]
 [ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_tp7dc"]
+[ext_resource type="Texture2D" uid="uid://d178onqtwp4y2" path="res://sprites/character_assets/germ/germflyin.png" id="7_6tlmd"]
 [ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_gsits"]
 [ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="8_kqx8m"]
 [ext_resource type="Texture2D" uid="uid://d371syh2hr3oj" path="res://sprites/character_assets/penvort/penvortdrivin.png" id="9_dhap6"]
@@ -37,6 +38,10 @@
 [ext_resource type="Shader" path="res://other/rerro.gdshader" id="35_c0dtw"]
 [ext_resource type="Texture2D" uid="uid://diendpdoptdll" path="res://sprites/ui/menu_assets/titlebackround.png" id="36_kanda"]
 [ext_resource type="PackedScene" uid="uid://dloabtqvsddqf" path="res://scenes/itemgetscreen.tscn" id="37_heug8"]
+[ext_resource type="Texture2D" uid="uid://dbtwafcmkvgtt" path="res://sprites/character_assets/racer_other/abilitycooldownunder.png" id="39_5t6db"]
+[ext_resource type="Texture2D" uid="uid://b5tcc7rctgi7c" path="res://sprites/character_assets/racer_other/abilitymenubackround.png" id="39_qa00o"]
+[ext_resource type="Texture2D" uid="uid://bvrtyusd7l3oh" path="res://sprites/character_assets/racer_other/abilitycooldownover.png" id="40_v2t2g"]
+[ext_resource type="Texture2D" uid="uid://n02fc8f72332" path="res://sprites/character_assets/racer_other/abilitycooldownfill.png" id="41_qjdtb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_731qk"]
 shader = ExtResource("2_r4eco")
@@ -60,6 +65,14 @@ animations = [{
 "loop": true,
 "name": &"Blizzy",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6tlmd")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -412,8 +425,61 @@ texture = ExtResource("36_kanda")
 
 [node name="Control" parent="itempopup" instance=ExtResource("37_heug8")]
 
+[node name="cooldowns" type="Window" parent="."]
+disable_3d = true
+title = "Cooldowns"
+initial_position = 5
+size = Vector2i(236, 160)
+transient = true
+unresizable = true
+extend_to_title = true
+content_scale_mode = 1
+content_scale_aspect = 1
+
+[node name="Abilitymenubackround" type="Sprite2D" parent="cooldowns"]
+scale = Vector2(2, 2)
+texture = ExtResource("39_qa00o")
+
+[node name="shader" type="Sprite2D" parent="cooldowns"]
+z_index = 4096
+material = SubResource("ShaderMaterial_g2oix")
+position = Vector2(41.2368, 41.6887)
+rotation = 3.14159
+scale = Vector2(1551.9, 1181.92)
+texture = ExtResource("36_kanda")
+
+[node name="Label" type="Label" parent="cooldowns"]
+offset_left = 33.0
+offset_top = 23.0
+offset_right = 97.0
+offset_bottom = 51.0
+theme_override_font_sizes/font_size = 26
+text = "Ability:"
+
+[node name="ability_cooldown" type="TextureProgressBar" parent="cooldowns"]
+offset_left = 29.0
+offset_top = 57.0
+offset_right = 104.0
+offset_bottom = 135.0
+max_value = 30.0
+fill_mode = 8
+texture_under = ExtResource("39_5t6db")
+texture_over = ExtResource("40_v2t2g")
+texture_progress = ExtResource("41_qjdtb")
+radial_center_offset = Vector2(0, -15)
+
+[node name="ability_last" type="Timer" parent="cooldowns/ability_cooldown"]
+wait_time = 5.0
+one_shot = true
+
+[node name="cooldown_timer" type="Timer" parent="cooldowns/ability_cooldown"]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
 [connection signal="finished" from="READY" to="." method="_on_ready_finished"]
 [connection signal="timeout" from="WarpFlash" to="." method="_on_warp_flash_timeout"]
 [connection signal="timeout" from="AutoRegen" to="AutoRegen" method="_on_timeout"]
 [connection signal="timeout" from="PillowTimer" to="." method="_on_pillow_timer_timeout"]
 [connection signal="close_requested" from="itempopup" to="itempopup" method="_on_close_requested"]
+[connection signal="timeout" from="cooldowns/ability_cooldown/ability_last" to="." method="_on_ability_last_timeout"]

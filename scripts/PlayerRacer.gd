@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-
+var custom
 #this stuff is all the cool movement
 var max_forward_speed : int = 1252
-var forward_accel : int = 15
+var forward_accel : float = 15
 var max_backward_speed : int = 100
 var backward_accel : int = 5
 var rotation_speed : = 2.2
@@ -58,7 +58,15 @@ var active_pillow = false
 
 var pillow_amount = 0
 
+var hitbox_w = 51.32
 
+var hitbox_r = 13.37
+
+@onready var ability_c = $cooldowns/ability_cooldown
+
+@onready var ability_l = $cooldowns/ability_cooldown/ability_last
+
+@onready var ability_t = $cooldowns/ability_cooldown/cooldown_timer
 
 
 # this should be called when saving the players data
@@ -259,7 +267,12 @@ func load_stats():
 		OS.crash("Node2D")
 	Global.fresh = false
 
+
 func _ready():
+	#if FileAccess.file_exists("user://garage/custom.gd"):
+	#	custom = FileAccess.open("user://garage/custom.gd", FileAccess.READ)
+	#	hitbox_w = custom.get_var(hitbox_w)
+	#	hitbox_r = custom.get_var(hitbox_r)
 	Global.shake = false
 	OS.delay_msec(40)
 	if Global.fresh == true:
@@ -279,6 +292,7 @@ func _ready():
 	temp_held_back = held_back
 	max_forward_speed = temp_max
 	$AutoRegen.wait_time = regen_time
+	ability_c.max_value = ability_t.wait_time
 
 @onready var backmusic : AudioStreamPlayer2D = $BGMTEST
 
@@ -369,6 +383,7 @@ func _process(_delta):
 	if Global.health > Global.max_health:
 		Global.health = Global.max_health
 	$AutoRegen.wait_time = regen_time
+	ability_c.value = ability_t.time_left
 	temp_update()
 
 var momentum = float(velocity.angle())
@@ -486,6 +501,102 @@ func _on_warp_flash_timeout():
 
 func _on_pillow_timer_timeout():
 	active_pillow = true
+
+
+func load_custom_char():
+	max_forward_speed = custom.get_var()
+	forward_accel = custom.get_var()
+	max_backward_speed = custom.get_var()
+	backward_accel = custom.get_var()
+	rotation_speed = custom.get_var()
+	held_back = custom.get_var()
+	drag = custom.get_var()
+	turn_charge = custom.get_var()
+	drift_multi = custom.get_var()
+	Global.regen_mult = custom.get_var()
+	Global.max_drift = custom.get_var()
+	Global.max_health = custom.get_var()
+	Global.player_attack = custom.get_var()
+	regen_time = custom.get_var()
+	crit_multi = custom.get_var()
+	reward_multi = custom.get_var()
+	darkness = custom.get_var()
+	weather_def = custom.get_var()
+	neg_stat_res = custom.get_var()
+	pos_stat_add = custom.get_var()
+	has_pillow = custom.get_var()
+	defense = custom.get_var()
+	flat_defense = custom.get_var()
+	hp_steal = custom.get_var()
+	pillow_amount = custom.get_var()
+
+
+
+
+func _on_ability_last_timeout():
+	if Global.player_selected == 0:
+		max_forward_speed = temp_max
+	elif Global.player_selected == 1:
+		pass
+	elif Global.player_selected == 2:
+		pass
+	elif Global.player_selected == 3:
+		set_process_input(true)
+		max_forward_speed = temp_max
+		$PlayerRacer.play("Germ")
+		$PlayerRacer/Wheels.show()
+	elif Global.player_selected == 4:
+		max_forward_speed = temp_max
+		forward_accel = forward_accel / 2
+		rotation_speed = temp_rotation_speed
+		drag = drag + 10
+	elif Global.player_selected == 5:
+		$Collider.disabled = false
+		$PlayerRacer.show()
+		$PlayerRacer/Wheels.show()
+	elif Global.player_selected == 6:
+		pass
+	elif Global.player_selected == 7:
+		pass
+
+
+func _input(_event):
+	if Input.is_action_just_pressed("ability"):
+		if ability_t.time_left == 0:
+			if ability_c.value == ability_c.min_value:
+				if Global.player_selected == 0:
+					max_forward_speed = max_forward_speed * 2
+				elif Global.player_selected == 1:
+					Global.drift_charge = Global.max_drift
+				elif Global.player_selected == 2:
+					max_forward_speed = max_forward_speed * 4
+					forward = forward * 20
+					OS.delay_msec(20)
+					max_forward_speed = temp_max
+				elif Global.player_selected == 3:
+					print("wow im flying weeee")
+					set_process_input(false)
+					max_forward_speed = max_forward_speed * 1.5
+					$PlayerRacer.play("Flying")
+					$PlayerRacer/Wheels.hide()
+					rotation_speed = 0
+				elif Global.player_selected == 4:
+					print("lock in.")
+					max_forward_speed = max_forward_speed * 2
+					forward_accel = forward_accel * 2
+					rotation_speed = rotation_speed * 2
+					drag = drag - 10
+				elif Global.player_selected == 5:
+					$Collider.disabled = true
+					$PlayerRacer.hide()
+					$PlayerRacer/Wheels.hide()
+				elif Global.player_selected == 6:
+					pass
+				elif Global.player_selected == 7:
+					pass
+				
+				ability_l.start()
+				ability_t.start()
 
 
 
