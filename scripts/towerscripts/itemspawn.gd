@@ -15,7 +15,6 @@ func _ready():
 	
 	
 	while random == 3 or random == 11 or random == 21:
-		randomize()
 		random = randi_range(0, 26)
 	
 	
