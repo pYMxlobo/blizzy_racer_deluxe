@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c2wo3vemomyso"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/penvortstats.gd" id="1_ktr7k"]
+
+[resource]
+resource_name = "Penvort_Stats"
+script = ExtResource("1_ktr7k")

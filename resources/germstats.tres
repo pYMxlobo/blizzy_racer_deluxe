@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dwef4myaj6f2w"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/germstats.gd" id="1_57b2u"]
+
+[resource]
+resource_name = "Germ_Stats"
+script = ExtResource("1_57b2u")

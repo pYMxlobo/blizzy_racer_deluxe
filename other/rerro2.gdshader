@@ -106,4 +106,3 @@ void fragment() {
 
 	COLOR.rgb = min_color.rgb;
 }
-

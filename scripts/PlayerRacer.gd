@@ -1,5 +1,24 @@
 extends CharacterBody2D
 
+
+@export var blizzy : Resource
+@export var yogu : Resource
+@export var robot : Resource
+@export var germ : Resource
+@export var penvort : Resource
+@export var oart : Resource
+@export var will : Resource
+@export var bane : Resource
+
+
+
+
+
+var stats : Resource
+
+
+
+
 var custom
 #this stuff is all the cool movement
 var max_forward_speed : int = 1252
@@ -68,6 +87,7 @@ var hitbox_r = 13.37
 
 @onready var ability_t = $cooldowns/ability_cooldown/cooldown_timer
 
+var flying = false
 
 # this should be called when saving the players data
 func savetowerdata():
@@ -175,94 +195,122 @@ func load_racer_sprite():
 func load_stats():
 	if Global.player_selected == 0:
 		$PlayerRacer.play("Blizzy")
+		stats = blizzy
 	elif Global.player_selected == 1:
 		$PlayerRacer.play("Yogu")
-		max_forward_speed = max_forward_speed - 131
-		drag = drag + 5
-		forward_accel = forward_accel - 1
-		rotation_speed = rotation_speed + 0.3
-		turn_charge = turn_charge + 0.02
-		held_back = held_back - 0.1
-		Global.player_attack = Global.player_attack + 10
-		Global.max_health = Global.max_health + 25
-		Global.max_drift = Global.max_drift + 1
+		stats = yogu
+		max_forward_speed = stats.max_forward_speed
+		drag = stats.drag
+		forward_accel = stats.forward_accel
+		rotation_speed = stats.rotation_speed
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
+		Global.player_attack = stats.Global.player_attack
+		Global.max_health = stats.Global.max_health
+		Global.max_drift = stats.Global.max_drift
+		ability_t.wait_time = 20
+		
 	elif Global.player_selected == 2:
 		$PlayerRacer.play("Robot")
-		max_forward_speed = max_forward_speed - 362
-		drag = drag + 30
-		forward_accel = forward_accel - 3
-		rotation_speed = rotation_speed - 0.05
-		max_backward_speed = max_backward_speed + 30
-		turn_charge = turn_charge + 0.05
-		held_back = held_back + 0.4
+		stats = robot
+		max_forward_speed = stats.max_forward_speed
+		drag = stats.drag
+		forward_accel = stats.forward_accel
+		rotation_speed = stats.rotation_speed
+		max_backward_speed = stats.max_backward_speed
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.player_attack = Global.player_attack + 30
 		Global.max_health = Global.max_health + 75
 		Global.max_drift = Global.max_drift - 2
+		ability_l.wait_time = 0.1
+		ability_t.wait_time = 40
+		
 	elif Global.player_selected == 3:
 		$PlayerRacer.play("Germ")
-		max_forward_speed = max_forward_speed + 117
-		drag = drag - 3
-		rotation_speed = rotation_speed + 0.3
-		forward_accel = forward_accel + 3
-		turn_charge = turn_charge + 0.02
-		held_back = held_back + 0.1
+		stats = germ
+		max_forward_speed = stats.max_forward_speed
+		drag = stats.drag
+		rotation_speed = stats.rotation_speed
+		forward_accel = stats.forward_accel
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.max_drift = Global.max_drift + 2.6
 		Global.player_attack = Global.player_attack - 20
 		Global.regen_mult = Global.regen_mult + 0.5
+		ability_l.wait_time = 6
+		ability_t.wait_time = 59
+		
 		#drift_multi = drift_multi + 0.5
 	elif Global.player_selected == 4:
 		$PlayerRacer.play("Penvort")
-		max_forward_speed = max_forward_speed - 233
-		drag = drag + 3
-		rotation_speed = rotation_speed + 2
-		max_backward_speed = max_backward_speed + 300
-		backward_accel = backward_accel + 5
-		turn_charge = turn_charge + 0.08
-		held_back = held_back + 0.3
+		stats = penvort
+		max_forward_speed = stats.max_forward_speed
+		drag = stats.drag
+		rotation_speed = stats.rotation_speed
+		max_backward_speed = stats.max_backward_speed
+		backward_accel = stats.backward_accel
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.max_drift = Global.max_drift + 3.3
 		Global.player_attack = Global.player_attack - 2
 		Global.max_health = Global.max_health - 5
+		ability_l.wait_time = 4
+		ability_t.wait_time = 35
+		
 	elif Global.player_selected == 5:
 		$PlayerRacer.play("Oart")
-		max_forward_speed = max_forward_speed + 338
-		drag = drag - 10
-		rotation_speed = rotation_speed - 0.3
-		forward_accel = forward_accel + 5
-		max_backward_speed = max_backward_speed - 20
-		turn_charge = turn_charge - 0.01
-		held_back = held_back + 0.2
+		stats = oart
+		max_forward_speed = stats.max_forward_speed
+		drag = stats.drag
+		rotation_speed = stats.rotation_speed
+		forward_accel = stats.forward_accel
+		max_backward_speed = stats.max_backward_speed
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.max_drift = Global.max_drift - 3
 		Global.player_attack = Global.player_attack - 10
 		Global.max_health = Global.max_health - 40
+		ability_l.wait_time = 10
+		ability_t.wait_time = 48
+		
 		#drift_multi = drift_multi + 2
 	elif Global.player_selected == 6:
 		$PlayerRacer.play("Will")
-		max_forward_speed = max_forward_speed + 777
-		forward_accel = forward_accel - 5
-		drag = drag - 15
-		rotation_speed = rotation_speed - 0.5
-		turn_charge = turn_charge + 0.4
-		held_back = held_back + 0.7
+		stats = will
+		max_forward_speed = stats.max_forward_speed
+		forward_accel = stats.forward_accel
+		drag = stats.drag
+		rotation_speed = stats.rotation_speed
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.max_drift = Global.max_drift + 5
-		drift_multi = drift_multi - 0.3
+		drift_multi = stats.drift_multi
 		Global.max_health = Global.max_health - 75
 		Global.player_attack = Global.player_attack - 13
 		Global.regen_mult = Global.regen_mult + 1
+		ability_l.wait_time = 8
+		ability_t.wait_time = 15
+		
 	elif Global.player_selected == 7:
 		$PlayerRacer.play("Bane")
-		max_forward_speed = 666 #lol epoic funny demon number
-		rotation_speed = rotation_speed + 1
-		forward_accel = forward_accel - 6
-		max_backward_speed = 66
-		backward_accel = 2
-		drag = drag + 30
-		turn_charge = turn_charge - 0.049
-		held_back = held_back - 0.59
+		stats = bane
+		max_forward_speed = stats.max_forward_speed
+		rotation_speed = stats.rotation_speed
+		forward_accel = stats.forward_accel
+		max_backward_speed = stats.max_backwad_speed
+		backward_accel = stats.backward_accel
+		drag = stats.drag
+		turn_charge = stats.turn_charge
+		held_back = stats.held_back
 		Global.max_drift = Global.max_drift - 7
-		drift_multi = drift_multi + 4
+		drift_multi = stats.drift_multi
 		Global.max_health = Global.max_health + 150
 		Global.player_attack = Global.player_attack + 10
 		Global.seeing = true
+		ability_l.wait_time = 1
+		ability_t.wait_time = 1
+		
 	else:
 		OS.crash("Node2D")
 	Global.fresh = false
@@ -280,12 +328,8 @@ func _ready():
 		Global.health = Global.max_health
 	else:
 		loadtowerdata()
-	if do_start_countdown == true:
-		$READY.play()
-	elif do_start_countdown == false:
-		bgm()
-		Global.race = true
-		OS.delay_msec(100)
+	
+	
 	$WarpFlash.wait_time = warp_time
 	temp_rotation_speed = rotation_speed
 	temp_max = max_forward_speed
@@ -293,6 +337,15 @@ func _ready():
 	max_forward_speed = temp_max
 	$AutoRegen.wait_time = regen_time
 	ability_c.max_value = ability_t.wait_time
+
+	
+	if do_start_countdown == true:
+		$READY.play()
+	elif do_start_countdown == false:
+		bgm()
+		Global.race = true
+		OS.delay_msec(100)
+		ability_t.autostart = true
 
 @onready var backmusic : AudioStreamPlayer2D = $BGMTEST
 
@@ -425,48 +478,55 @@ func movement(delta: float) -> void:
 			max_forward_speed = temp_max
 			held_back = temp_held_back
 	if Input.is_action_pressed("left"):
-		if Input.is_action_pressed("right"):
-			forward = 0
-		else:
-			if is_going == true:
-				turning = true
-				Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
-				rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
-				held_back = held_back - 0.02
+		if flying == false:
+			if Input.is_action_pressed("right"):
+				forward = 0
+			else:
+				if is_going == true:
+					turning = true
+					Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
+					rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
+					held_back = held_back - 0.02
 	if Input.is_action_pressed("right"):
-		if Input.is_action_pressed("left"):
-			forward = 0
-		else:
-			if is_going == true:
-				turning = true
-				Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
-				rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
-				held_back = held_back - 0.02
+		if flying == false:
+			if Input.is_action_pressed("left"):
+				forward = 0
+			else:
+				if is_going == true:
+					turning = true
+					Global.drift_charge = clamp(Global.drift_charge + turn_charge, 0, Global.max_drift)
+					rotation_speed = rotation_speed * (Global.drift_charge / 25) + .9
+					held_back = held_back - 0.02
 	if Input.is_action_just_released("left"):
 		turning = false
-		if is_going == true:
-			releasethedrift()
+		if flying == false:
+			if is_going == true:
+				releasethedrift()
 	if Input.is_action_just_released("right"):
 		turning = false
-		if is_going == true:
-			releasethedrift()
+		if flying == false:
+			if is_going == true:
+				releasethedrift()
 	if Input.is_action_just_pressed("left"):
 		#if is_going == true:
-		if Input.is_action_pressed("right"):
-			pass
-		else:
-			max_forward_speed = max_forward_speed / drift_multi
-			$TURN.play()
-			forward = forward * held_back
+		if flying == false:
+			if Input.is_action_pressed("right"):
+				pass
+			else:
+				max_forward_speed = max_forward_speed / drift_multi
+				$TURN.play()
+				forward = forward * held_back
 	if Input.is_action_just_pressed("right"):
 		#if is_going == true:
-		if Input.is_action_pressed("left"):
-			pass
-		else:
-			max_forward_speed = max_forward_speed / drift_multi
-			$TURN.play()
-			forward = forward * held_back
-	rotation -= ((rotation_direction * (rotation_speed * 1.5) * delta) * forward)
+		if flying == false:
+			if Input.is_action_pressed("left"):
+				pass
+			else:
+				max_forward_speed = max_forward_speed / drift_multi
+				$TURN.play()
+				forward = forward * held_back
+	if flying == false:
+		rotation -= ((rotation_direction * (rotation_speed * 1.5) * delta) * forward)
 	if forward < 0:
 		is_going = true
 		velocity = transform.y * forward * max_forward_speed
@@ -493,6 +553,8 @@ func _on_ready_finished():
 	bgm()
 	Global.race = true
 	OS.delay_msec(100)
+	ability_t.autostart = true
+
 
 
 func _on_warp_flash_timeout():
@@ -539,12 +601,14 @@ func _on_ability_last_timeout():
 	elif Global.player_selected == 1:
 		pass
 	elif Global.player_selected == 2:
-		pass
+		max_forward_speed = temp_max
 	elif Global.player_selected == 3:
-		set_process_input(true)
+		flying = false
 		max_forward_speed = temp_max
 		$PlayerRacer.play("Germ")
 		$PlayerRacer/Wheels.show()
+		$GPUParticles2D.show()
+		$GPUParticles2D2.show()
 	elif Global.player_selected == 4:
 		max_forward_speed = temp_max
 		forward_accel = forward_accel / 2
@@ -552,10 +616,11 @@ func _on_ability_last_timeout():
 		drag = drag + 10
 	elif Global.player_selected == 5:
 		$Collider.disabled = false
-		$PlayerRacer.show()
+		$PlayerRacer.play("Oart")
 		$PlayerRacer/Wheels.show()
 	elif Global.player_selected == 6:
-		pass
+		max_forward_speed = temp_max
+		forward_accel = forward_accel / 4
 	elif Global.player_selected == 7:
 		pass
 
@@ -572,13 +637,14 @@ func _input(_event):
 					max_forward_speed = max_forward_speed * 4
 					forward = forward * 20
 					OS.delay_msec(20)
-					max_forward_speed = temp_max
 				elif Global.player_selected == 3:
 					print("wow im flying weeee")
-					set_process_input(false)
+					flying = true
 					max_forward_speed = max_forward_speed * 1.5
 					$PlayerRacer.play("Flying")
 					$PlayerRacer/Wheels.hide()
+					$GPUParticles2D.hide()
+					$GPUParticles2D2.hide()
 					rotation_speed = 0
 				elif Global.player_selected == 4:
 					print("lock in.")
@@ -588,12 +654,13 @@ func _input(_event):
 					drag = drag - 10
 				elif Global.player_selected == 5:
 					$Collider.disabled = true
-					$PlayerRacer.hide()
+					$PlayerRacer.play("Clip")
 					$PlayerRacer/Wheels.hide()
 				elif Global.player_selected == 6:
-					pass
+					max_forward_speed = max_forward_speed * 4
+					forward_accel = forward_accel * 4
 				elif Global.player_selected == 7:
-					pass
+					$WARP.play()
 				
 				ability_l.start()
 				ability_t.start()

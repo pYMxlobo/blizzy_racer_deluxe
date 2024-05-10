@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwaidodw0kqls"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/willstats.gd" id="1_8wonb"]
+
+[resource]
+resource_name = "Will_Stats"
+script = ExtResource("1_8wonb")

@@ -3,7 +3,16 @@ res://other/theme.tres
 res://other/rerro.gdshader
 res://other/whiteflash.gdshader
 res://other/16.gdshader
+res://other/rerro2.gdshader
 res://scripts/PlayerRacer.gd
+res://resources/banestats.tres
+res://resources/yogustats.tres
+res://resources/robotstats.tres
+res://resources/germstats.tres
+res://resources/penvortstats.tres
+res://resources/oartstats.tres
+res://resources/willstats.tres
+res://resources/blizzystats.tres
 res://scenes/TitleSreen.tscn
 res://scenes/char_select.tscn
 res://scenes/towerrooms/enemy.tscn
@@ -16,4 +25,4 @@ res://scenes/towerrooms/floor5.tscn
 res://scenes/towerrooms/floor6.tscn
 res://scenes/towerrooms/floor7.tscn
 res://scenes/towerrooms/floor8.tscn
-res://other/rerro2.gdshader
+res://scripts/towerscripts/itemspawn.gd

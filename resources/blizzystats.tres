@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bxom5lkrsqejx"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/blizzystats.gd" id="1_udcay"]
+
+[resource]
+resource_name = "Blizzy_Stats"
+script = ExtResource("1_udcay")

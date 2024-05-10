@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ch7u16tpw02up"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/banestats.gd" id="1_mempp"]
+
+[resource]
+resource_name = "Bane_Stats"
+script = ExtResource("1_mempp")

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cy1r2pbye0m6x"]
+
+[ext_resource type="Script" path="res://scripts/stat scripts/yogustats.gd" id="1_2m5o8"]
+
+[resource]
+resource_name = "Yogu_Stats"
+script = ExtResource("1_2m5o8")

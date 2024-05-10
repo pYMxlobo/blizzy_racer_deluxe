@@ -12,9 +12,14 @@ var random = 0
 func _ready():
 	randomize()
 	random = randi_range(0, 26)
-	if random == 3 or 11 or 21:
+	
+	
+	while random == 3 or random == 11 or random == 21:
 		randomize()
 		random = randi_range(0, 26)
+	
+	
+	
 	
 	if random_item == true:
 		ID = random

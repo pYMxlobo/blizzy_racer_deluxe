@@ -1,14 +1,23 @@
-[gd_scene load_steps=53 format=3 uid="uid://5ig03wmyusyv"]
+[gd_scene load_steps=62 format=3 uid="uid://5ig03wmyusyv"]
 
 [ext_resource type="Script" path="res://scripts/PlayerRacer.gd" id="1_voco8"]
+[ext_resource type="Resource" uid="uid://bxom5lkrsqejx" path="res://resources/blizzystats.tres" id="2_6fjhr"]
 [ext_resource type="Shader" path="res://other/whiteflash.gdshader" id="2_r4eco"]
 [ext_resource type="Texture2D" uid="uid://cj8oqsjs2s3n4" path="res://sprites/other/temp_or_other/white.png" id="3_fjhi4"]
+[ext_resource type="Resource" uid="uid://cy1r2pbye0m6x" path="res://resources/yogustats.tres" id="3_ll5mq"]
 [ext_resource type="Script" path="res://scripts/White.gd" id="3_q5ems"]
+[ext_resource type="Resource" uid="uid://b0y26mynvib7f" path="res://resources/robotstats.tres" id="4_tn0ji"]
 [ext_resource type="Texture2D" uid="uid://c0en0kl3s2wiv" path="res://sprites/character_assets/bane/bandrivin.png" id="5_awiyf"]
+[ext_resource type="Resource" uid="uid://dwef4myaj6f2w" path="res://resources/germstats.tres" id="5_hdv7w"]
+[ext_resource type="Resource" uid="uid://c2wo3vemomyso" path="res://resources/penvortstats.tres" id="6_bn7x8"]
 [ext_resource type="Texture2D" uid="uid://6i8xgojjq0mk" path="res://sprites/character_assets/blizzy/blizzydrivin.png" id="6_tp7dc"]
 [ext_resource type="Texture2D" uid="uid://d178onqtwp4y2" path="res://sprites/character_assets/germ/germflyin.png" id="7_6tlmd"]
 [ext_resource type="Texture2D" uid="uid://dy84j2lyva4w5" path="res://sprites/character_assets/germ/germdrivin.png" id="7_gsits"]
+[ext_resource type="Resource" uid="uid://bo6ymps12w3m" path="res://resources/oartstats.tres" id="7_pg1kk"]
+[ext_resource type="Texture2D" uid="uid://di75uqqusn71c" path="res://sprites/character_assets/oart/oarttransparent.png" id="7_uc75b"]
+[ext_resource type="Resource" uid="uid://cwaidodw0kqls" path="res://resources/willstats.tres" id="8_g2i14"]
 [ext_resource type="Texture2D" uid="uid://bbh6bily08037" path="res://sprites/character_assets/oart/oartdrivin.png" id="8_kqx8m"]
+[ext_resource type="Resource" uid="uid://ch7u16tpw02up" path="res://resources/banestats.tres" id="9_47si4"]
 [ext_resource type="Texture2D" uid="uid://d371syh2hr3oj" path="res://sprites/character_assets/penvort/penvortdrivin.png" id="9_dhap6"]
 [ext_resource type="Texture2D" uid="uid://rpro5w812yn4" path="res://sprites/character_assets/robot/robotdrivin.png" id="10_2lsuc"]
 [ext_resource type="Texture2D" uid="uid://djoxlxved3c4d" path="res://sprites/character_assets/will/willdrivin.png" id="11_0b34r"]
@@ -65,6 +74,14 @@ animations = [{
 "loop": true,
 "name": &"Blizzy",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uc75b")
+}],
+"loop": true,
+"name": &"Clip",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -271,9 +288,81 @@ shader_parameter/color_60 = Color(0.588235, 0.933333, 1, 1)
 shader_parameter/color_61 = Color(0.352941, 0.560784, 0.6, 1)
 shader_parameter/color_62 = Color(0.239216, 0.266667, 1, 1)
 shader_parameter/color_63 = Color(0.137255, 0.152941, 0.580392, 1)
+shader_parameter/color_64 = Color(0.588235, 0, 0.196078, 1)
+shader_parameter/color_65 = Color(0.439216, 0.172549, 0.215686, 1)
+shader_parameter/color_66 = Color(0.321569, 0, 0.105882, 1)
+shader_parameter/color_67 = Color(0.0901961, 0, 0.0313726, 1)
+shader_parameter/color_68 = Color(0.419608, 0.65098, 1, 1)
+shader_parameter/color_69 = Color(0.262745, 0.411765, 0.631373, 1)
+shader_parameter/color_70 = Color(0.470588, 1, 0.662745, 1)
+shader_parameter/color_71 = Color(0.286275, 0.611765, 0.403922, 1)
+shader_parameter/color_72 = Color(1, 0.945098, 0.180392, 1)
+shader_parameter/color_73 = Color(0.321569, 0.301961, 0.0588235, 1)
+shader_parameter/color_74 = Color(0.858824, 0.858824, 0.858824, 1)
+shader_parameter/color_75 = Color(0.74902, 0.858824, 0.792157, 1)
+shader_parameter/color_76 = Color(0.721569, 0.92549, 1, 1)
+shader_parameter/color_77 = Color(0.454902, 0.584314, 0.631373, 1)
+shader_parameter/color_78 = Color(0.52549, 0.67451, 0.729412, 1)
+shader_parameter/color_79 = Color(0.352941, 0.454902, 0.490196, 1)
+shader_parameter/color_80 = Color(1, 0.568627, 0, 1)
+shader_parameter/color_81 = Color(1, 0.709804, 0.270588, 1)
+shader_parameter/color_82 = Color(0.74902, 0.427451, 0, 1)
+shader_parameter/color_83 = Color(0.580392, 0.329412, 0, 1)
+shader_parameter/color_84 = Color(1, 0.435294, 0, 1)
+shader_parameter/color_85 = Color(1, 0.666667, 0.329412, 1)
+shader_parameter/color_86 = Color(0.741176, 0.321569, 0, 1)
+shader_parameter/color_87 = Color(0.439216, 0.192157, 0, 1)
+shader_parameter/color_88 = Color(1, 0.901961, 0.768627, 1)
+shader_parameter/color_89 = Color(0.639216, 0.576471, 0.490196, 1)
+shader_parameter/color_90 = Color(0, 0.329412, 0.0235294, 1)
+shader_parameter/color_91 = Color(0.215686, 0.631373, 0.254902, 1)
+shader_parameter/color_92 = Color(0.85098, 1, 0.25098, 1)
+shader_parameter/color_93 = Color(0.54902, 0.65098, 0.376471, 1)
+shader_parameter/color_94 = Color(0.458824, 0.541176, 0.137255, 1)
+shader_parameter/color_95 = Color(0.270588, 0.321569, 0.0823529, 1)
+shader_parameter/color_96 = Color(0.894118, 0.470588, 1, 1)
+shader_parameter/color_97 = Color(0.937255, 0.690196, 1, 1)
+shader_parameter/color_98 = Color(0.537255, 0.282353, 0.6, 1)
+shader_parameter/color_99 = Color(0.341176, 0.180392, 0.380392, 1)
+shader_parameter/color_100 = Color(1, 0.752941, 0.380392, 1)
+shader_parameter/color_101 = Color(0.85098, 0.639216, 0.321569, 1)
+shader_parameter/color_102 = Color(0.568627, 0.427451, 0.215686, 1)
+shader_parameter/color_103 = Color(0.411765, 0.309804, 0.156863, 1)
+shader_parameter/color_104 = Color(0.780392, 0.831373, 1, 1)
+shader_parameter/color_105 = Color(0.623529, 0.666667, 0.8, 1)
+shader_parameter/color_106 = Color(0.443137, 0.47451, 0.568627, 1)
+shader_parameter/color_107 = Color(0.243137, 0.258824, 0.309804, 1)
+shader_parameter/color_108 = Color(0.796078, 1, 0.388235, 1)
+shader_parameter/color_109 = Color(0.670588, 0.839216, 0.32549, 1)
+shader_parameter/color_110 = Color(0.494118, 0.619608, 0.239216, 1)
+shader_parameter/color_111 = Color(0.32549, 0.411765, 0.156863, 1)
+shader_parameter/color_112 = Color(1, 0.67451, 0.458824, 1)
+shader_parameter/color_113 = Color(0.721569, 0.486275, 0.329412, 1)
+shader_parameter/color_114 = Color(1, 0.4, 0.560784, 1)
+shader_parameter/color_115 = Color(0.811765, 0.32549, 0.454902, 1)
+shader_parameter/color_116 = Color(0.568627, 0.227451, 0.321569, 1)
+shader_parameter/color_117 = Color(0.34902, 0.141176, 0.196078, 1)
+shader_parameter/color_118 = Color(0.701961, 0, 1, 1)
+shader_parameter/color_119 = Color(0.698039, 0.32549, 0.811765, 1)
+shader_parameter/color_120 = Color(0.588235, 0.933333, 1, 1)
+shader_parameter/color_121 = Color(0.568627, 0.752941, 0.8, 1)
+shader_parameter/color_122 = Color(0.352941, 0.560784, 0.6, 1)
+shader_parameter/color_123 = Color(0.160784, 0.25098, 0.270588, 1)
+shader_parameter/color_124 = Color(0.239216, 0.266667, 1, 1)
+shader_parameter/color_125 = Color(0.419608, 0.388235, 0.901961, 1)
+shader_parameter/color_126 = Color(0.137255, 0.152941, 0.580392, 1)
+shader_parameter/color_127 = Color(0.0823529, 0.0901961, 0.341176, 1)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_voco8")
+blizzy = ExtResource("2_6fjhr")
+yogu = ExtResource("3_ll5mq")
+robot = ExtResource("4_tn0ji")
+germ = ExtResource("5_hdv7w")
+penvort = ExtResource("6_bn7x8")
+oart = ExtResource("7_pg1kk")
+will = ExtResource("8_g2i14")
+bane = ExtResource("9_47si4")
 
 [node name="White" type="Sprite2D" parent="."]
 visible = false
@@ -475,7 +564,6 @@ one_shot = true
 [node name="cooldown_timer" type="Timer" parent="cooldowns/ability_cooldown"]
 wait_time = 30.0
 one_shot = true
-autostart = true
 
 [connection signal="finished" from="READY" to="." method="_on_ready_finished"]
 [connection signal="timeout" from="WarpFlash" to="." method="_on_warp_flash_timeout"]
