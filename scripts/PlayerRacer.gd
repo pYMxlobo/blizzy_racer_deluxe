@@ -21,7 +21,7 @@ var stats : Resource
 
 var custom
 #this stuff is all the cool movement
-var max_forward_speed : int = 1252 * 1000
+var max_forward_speed : int = 1252
 var forward_accel : float = 15
 var max_backward_speed : int = 100
 var backward_accel : int = 5

@@ -1,3 +1,5 @@
+res://scripts
+res://scenes
 res://scripts/stat scripts
 res://resources
 res://sprites/character_assets/blizzy
@@ -7,8 +9,6 @@ res://
 C:/Users/minio/Downloads
 res://sprites/stageassets/towerassets
 res://scenes/towerrooms
-res://scripts
-res://scenes
 res://sprites/character_assets/enemy
 res://audio/finaksfx
 res://sprites/stageassets/racetrackassets

@@ -1,0 +1,124 @@
+[gd_scene load_steps=21 format=3 uid="uid://ca6abne10o8dx"]
+
+[ext_resource type="PackedScene" uid="uid://5ig03wmyusyv" path="res://scenes/player.tscn" id="1_m0uq8"]
+[ext_resource type="Script" path="res://scripts/Camera3D.gd" id="2_6w0cd"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="2_ywp2r"]
+[ext_resource type="Texture2D" uid="uid://cjseqmfk4kpj" path="res://sprites/stageassets/racetrackassets/skytemp.png" id="3_abwqq"]
+[ext_resource type="Script" path="res://scripts/noturning.gd" id="4_xu00y"]
+[ext_resource type="Texture2D" uid="uid://cfacud55ldfw5" path="res://sprites/ui/bars/drift_bar_under.png" id="5_whmr2"]
+[ext_resource type="Texture2D" uid="uid://cld0tosi7a7ib" path="res://sprites/ui/bars/drift_bar_over.png" id="6_w55i8"]
+[ext_resource type="Texture2D" uid="uid://cuq7tce3tgl83" path="res://sprites/ui/bars/drift_bar_progress.png" id="7_sh4ru"]
+[ext_resource type="Script" path="res://scripts/DriftMeter.gd" id="8_kajw2"]
+[ext_resource type="Texture2D" uid="uid://fe2e7usck4xu" path="res://sprites/ui/bars/hpunder.png" id="9_erwou"]
+[ext_resource type="Texture2D" uid="uid://c6xfe5bbe14ev" path="res://sprites/ui/bars/hpover.png" id="10_qjunl"]
+[ext_resource type="Texture2D" uid="uid://dvjrtferq1b7i" path="res://sprites/ui/bars/hpfill.png" id="11_ojolp"]
+[ext_resource type="Script" path="res://scripts/HealthBar.gd" id="12_dcrx2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j0jvx"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_fpyti"]
+sky_material = SubResource("ProceduralSkyMaterial_j0jvx")
+
+[sub_resource type="Environment" id="Environment_qncuo"]
+background_mode = 2
+sky = SubResource("Sky_fpyti")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_663u2"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b3mfb"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_663u2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aitkc"]
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = SubResource("NoiseTexture2D_b3mfb")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w1k40"]
+material = SubResource("StandardMaterial3D_aitkc")
+top_radius = 2.48
+bottom_radius = 4.141
+radial_segments = 12
+rings = 1
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qncuo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.50384, 0, 0, 0, 2.50384, 0, 0, 0, 2.50384, 0, -2.77644, 0)
+mesh = SubResource("CylinderMesh_w1k40")
+
+[node name="Player" parent="." instance=ExtResource("1_m0uq8")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 590
+zoom = Vector2(0.355, 0.355)
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+script = ExtResource("2_ywp2r")
+random_strength = 10.0
+shake_fade = 10.0
+
+[node name="Sky" type="Sprite2D" parent="Camera2D"]
+visible = false
+z_index = -4096
+position = Vector2(-14.9831, 5.17641)
+rotation = 3.14159
+scale = Vector2(1.46899, 1.00882)
+texture = ExtResource("3_abwqq")
+script = ExtResource("4_xu00y")
+
+[node name="DriftMeter" type="TextureProgressBar" parent="Camera2D"]
+editor_description = "this is the meter for the thing :D"
+z_index = 3896
+z_as_relative = false
+offset_left = 1051.0
+offset_top = -741.0
+offset_right = 1227.0
+offset_bottom = 675.0
+tooltip_text = "The Drift Warp Meter!"
+max_value = 18.1
+step = 0.25
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("5_whmr2")
+texture_over = ExtResource("6_w55i8")
+texture_progress = ExtResource("7_sh4ru")
+script = ExtResource("8_kajw2")
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" type="TextureProgressBar" parent="Camera2D"]
+offset_left = -1266.0
+offset_top = -833.0
+offset_right = 538.0
+offset_bottom = -650.0
+tooltip_text = "this is the Health Bar!"
+step = 0.1
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("9_erwou")
+texture_over = ExtResource("10_qjunl")
+texture_progress = ExtResource("11_ojolp")
+script = ExtResource("12_dcrx2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+fov = 50.0
+script = ExtResource("2_6w0cd")
+player = NodePath("../Player")

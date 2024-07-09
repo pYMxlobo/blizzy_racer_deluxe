@@ -1,3 +1,5 @@
+Camera3D
+MeshInstance3D
 ResourcePreloader
 Timer
 Label
@@ -11,5 +13,3 @@ CollisionPolygon2D
 StaticBody2D
 SpinBox
 GPUParticles2D
-AudioStreamPlayer2D
-Area2D
